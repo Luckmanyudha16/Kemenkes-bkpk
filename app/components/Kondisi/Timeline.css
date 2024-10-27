@@ -1,0 +1,53 @@
+/* .timeline {
+  position: relative;
+}
+
+.timeline li {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.timeline li:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.timeline-start, .timeline-end {
+  cursor: pointer;
+}
+
+.timeline-start:hover, .timeline-end:hover {
+  color: #007bff; /* Change to your desired hover color */
+/* } */
+
+.timeline {
+  position: relative;
+}
+
+.timeline li {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.timeline li:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #333;
+  transition: opacity 0.3s ease;
+}
+.timeline-start, .timeline-end {
+  cursor: pointer;
+}
+
+.timeline-start:hover, .timeline-end:hover {
+  color: #007bff; /* Change to your desired hover color */
+}
