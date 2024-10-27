@@ -6,6 +6,13 @@
   --background: #ffffff;
   --foreground: #ffffff;
 }
+.custom-container {
+  width: 100%;
+  position: relative;
+  max-width: 100%;
+  /* overflow: hidden; */
+  height: auto;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
