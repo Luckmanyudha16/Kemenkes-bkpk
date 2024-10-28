@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Link from "next/link";
 import Theme from "./components/Home/Theme";
 import Kemerdekaan from "./components/Home/Kemerdekaan";
