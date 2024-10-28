@@ -25,7 +25,7 @@ export default function Home() {
             <img className="w-full" src="dummy.png" alt="Team Member" />
           </Link>
         </div>
-        <Kemerdekaan></Kemerdekaan>
+        {/* <Kemerdekaan></Kemerdekaan> */}
       </div>
     </div>
   );
