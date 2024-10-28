@@ -4,6 +4,25 @@ import Link from "next/link";
 export default function Sejarah() {
   return (
     <div>
+      <div className="container mx-auto px-6">
+    {/* Logo Section */}
+    <div className="flex justify items gap-6 py-6">
+    <img
+      src="garuda.png"
+      alt="Logo Garuda"
+      className="max-h-24 w-auto sm:max-h-28 md:max-h-32 lg:max-h-36"
+    />
+    <img
+      src="BKPK LOGO.png"
+      alt="Logo BKPK"
+      className="max-h-24 w-auto sm:max-h-28 md:max-h-32 lg:max-h-36"
+    />
+  </div>
+  <img
+    src="Supergrafis.png"
+    alt="Logo Tambahan"
+    className="absolute top-0 right-0 max-h-0 w-auto sm:max-h-0 md:max-h-0 lg:max-h-72 m-2"
+  />
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-2xl mx-auto text-center animate-fade-in">
           <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
@@ -59,6 +78,7 @@ export default function Sejarah() {
         </div>
         {/* </section> */}
       </div>
+    </div>
       <div className="relative mt-12 flex justify-start items-start">
         <img
           src="Supergrafiskiri.png"
