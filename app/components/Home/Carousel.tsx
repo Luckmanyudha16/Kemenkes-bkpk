@@ -24,27 +24,40 @@ export default function Carousel() {
         href: "/Peran_Tokoh",
         src: "Dokter.jpg",
         alt: "Team Member",
-        caption: "Peran Tokoh Kesehatan dalam Perjuangan Menuju Kemerdekaan",
+        caption: (
+          <>
+            Peran Tokoh Kesehatan
+            <br />
+            dalam Perjuangan Menuju Kemerdekaan
+          </>
+        ),
+
       },
     ],
     [
       {
-        href: "/Sejarah",
-        src: "obat.jpg",
+        href: "/Sejarah_Stovia",
+        src: "stovia.png",
         alt: "Team Member",
-        caption: "Pengobatan Tradisional dan Masyarakat Adat",
+        caption: "Sejarah Stovia",
       },
       {
-        href: "/Kondi",
-        src: "Bidan.jpg",
+        href: "/Kurikulum",
+        src: "kurikulum.png",
         alt: "Team Member",
-        caption: "Kondisi Kesehatan di Masa Kolonial",
+        caption: "Kurikulum dan Pelatihan",
       },
       {
-        href: "/Peran",
-        src: "Dokter.jpg",
+        href: "/Tokoh_Perjuangan",
+        src: "tokoh.png",
         alt: "Team Member",
-        caption: "Peran Tokoh Kesehatan dalam Perjuangan Menuju Kemerdekaan",
+        caption: (
+          <>
+          Peran Tokoh Kesehatan dan Penyakit Endemik 
+          <br/>
+          dalam Perjuangan Menuju Kemerdekaan
+          </>
+        ),
       },
     ],
   ];
@@ -91,13 +104,13 @@ export default function Carousel() {
       {/* Navigation controls */}
       <button
         onClick={prevSlide}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gray-700 text-white">
-        Prev
+        className="absolute left-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+        <a className="btn btn-circle">❮</a>
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gray-700 text-white">
-        Next
+        className="absolute right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+        <a className="btn btn-circle">❯</a>
       </button>
     </div>
   );

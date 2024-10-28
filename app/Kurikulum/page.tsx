@@ -1,7 +1,7 @@
 import "./PageSejarah.css";
 import Link from "next/link";
 
-export default function Sejarah() {
+export default function Kurikulum() {
   return (
     <div>
       <div className="container mx-auto px-6">
@@ -26,7 +26,7 @@ export default function Sejarah() {
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-2xl mx-auto text-center animate-fade-in">
           <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-            Pengobatan Tradisional dan Masyarakat Adat
+          Kurikulum dan Pelatihan
           </h2>
         </div>
         <br/>

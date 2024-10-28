@@ -1,7 +1,7 @@
 import "./PageSejarah.css";
 import Link from "next/link";
 
-export default function Sejarah() {
+export default function Sejarah_Stovia() {
   return (
     <div>
       <div className="container mx-auto px-6">
@@ -26,7 +26,7 @@ export default function Sejarah() {
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-2xl mx-auto text-center animate-fade-in">
           <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-            Pengobatan Tradisional dan Masyarakat Adat
+          Sejarah STOVIA
           </h2>
         </div>
         <br/>
@@ -48,7 +48,7 @@ export default function Sejarah() {
               <div className="relative max-w-xs mb-12">
                 <img
                   className="object-bottom rounded-md"
-                  src="/obat.jpg"
+                  src="/stovia.png"
                   alt=""
                   width={400}
                   height={400}
