@@ -10,6 +10,7 @@ export default function Sejarah() {
             Pengobatan Tradisional dan Masyarakat Adat
           </h2>
         </div>
+        <br/>
 
         {/* Video from public folder */}
         <div className="flex justify-center items-center py-6">
@@ -18,6 +19,7 @@ export default function Sejarah() {
             Your browser does not support the video tag.
           </video>
         </div>
+        <br/>
 
         {/* Section dengan gambar lebih kecil */}
         {/* <section className="py-10 bg-white sm:py-16 lg:py-24"> */}
