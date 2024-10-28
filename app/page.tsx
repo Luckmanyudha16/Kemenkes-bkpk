@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Kotak from "./components/Home/Kotak";
+import Theme from "./components/Home/Theme";
 
 export default function Home() {
   return (
