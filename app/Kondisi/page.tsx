@@ -7,6 +7,11 @@ export default function Kondisi() {
   return (
     <div>
       <section className="py-10 bg-gray-100 sm:py-16 lg:py-24">
+      <img
+    src="Supergrafis.png"
+    alt="Logo Tambahan"
+    className="absolute top-0 right-0 max-h-0 w-auto sm:max-h-0 md:max-h-0 lg:max-h-72 m-2"
+  />
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-3xl animate-fade-in">
@@ -27,6 +32,11 @@ export default function Kondisi() {
           </button>
         </Link>
       </div>
+      <img
+      src="Supergrafiskiri.png"
+      alt="Logo Tambahan"
+      className="max-h-48 w-auto sm:max-h-56 md:max-h-64 lg:max-h-72"
+    />
     </div>
   );
 }

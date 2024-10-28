@@ -1,3 +1,44 @@
 .bgRed{
-    background-color: tomato;
+    background-color: rgb(255, 255, 255);
     } 
+    /* Animasi Section Fade-in */
+.animate-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animasi Zoom-in pada Gambar */
+.animate-image img {
+  transform: scale(0.9);
+  opacity: 0;
+  animation: zoomIn 1s ease-out forwards 0.5s;
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animasi Slide-in pada Teks */
+.animate-text {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 1s ease-out forwards 0.8s;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

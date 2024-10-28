@@ -24,6 +24,11 @@ export default function Peran_Tokoh() {
   return (
     <div>
   <section className="py-10 bg-white sm:py-16 lg:py-24">
+  <img
+    src="Supergrafis.png"
+    alt="Logo Tambahan"
+    className="absolute top-0 right-0 max-h-0 w-auto sm:max-h-0 md:max-h-0 lg:max-h-72 m-2"
+  />
     <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
       <div className="max-w-2xl mx-auto text-center animate-fade-in">
         <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
@@ -83,6 +88,12 @@ export default function Peran_Tokoh() {
           </button>
         </Link>
       </div>
+    <img
+      src="Supergrafiskiri.png"
+      alt="Logo Tambahan"
+      className="max-h-48 w-auto sm:max-h-56 md:max-h-64 lg:max-h-72"
+    />
+  
     </div>
   );
 }

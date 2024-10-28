@@ -4,7 +4,9 @@ import Theme from "./components/Home/Theme";
 
 export default function Home() {
   return (
-  <div className="container mx-auto px-6">
+  // < className="container mx-auto px-6">
+  <div>
+      <section className="container mx-auto px-6">
     {/* Logo Section */}
     <div className="flex justify items gap-6 py-6">
     <img
@@ -64,16 +66,16 @@ export default function Home() {
       </span>
     </Link>
   </div>
-           
   </div>
-    <div className="relative mt-12 flex justify-">
+    {/* <div className="relative mt-12 flex justify-"> */}
+    </section>
     <img
       src="Supergrafiskiri.png"
       alt="Logo Tambahan"
-      className="max-h-48 w-auto sm:max-h-56 md:max-h-64 lg:max-h-72"
-    />
+      className="absolute bottom-0 left-0 max-h-48 w-auto sm:max-h-56 md:max-h-64 lg:max-h-72"
+      />
   </div>
-  </div>
+  
   
   );
 }
