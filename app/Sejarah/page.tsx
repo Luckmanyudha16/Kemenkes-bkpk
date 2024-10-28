@@ -1,4 +1,3 @@
-import Image from "next/image";
 import style from "./PageSejarah.module.css";
 
 export default function Sejarah() {
@@ -8,13 +7,8 @@ export default function Sejarah() {
       
       {/* Gambar pertama di tengah */}
       <div className="flex justify-center items-center py-6">
-        <Image
-          className="rounded-md"
-          src="/globe.svg"
-          alt="Main Image"
-          width={400}
-          height={400}
-        />
+      <img className="rounded-md" src="/globe.svg" alt="" width={400}
+          height={400}/>
       </div>
 
       {/* Section dengan gambar lebih kecil */}
@@ -23,20 +17,12 @@ export default function Sejarah() {
           <div className="grid items-center md:grid-cols-2 gap-y-10 md:gap-x-20">
             <div className="pr-12 sm:pr-0">
               <div className="relative max-w-xs mb-12">
-                <Image
-                  className="object-bottom rounded-md"
-                  src="/globe.svg"
-                  alt="Secondary Image"
-                  width={300} // Lebih kecil dari gambar pertama
-                  height={300}
-                />
-                <Image
-                  className="absolute origin-bottom-right scale-50 rounded-md -bottom-6 -right-6"
-                  src="/globe.svg"
-                  alt="Overlay Image"
-                  width={150}
-                  height={150}
-                />
+              <img className="object-bottom rounded-md" src="/globe.svg" alt="" width={300}
+          height={300}/>
+                
+                <img className="absolute origin-bottom-right scale-50 rounded-md -bottom-6 -right-6" src="/globe.svg" alt="" width={150}
+          height={150}/>
+                
               </div>
             </div>
 

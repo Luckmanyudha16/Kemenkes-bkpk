@@ -12,7 +12,7 @@ export default function Kondisi() {
             <h1 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-3xl animate-fade-in">
               Kondisi Kesehatan di Masa Kolonial
             </h1>
-            <p className="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600">
+            <p className="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600 animate-fade-in">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.
             </p>
             <br />
@@ -23,7 +23,7 @@ export default function Kondisi() {
       <div className="flex justify-end px-4 mb-4">
         <Link href="/"> {/* Wrap the button with Link */}
           <button className="btn btn-outline btn-primary">
-            Primary
+            Back
           </button>
         </Link>
       </div>

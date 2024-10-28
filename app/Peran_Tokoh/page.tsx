@@ -79,7 +79,7 @@ export default function Peran_Tokoh() {
       <div className="flex justify-end px-4 mb-4">
         <Link href="/"> {/* Wrap the button with Link */}
           <button className="btn btn-outline btn-primary">
-            Primary
+           Back
           </button>
         </Link>
       </div>

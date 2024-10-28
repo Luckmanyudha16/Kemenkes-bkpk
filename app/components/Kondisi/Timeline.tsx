@@ -72,7 +72,7 @@ const Timeline = () => {
           </svg>
         </div>
         <div className="timeline-end mb-10">
-          <time className="font-mono italic">2015</time>
+          <time className="font-mono italic">2000</time>
           <div className="text-lg font-black">Apple Watch</div>
           <img
             src="/imam.jpg"
@@ -106,7 +106,7 @@ const Timeline = () => {
           </svg>
         </div>
         <div className="timeline-start mb-10 md:text-end">
-          <time className="font-mono italic">1984</time>
+          <time className="font-mono italic">2015</time>
           <div className="text-lg font-black">First Macintosh computer</div>
           <img
             src="/imam.jpg"
