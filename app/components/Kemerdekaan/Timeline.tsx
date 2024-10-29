@@ -26,7 +26,7 @@ const data = [
     year: 1946,
     judul: "KEMERDEKAAN",
     title: "Empat Sehat Lima Sempurna dan NV Saridele",
-    image: "/satrio.png",
+    image: "/image.png",
     description:
       "Pada 1952, Profesor Poerwo Soedarmo meluncurkan program “Empat Sehat Lima Sempurna”untuk mendorong masyarakat mengonsumsi makanan sehat dan bernutrisi. Melalui program tersebut, Profesor Poerwo Soedarmo dikenal sebagai Bapak Gizi Indonesia.  OBJEK: VISUAL PROFESSOR PORWO SOEDARMO Dua tahun setelah “Empat Sehat, Lima Sempurna” diperkenalkan, pemerintah bekerja sama dengan WHO mendirikan pabrik susu NV Saridele untuk mencukup kebutuhan gizi anak Indonesia. Pada 1965, NV Saridele yang sudah berganti nama menjadi Perusahaan Negara Sari Husada mendapatkan tugas dari Menteri Kesehatan Profesor Doktor Satrio untuk untuk membuat susu bayi yang terbuat dari bubuk skim, gula, lemak nabati, dan dilengkapi vitamin serta mineral. Formulasi ini dikenal luas dengan nama Susu, Gula, Minyak atau SGM.  ",
   },

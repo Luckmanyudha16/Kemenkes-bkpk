@@ -8,7 +8,7 @@ import Link from "next/link";
 const data : Record<number, { image: string; title:string; judul:string; description: string }> ={
   1799: {
     judul:"MASA KOLONIAL BELANDA",
-    title :"",
+    title :"Rempah-rempah",
     image: "/rempah.png",
     description:
       "Kolonialisme Belanda yang berlangsung pada 1799-1942 berawal dari upaya mencari rempah-rempah di Nusantara. Pada masa itu, rempah-rempah digunakan untuk penyedap makanan dan obat. Kolonialisme Belanda membuat masyarakat Nusantara mengenal dunia kesehatan Eropa, yang berdampak besar dalam perjalanan Indonesia pada masa setelahnya. Pengetahuan kesehatan pada masa kolonialisme Belanda yang berdampak pada dunia kesehatan Indonesia saat ini antara lain pelaksanaan program vaksinasi, pembentukan STOVIA, dan karantina.",
@@ -77,8 +77,8 @@ export default function Timeline() {
         <Image
           src={image}
           alt="Deskripsi gambar"
-          width={300}
-          height={300}
+          width={250}
+          height={250}
           className={styles.image}
         />
         <div>

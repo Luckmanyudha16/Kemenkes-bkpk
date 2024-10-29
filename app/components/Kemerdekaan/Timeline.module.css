@@ -21,8 +21,8 @@
 
 /* Gambar di sebelah kiri */
 .image {
-  width: 30%; /* Gambar mengambil 30% layar */
-  height: auto;
+  width: 20%; /* Gambar mengambil 30% layar */
+  height: 80%;
   object-fit: cover; /* Menjaga proporsi gambar */
   border-radius: 10px; /* Opsional: Untuk sudut yang melengkung */
 }
@@ -79,8 +79,8 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
+  left: 50;
+  right: 80;
   height: 5px;
   background-color: rgb(3, 249, 192);
   z-index: 1;
@@ -142,18 +142,18 @@
 
 .buttonContainer {
   position: absolute; /* Position relative to the nearest positioned ancestor */
-  top: 620px; /* Adjust as needed */
-  right: 40px; /* Adjust as needed */
+  top: 655px;         /* Adjust as needed */
+  right: 40px;       /* Adjust as needed */
 }
 
 .navigationButton {
   background-color: #05e265; /* Button color */
-  color: white; /* Text color */
-  border: none; /* No border */
-  padding: 10px 20px; /* Padding */
-  border-radius: 20px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor */
-  font-size: 12px; /* Font size */
+  color: white;              /* Text color */
+  border: none;              /* No border */
+  padding: 10px 20px;       /* Padding */
+  border-radius: 20px;       /* Rounded corners */
+  cursor: pointer;           /* Pointer cursor */
+  font-size: 12px;          /* Font size */
 }
 
 .navigationButton:hover {
