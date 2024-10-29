@@ -1,0 +1,179 @@
+/* Kontainer utama yang memenuhi layar penuh */
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Konten utama dengan gambar di kiri dan teks di kanan */
+.content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  flex: 1;
+}
+
+/* Gambar di sebelah kiri */
+.image {
+  width: 30%; /* Gambar mengambil setengah layar */
+  height: auto;
+  object-fit: cover; /* Menjaga proporsi gambar */
+  border-radius: 10px; /* Opsional: Untuk sudut yang melengkung */
+}
+
+/* Kontainer teks di sisi kanan gambar */
+.textContainer {
+  width: 60%; /* Mengambil setengah layar */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.Judul{
+  position: absolute; /* Mengatur posisi absolut */
+  top: 200; /* Jarak dari atas */
+  right: 200; /* Jarak dari kanan */
+  /* Menghilangkan margin default */
+  font-size: 32px; /* Ukuran font */
+  font-weight: bold; /* Ketebalan font */
+  color: #909090; /* Warna teks hitam */
+}
+/* Judul berada di atas deskripsi */
+.title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: #000; /* Warna teks hitam */
+}
+
+/* Deskripsi berada di bawah judul */
+.description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #000; /* Warna teks hitam */
+}
+
+/* Timeline berada di bawah konten utama */
+.timeline {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-right: 40px ;
+  position: relative;
+  margin-bottom: 60px;
+  width: 1600;
+  margin-left: auto;                 /* Centering using auto margins */
+  margin-right: auto;
+}
+
+/* Garis timeline melintang di tengah */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: rgb(3, 249, 192);
+  z-index: 1;
+}
+
+.timelinePoint {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: #686868; /* Default background color */
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Add transition for background color */
+}
+
+.timelinePoint:hover {
+  box-shadow: 0 0 10px 5px rgba(4, 182, 242, 0.6); /* Cahaya biru muda */
+}
+
+/* Tahun berada di bawah titik timeline */
+.timelinePoint span {
+  position: absolute;
+  top: 30px;
+  font-weight: bold;
+  color: #686868;
+  font-size: 14px;
+}
+
+/* Efek saat titik aktif */
+.active {
+  background-color: white; /* Change background to white */
+  border: 3px solid #00B1A9; /* Keep the border as white */
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Slide up effect */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.fadein {
+  opacity: 0; /* Start invisible */
+  animation: fadeIn 1s ease forwards; /* Transition timing */
+}
+
+.fadeinActive {
+  opacity: 1; /* Become visible */
+}
+
+.buttonContainerRight {
+  position: absolute; /* Position relative to the nearest positioned ancestor */
+  top: 620px;         /* Adjust as needed */
+  right: 40px;       /* Adjust as needed */
+}
+
+.navigationButtonRight {
+  background-color: #05e265; /* Button color */
+  color: white;              /* Text color */
+  border: none;              /* No border */
+  padding: 10px 20px;       /* Padding */
+  border-radius: 20px;       /* Rounded corners */
+  cursor: pointer;           /* Pointer cursor */
+  font-size: 12px;          /* Font size */
+}
+.buttonContainerLeft {
+  position: absolute; /* Position relative to the nearest positioned ancestor */
+  top: 620px;         /* Adjust as needed */
+  left: 40px;       /* Adjust as needed */
+}
+
+.navigationButtonLeft {
+  background-color: #05e265; /* Button color */
+  color: white;              /* Text color */
+  border: none;              /* No border */
+  padding: 10px 20px;       /* Padding */
+  border-radius: 20px;       /* Rounded corners */
+  cursor: pointer;           /* Pointer cursor */
+  font-size: 12px;          /* Font size */
+}
+
+.navigationButton:hover {
+  background-color: #057ff9; /* Darker blue on hover */
+}
+
+
