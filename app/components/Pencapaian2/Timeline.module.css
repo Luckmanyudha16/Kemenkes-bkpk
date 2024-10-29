@@ -66,7 +66,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-right: 40px ;
+  padding-right: 60px ;
   position: relative;
   margin-bottom: 60px;
   width: 1600;
@@ -80,7 +80,7 @@
   position: absolute;
   top: 50%;
   left: 0;
-  right: 55;
+  right: 110;
   height: 5px;
   background-color: rgb(3, 249, 192);
   z-index: 1;
@@ -166,13 +166,16 @@
   background-color: #05e265; /* Button color */
   color: white;              /* Text color */
   border: none;              /* No border */
-  padding: 10px 30px;       /* Padding */
+  padding: 10px 20px;       /* Padding */
   border-radius: 20px;       /* Rounded corners */
   cursor: pointer;           /* Pointer cursor */
   font-size: 12px;          /* Font size */
 }
 
-.navigationButton:hover {
+.navigationButtonRight:hover {
+  background-color: #057ff9; /* Darker blue on hover */
+}
+.navigationButtonLeft:hover {
   background-color: #057ff9; /* Darker blue on hover */
 }
 

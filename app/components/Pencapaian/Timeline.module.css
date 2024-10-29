@@ -80,7 +80,7 @@
   position: absolute;
   top: 50%;
   left: 0;
-  right: 55;
+  right: 0;
   height: 5px;
   background-color: rgb(3, 249, 192);
   z-index: 1;
@@ -141,32 +141,17 @@
   opacity: 1; /* Become visible */
 }
 
-.buttonContainerRight {
+.buttonContainer {
   position: absolute; /* Position relative to the nearest positioned ancestor */
   top: 620px;         /* Adjust as needed */
   right: 40px;       /* Adjust as needed */
 }
 
-.navigationButtonRight {
+.navigationButton {
   background-color: #05e265; /* Button color */
   color: white;              /* Text color */
   border: none;              /* No border */
   padding: 10px 20px;       /* Padding */
-  border-radius: 20px;       /* Rounded corners */
-  cursor: pointer;           /* Pointer cursor */
-  font-size: 12px;          /* Font size */
-}
-.buttonContainerLeft {
-  position: absolute; /* Position relative to the nearest positioned ancestor */
-  top: 620px;         /* Adjust as needed */
-  left: 40px;       /* Adjust as needed */
-}
-
-.navigationButtonLeft {
-  background-color: #05e265; /* Button color */
-  color: white;              /* Text color */
-  border: none;              /* No border */
-  padding: 10px 30px;       /* Padding */
   border-radius: 20px;       /* Rounded corners */
   cursor: pointer;           /* Pointer cursor */
   font-size: 12px;          /* Font size */

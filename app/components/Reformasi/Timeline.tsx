@@ -111,7 +111,7 @@ export default function Timeline() {
        {/* Button to navigate to another page */}
        <div className={styles.buttonContainerRight}>
         <Link href="/Transformasi">
-          <button className={styles.navigationButtonRight}>Transformasi</button>
+          <button className={styles.navigationButtonRight}>Transformasi Kesehatan</button>
         </Link>
       </div>
     </div>
