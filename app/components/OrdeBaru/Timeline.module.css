@@ -6,7 +6,6 @@
   flex-direction: column;
   justify-content: space-between;
   font-family: Arial, sans-serif;
-  
   padding: 20px;
   box-sizing: border-box;
 }
@@ -22,7 +21,7 @@
 
 /* Gambar di sebelah kiri */
 .image {
-  width: 30%; /* Gambar mengambil setengah layar */
+  width: 30%; /* Gambar mengambil 30% layar */
   height: auto;
   object-fit: cover; /* Menjaga proporsi gambar */
   border-radius: 10px; /* Opsional: Untuk sudut yang melengkung */
@@ -30,22 +29,22 @@
 
 /* Kontainer teks di sisi kanan gambar */
 .textContainer {
-  width: 60%; /* Mengambil setengah layar */
+  width: 60%; /* Mengambil 60% layar */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 10px;
 }
 
-.Judul{
+.Judul {
   position: absolute; /* Mengatur posisi absolut */
   top: 200; /* Jarak dari atas */
   right: 200; /* Jarak dari kanan */
-  /* Menghilangkan margin default */
   font-size: 32px; /* Ukuran font */
   font-weight: bold; /* Ketebalan font */
   color: #909090; /* Warna teks hitam */
 }
+
 /* Judul berada di atas deskripsi */
 .title {
   margin: 0;
@@ -66,11 +65,11 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-right: 40px ;
+  padding-right: 40px;
   position: relative;
   margin-bottom: 60px;
-  width: 1600;
-  margin-left: auto;                 /* Centering using auto margins */
+  width: 100%; /* Ganti 1600 dengan 100% untuk responsif */
+  margin-left: auto; /* Centering using auto margins */
   margin-right: auto;
 }
 
@@ -131,7 +130,6 @@
   }
 }
 
-
 .fadein {
   opacity: 0; /* Start invisible */
   animation: fadeIn 1s ease forwards; /* Transition timing */
@@ -156,6 +154,7 @@
   cursor: pointer;           /* Pointer cursor */
   font-size: 12px;          /* Font size */
 }
+
 .buttonContainerLeft {
   position: absolute; /* Position relative to the nearest positioned ancestor */
   top: 620px;         /* Adjust as needed */
@@ -176,4 +175,49 @@
   background-color: #057ff9; /* Darker blue on hover */
 }
 
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* Mengubah arah flex menjadi kolom */
+    align-items: flex-start; /* Mengatur agar item di atas satu sama lain */
+  }
 
+  .image {
+    width: 100%; /* Gambar mengambil 100% layar */
+    height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+  }
+
+  .textContainer {
+    width: 100%; /* Kontainer teks mengambil 100% layar */
+  }
+
+  .title {
+    font-size: 24px; /* Ukuran font lebih kecil untuk judul */
+  }
+
+  .description {
+    font-size: 16px; /* Ukuran font lebih kecil untuk deskripsi */
+  }
+
+  .buttonContainerRight, .buttonContainerLeft {
+    position: relative; /* Mengubah posisi menjadi relatif untuk responsif */
+    top: auto; /* Menghapus posisi atas */
+    left: auto; /* Menghapus posisi kiri */
+    right: auto; /* Menghapus posisi kanan */
+    margin-top: 20px; /* Jarak atas untuk pemisahan */
+  }
+
+  .navigationButtonRight,
+  .navigationButtonLeft {
+    font-size: 14px; /* Ukuran font lebih besar untuk tombol */
+  }
+
+  .timeline {
+    flex-direction: column; /* Mengubah arah flex menjadi kolom */
+    padding-right: 0; /* Menghapus padding kanan */
+  }
+
+  .timeline::before {
+    height: 2px; /* Mengurangi tinggi garis timeline untuk perangkat kecil */
+  }
+}

@@ -9,25 +9,25 @@ export default function Carousel() {
   const slides = [
     [
       {
-        href: "/Sejarah",
+        href: "/PraKemerdekaan",
         src: "gedung.png",
         alt: "Team Member",
         caption: "Pra Kemerdekaan",
       },
       {
-        href: "/Kondisi",
+        href: "/Kemerdekaan",
         src: "orang.png",
         alt: "Team Member",
         caption: "Kemerdekaan",
       },
       {
-        href: "/Sejarah_Stovia",
+        href: "/",
         src: "budi.png",
         alt: "Team Member",
         caption: "Transformasi Kesehatan",
       },
       {
-        href: "/Peran_Tokoh",
+        href: "/reformasi",
         src: "45.png",
         alt: "Team Member",
         caption: (

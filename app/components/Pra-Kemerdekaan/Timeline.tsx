@@ -8,45 +8,45 @@ import Link from "next/link";
 const data : Record<number, { image: string; title:string; judul:string; description: string }> ={
   1799: {
     judul:"MASA KOLONIAL BELANDA",
-    title :"Rempah-rempah",
-    image: "/obat.jpg",
+    title :"",
+    image: "/rempah.png",
     description:
-      "Pada tahun 1799, Belanda secara resmi mengambil alih kekuasaan perdagangan rempah dari VOC (Vereenigde Oostindische Compagnie), yang kolaps karena korupsi dan utang. Rempah-rempah seperti cengkeh, lada, pala, dan kayu manis menjadi komoditas berharga di Eropa karena digunakan sebagai penyedap makanan, pengawet, dan obat. Permintaan tinggi menyebabkan persaingan sengit antara kekuatan kolonial seperti Portugis, Spanyol, Inggris, dan Belanda. Pulau Banda dan Maluku menjadi pusat penting dalam perdagangan rempah, terutama cengkeh dan pala.",
+      "Kolonialisme Belanda yang berlangsung pada 1799-1942 berawal dari upaya mencari rempah-rempah di Nusantara. Pada masa itu, rempah-rempah digunakan untuk penyedap makanan dan obat. Kolonialisme Belanda membuat masyarakat Nusantara mengenal dunia kesehatan Eropa, yang berdampak besar dalam perjalanan Indonesia pada masa setelahnya. Pengetahuan kesehatan pada masa kolonialisme Belanda yang berdampak pada dunia kesehatan Indonesia saat ini antara lain pelaksanaan program vaksinasi, pembentukan STOVIA, dan karantina.",
   },
   1804: {
     judul:"MASA KOLONIAL BELANDA",
-    title :"Rempah-rempah",
-    image: "/obat.jpg",
+    title :"Vaksinasi",
+    image: "/belanda.png",
     description:
-      "Pada awal abad ke-19, sekitar tahun 1804, kolonialisme Eropa mulai memperkenalkan ilmu pengetahuan modern, termasuk di bidang kesehatan. Pada masa ini, penggunaan rempah sebagai obat alami mulai dicampur dengan pendekatan medis modern dari Eropa, menggabungkan manfaat tradisional dan ilmu baru.",
+      "Pada 1804, Batavia mengalami wabah cacar. Untuk menangani masalah tersebut, pemerintah kolonial mendatangkan dokter-dokter Belanda untuk memberikan vaksinasi cacar. Vaksinasi cacar diperluas ke wilayah lain di Pulau Jawa pada masa Letnan Gubernur Thomas Stamford Raffles (1811-1816). ",
   },
   1847: {
     judul:"MASA KOLONIAL BELANDA",
-    title :"Rempah-rempah",
-    image: "/obat.jpg",
+    title :"Karantina",
+    image: "/karantina.png",
     description:
-      "Pada tahun 1847, pengaruh kolonial Eropa semakin memperkuat ilmu kesehatan di Nusantara. Ilmu farmasi dan kedokteran mulai diajarkan di lembaga pendidikan lokal. Pengetahuan tentang rempah-rempah sebagai obat tradisional bertemu dengan pendekatan ilmiah baru. Penggabungan ini berperan penting dalam mendirikan STOVIA (School Tot Opleiding Van Indische Artsen) di tahun 1882, yang menjadi sekolah kedokteran pertama di Indonesia.",
+      "Pada 1847, pemerintah kolonial Belanda memberlakukan karantina untuk membatasi penularan wabah cacar. Kemudian pada 1911, pemerintah kolonial menerapkan kebijakan karantina untuk jemaah Haji. Pusat karantina Haji dibangun di Pulau Rubiah, Sabang, dan Pulau Onrust, Kepulauan Seribu.",
   },
   1851: {
     judul:"MASA KOLONIAL BELANDA",
-    title :"Rempah-rempah",
-    image: "/obat.jpg",
+    title :"Masa Pendudukan Jepang ",
+    image: "/Koran.jpg",
     description:
-      "Pada pertengahan abad ke-19, perdagangan rempah-rempah masih berlangsung, tetapi perlahan mengalami penurunan karena semakin tergantikan oleh komoditas baru seperti kopi, teh, dan karet. Sementara itu, pemerintah kolonial mulai lebih fokus pada eksploitasi hasil bumi lain, namun rempah tetap memainkan peran dalam ekonomi rumah tangga dan industri obat tradisional.",
+      "Secara umum, pemerintah pendudukan Jepang hanya melakukan eksplotasi terhadap sumber daya manusia dan sumber daya alam Indonesia sehingga pada masa ini, kesehatan masyarakat mengalami kemunduran. Sebagai gambaran, sebagian masyarakat pada masa ini memanfaatkan bonggol pisang sebagai makanan, menggunakan karung goni sebagai sandang, dan menggunakan pelepah pisang sebagai pengganti pembalut luka. Selain itu, tenaga-tenaga medis dan dokter Indonesia dipaksa ikut dalam pasukan tempur Jepang. ",
   },
   1882: {
     judul:"MASA KOLONIAL BELANDA",
-    title :"Rempah",
-    image: "/obat.jpg",
+    title :"Lorem ipsum is placeholder text",
+    image: "/BKPK LOGO.png",
     description:
-      "Pada tahun 1882, didirikan STOVIA (School Tot Opleiding Van Indische Artsen) di Batavia sebagai sekolah kedokteran pertama. Di sekolah ini, pengajaran tentang tanaman obat dan rempah menjadi bagian dari kurikulum. Hal ini memperlihatkan bagaimana rempah-rempah tetap relevan, tidak hanya dalam perdagangan tetapi juga dalam pendidikan dan kesehatan modern.",
+      "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
   },
   1942: {
     judul:"Masa Pendudukan Jepang",
-    title :"Rempah-rempah",
-    image: "/obat.jpg",
+    title :"Lorem ipsum is placeholder text",
+    image: "/BKPK LOGO.png",
     description:
-      "Pada tahun 1942, Indonesia memasuki masa pendudukan Jepang, mengakhiri era kolonial Belanda. Selama pendudukan ini, banyak infrastruktur ekonomi, termasuk perdagangan rempah-rempah, mengalami kerusakan. Meskipun demikian, masyarakat tetap menggunakan rempah untuk pengobatan dan kebutuhan sehari-hari, menunjukkan bagaimana rempah-rempah tetap menjadi bagian penting dari kehidupan masyarakat Indonesia.",
+      "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
   },
 };
 
