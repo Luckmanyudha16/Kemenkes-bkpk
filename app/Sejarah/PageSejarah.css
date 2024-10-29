@@ -1,17 +1,62 @@
-.bgRed{
-    background-color: tomato;
-    } 
+/* Layout and positioning */
+.h-screen {
+  overflow: hidden;
+}
 
-    .animate-fade-in {
-        animation: fadeIn 0.8s ease forwards; /* Increased animation duration */
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px); /* Slide up effect */
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+/* Logo styling */
+.logo-size {
+  height: 4rem; /* Adjust logo size */
+  width: auto;
+}
+
+/* Decorative image styling */
+.supergrafis-size {
+  height: 5rem;
+  width: auto;
+}
+
+/* Main content styling */
+.main-content {
+  max-height: 70vh;
+  overflow: hidden;
+}
+
+/* Heading styling */
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Video styling */
+.video-size {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+}
+
+/* Image styling after video */
+.image-size {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 0.5rem;
+}
+
+/* Text content styling */
+.text-content {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Footer styling */
+.footer-logo-size {
+  max-height: 4rem;
+  width: auto;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
