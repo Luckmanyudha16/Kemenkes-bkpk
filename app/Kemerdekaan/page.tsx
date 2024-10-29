@@ -10,11 +10,7 @@ export default function Kemerdekaan() {
       {/* Header Section */}
       <div className="flex items-center justify-between p-1">
   <div className="flex items-center gap-6 pl-10">
-    {/* <img
-      src="garuda.png"
-      alt="Logo Garuda"
-      className="h-full w-auto max-h-20" // Menggunakan max-h untuk membatasi tinggi
-    /> */}
+    
     <img
       src="BKPK LOGO.png"
       alt="Logo BKPK"
