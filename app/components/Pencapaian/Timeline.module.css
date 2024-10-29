@@ -80,7 +80,7 @@
   position: absolute;
   top: 50%;
   left: 0;
-  right: 55;
+  right: 0;
   height: 5px;
   background-color: rgb(3, 249, 192);
   z-index: 1;
@@ -141,32 +141,17 @@
   opacity: 1; /* Become visible */
 }
 
-.buttonContainerRight {
+.buttonContainer {
   position: absolute; /* Position relative to the nearest positioned ancestor */
   top: 620px;         /* Adjust as needed */
   right: 40px;       /* Adjust as needed */
 }
 
-.navigationButtonRight {
+.navigationButton {
   background-color: #05e265; /* Button color */
   color: white;              /* Text color */
   border: none;              /* No border */
   padding: 10px 20px;       /* Padding */
-  border-radius: 20px;       /* Rounded corners */
-  cursor: pointer;           /* Pointer cursor */
-  font-size: 12px;          /* Font size */
-}
-.buttonContainerLeft {
-  position: absolute; /* Position relative to the nearest positioned ancestor */
-  top: 620px;         /* Adjust as needed */
-  left: 40px;       /* Adjust as needed */
-}
-
-.navigationButtonLeft {
-  background-color: #05e265; /* Button color */
-  color: white;              /* Text color */
-  border: none;              /* No border */
-  padding: 10px 30px;       /* Padding */
   border-radius: 20px;       /* Rounded corners */
   cursor: pointer;           /* Pointer cursor */
   font-size: 12px;          /* Font size */
@@ -176,87 +161,4 @@
   background-color: #057ff9; /* Darker blue on hover */
 }
 
-/* Responsif untuk tablet dan perangkat yang lebih kecil */
-@media (max-width: 1024px) {
-  .container {
-    padding: 15px;
-  }
-
-  .content {
-    flex-direction: column; /* Stack gambar dan teks */
-    align-items: flex-start;
-  }
-
-  .image {
-    width: 100%; /* Gambar memenuhi lebar layar */
-    margin-bottom: 15px; /* Jarak di bawah gambar */
-  }
-
-  .textContainer {
-    width: 100%; /* Teks memenuhi lebar layar */
-  }
-
-  .Judul {
-    font-size: 28px; /* Sesuaikan ukuran font */
-    top: 150px;
-    right: 20px;
-  }
-
-  .title {
-    font-size: 28px;
-  }
-
-  .description {
-    font-size: 16px;
-  }
-
-  .timeline {
-    width: 90%;
-  }
-
-  .timelinePoint span {
-    font-size: 12px;
-    top: 25px;
-  }
-  
-  .buttonContainerRight, .buttonContainerLeft {
-    top: 600px; /* Sesuaikan posisi */
-  }
-}
-
-/* Media Queries untuk responsivitas */
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column; /* Mengubah arah menjadi kolom */
-    align-items: center; /* Rata tengah */
-  }
-
-  .image {
-    width: 100%; /* Gambar mengambil 100% layar pada perangkat kecil */
-  }
-
-  .textContainer {
-    width: 100%; /* Kontainer teks juga mengambil 100% layar */
-  }
-
-  .Judul {
-    position: relative; /* Mengubah menjadi relatif */
-    top: 0; /* Jarak dari atas diatur ke 0 */
-    right: 0; /* Jarak dari kanan diatur ke 0 */
-    font-size: 24px; /* Ukuran font lebih kecil */
-  }
-
-  .title {
-    font-size: 24px; /* Ukuran font lebih kecil */
-  }
-
-  .description {
-    font-size: 16px; /* Ukuran font lebih kecil */
-  }
-
-  .buttonContainer {
-    top: auto; /* Menghilangkan posisi absolut untuk tombol */
-    margin-top: 20px; /* Menambahkan margin */
-  }
-}
 
