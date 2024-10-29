@@ -9,90 +9,70 @@ export default function Carousel() {
   const slides = [
     [
       {
-        href: "/Sejarah",
-        src: "obat.jpg",
+        href: "/PraKemerdekaan",
+        src: "gedung.png",
         alt: "Team Member",
-        caption: "Pengobatan Tradisional dan Masyarakat Adat",
+        caption: "Pra Kemerdekaan",
       },
       {
-        href: "/Kondisi",
-        src: "Bidan.jpg",
+        href: "/Kemerdekaan",
+        src: "orang.png",
         alt: "Team Member",
-        caption: "Kondisi Kesehatan di Masa Kolonial",
+        caption: "Kemerdekaan",
       },
       {
-        href: "/Peran_Tokoh",
-        src: "Dokter.jpg",
+        href: "/",
+        src: "budi.png",
+        alt: "Team Member",
+        caption: "Transformasi Kesehatan",
+      },
+      {
+        href: "/reformasi",
+        src: "45.png",
         alt: "Team Member",
         caption: (
           <>
-            Peran Tokoh Kesehatan
-            <br />
-            dalam Perjuangan Menuju Kemerdekaan
-          </>
-        ),
-
-      },
-    ],
-    [
-      {
-        href: "/Sejarah_Stovia",
-        src: "stovia.png",
-        alt: "Team Member",
-        caption: "Sejarah Stovia",
-      },
-      {
-        href: "/Kurikulum",
-        src: "kurikulum.png",
-        alt: "Team Member",
-        caption: "Kurikulum dan Pelatihan",
-      },
-      {
-        href: "/Tokoh_Perjuangan",
-        src: "tokoh.png",
-        alt: "Team Member",
-        caption: (
-          <>
-          Peran Tokoh Kesehatan dan Penyakit Endemik 
-          <br/>
-          dalam Perjuangan Menuju Kemerdekaan
+            Menuju Indonesia Emas 2045
           </>
         ),
       },
     ],
   ];
 
-  const nextSlide = () => {
-    setIndex((index + 1) % slides.length);
-  };
+  // const nextSlide = () => {
+  //   setIndex((index + 1) % slides.length);
+  // };
 
-  const prevSlide = () => {
-    setIndex((index - 1 + slides.length) % slides.length);
-  };
+  // const prevSlide = () => {
+  //   setIndex((index - 1 + slides.length) % slides.length);
+  // };
 
   return (
     <div className="relative w-full">
       {/* Carousel container */}
-      <div className="carousel w-full overflow-hidden">
+      <div className="carousel w-full overflow-center">
         <div
           className="flex gap-4 transition-transform"
           style={{ transform: `translateX(-${index * 100}%)` }}>
           {slides.map((slideGroup, i) => (
-            <div key={i} className="flex w-full flex-shrink-0 gap-4">
+            <div key={i} className="flex w-full flex-shrink-0 ">
               {slideGroup.map((slide, j) => (
-                <div key={j} className="relative group w-1/3 h-80">
+                <div key={j} className="relative group w-1/3 h-100 ">
                   <Link href={slide.href}>
-                    <div className="h-full">
-                      <img
-                        className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105"
-                        src={slide.src}
-                        alt={slide.alt}
-                        style={{ maxHeight: "100%", objectFit: "cover" }}
-                      />
-                      <span className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-bold opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                        {slide.caption}
-                      </span>
-                    </div>
+                  <div className="relative">
+                    <img
+                      className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+                      src={slide.src}
+                      alt={slide.alt}
+                      style={{ maxHeight: "200%", objectFit: "cover" }}
+                    />
+                    {/* <figcaption
+                      className="absolute inset-0 flex items-center justify-center  text-white p-2"
+                      style={{ marginTop: '400px', fontSize: '1.8rem', fontFamily: 'VAG Rounded BT' }}
+                    >
+                      {slide.caption} 
+                    </figcaption> */}
+                  </div>
                   </Link>
                 </div>
               ))}
@@ -101,8 +81,10 @@ export default function Carousel() {
         </div>
       </div>
 
+
+
       {/* Navigation controls */}
-      <button
+      {/* <button
         onClick={prevSlide}
         className="absolute left-5 top-1/2 flex -translate-y-1/2 transform justify-between">
         <a className="btn btn-circle">❮</a>
@@ -111,7 +93,7 @@ export default function Carousel() {
         onClick={nextSlide}
         className="absolute right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
         <a className="btn btn-circle">❯</a>
-      </button>
+      </button> */}
     </div>
   );
 }

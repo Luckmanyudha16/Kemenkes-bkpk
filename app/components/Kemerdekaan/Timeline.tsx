@@ -10,41 +10,41 @@ const data = [
     year: 1945,
     judul: "KEMERDEKAAN",
     title: "Orde lama",
-    image: "/obat.jpg",
+    image: "/taran.png",
     description:
-      "Pada awal abad ke-19, sekitar tahun 1804, kolonialisme Eropa mulai memperkenalkan ilmu pengetahuan modern, termasuk di bidang kesehatan...",
+      "Pada masa-masa awal kemerdekaan, bangsa Indonesia mengalami berbagai masalah kesehatan yang terjadi akibat kebijakan pada masa pendudukan Jepang. Dengan latar belakang itu, kementerian kesehatan menjadi salah satu dari 12 kementerian yang dibentuk pada pemerintahan pertama Indonesia yang dipimpin SukarnoMohammad Hatta. Melalui kementerian kesehatan yang dipimpin Boentaran Martoatmodjo, pemerintah ingin meningkatkan kualitas kesehatan masyarakat, terutama anak anak. ",
   },
   {
     year: 1945,
     judul: "KEMERDEKAAN",
-    title: "Orde lama",
-    image: "/obat.jpg",
+    title: "Kerja Sama Internasional ",
+    image: "/BKPK LOGO.png",
     description:
-      "Pada tahun 1847, pengaruh kolonial Eropa semakin memperkuat ilmu kesehatan di Nusantara...",
+      "Pada masa-masa awal kemerdekaan, pemerintah Indonesia berupaya meningkatkan jumlah tenaga kesehatan. Upaya tersebut dilakukan dengan antara lain bekerja sama dengan WHO dan UNICEF. WHO dan UNICEF merespons dengan mengirimkan tenaga-tenaga kesehatan internasional untuk memberikan pendidikan kesehatan di universitas-universitas Indonesia. Kerja sama ini berkembang dan mendorong pendirian fakultas-fakultas kedokteran di Sumatra, Jawa, Bali, dan Sulawesi. Seiring meningkatnya sumber daya manusia dalam bidang kesehatan, pemerintah Indonesia tidak hanya memberikan perhatian pada pengobatan, tetapi juga pada pencegahan, termasuk memberikan jaminan kesehatan nasional. ",
   },
   {
     year: 1946,
     judul: "KEMERDEKAAN",
-    title: "Orde lama",
-    image: "/obat.jpg",
+    title: "Empat Sehat Lima Sempurna dan NV Saridele",
+    image: "/satrio.png",
     description:
-      "Pada pertengahan abad ke-19, perdagangan rempah-rempah masih berlangsung...",
+      "Pada 1952, Profesor Poerwo Soedarmo meluncurkan program “Empat Sehat Lima Sempurna”untuk mendorong masyarakat mengonsumsi makanan sehat dan bernutrisi. Melalui program tersebut, Profesor Poerwo Soedarmo dikenal sebagai Bapak Gizi Indonesia.  OBJEK: VISUAL PROFESSOR PORWO SOEDARMO Dua tahun setelah “Empat Sehat, Lima Sempurna” diperkenalkan, pemerintah bekerja sama dengan WHO mendirikan pabrik susu NV Saridele untuk mencukup kebutuhan gizi anak Indonesia. Pada 1965, NV Saridele yang sudah berganti nama menjadi Perusahaan Negara Sari Husada mendapatkan tugas dari Menteri Kesehatan Profesor Doktor Satrio untuk untuk membuat susu bayi yang terbuat dari bubuk skim, gula, lemak nabati, dan dilengkapi vitamin serta mineral. Formulasi ini dikenal luas dengan nama Susu, Gula, Minyak atau SGM.  ",
   },
   {
     year: 1950,
     judul: "KEMERDEKAAN",
-    title: "Orde lama",
-    image: "/obat.jpg",
+    title: "Pengentasan Frambusia ",
+    image: "/frambusia.png",
     description:
-      "Pada tahun 1882, didirikan STOVIA di Batavia sebagai sekolah kedokteran pertama...",
+      "Selain membentuk NV Saridele, pemerintah juga merintis upaya pencegahan dan penanganan kesehatan pada masa-masa awal kemerdekaan. Salah satu keberhasilan pada masa ini adalah penanganan frambusia, yang dimotori oleh Dokter Kodiyat, yang diangkat menjadi Kepala Lembaga Penyelidikan dan Pemberantasan Penyakit Rakyat atau LP3R pada 1950.",
   },
   {
     year: 1960,
     judul: "KEMERDEKAAN",
-    title: "Orde lama",
-    image: "/obat.jpg",
+    title: "UU Pokok Kesehatan 1960 ",
+    image: "/BKPK LOGO.png",
     description:
-      "Pada tahun 1942, Indonesia memasuki masa pendudukan Jepang, mengakhiri era kolonial Belanda...",
+      "Undang-Undang Pokok Kesehatan 1960 adalah payung hukum dunia kesehatan di Indonesia. Melalui UU Pokok Kesehatan 1960, pemerintah menegaskan komitmennya, untuk mengakomodasi kebutuhan kesejahteraan masyarakat dalam aspek luas dan sepenuhnya lepas dari Het Reglement of de Dienst der Volksgezondheid (Staatsblad 1882 No. 97).",
   },
 ];
 

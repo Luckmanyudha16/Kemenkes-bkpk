@@ -8,10 +8,10 @@ import Link from "next/link";
 const data : Record<number, { image: string; title:string; judul:string; description: string }> ={
   1799: {
     judul:"MASA KOLONIAL BELANDA",
-    title :"Rempah-rempah",
+    title :"Reformasi",
     image: "/obat.jpg",
     description:
-      "Pada tahun 1799, Belanda secara resmi mengambil alih kekuasaan perdagangan rempah dari VOC (Vereenigde Oostindische Compagnie), yang kolaps karena korupsi dan utang. Rempah-rempah seperti cengkeh, lada, pala, dan kayu manis menjadi komoditas berharga di Eropa karena digunakan sebagai penyedap makanan, pengawet, dan obat. Permintaan tinggi menyebabkan persaingan sengit antara kekuatan kolonial seperti Portugis, Spanyol, Inggris, dan Belanda. Pulau Banda dan Maluku menjadi pusat penting dalam perdagangan rempah, terutama cengkeh dan pala.",
+      "melakukan peningkatan program jaminan kesehatan masyarakat yang terus berkembang dan mengalami perubahan sesuai dinamika masyarakat. Dengan meningkatnya sistem penyelenggaraan jaminan kesehatan dan pengalaman dari masa lalu, Indonesia secara bertahap mampu menghadapi mengatasi masalah-masalah yang terjadi pada masa COVID-19.  ",
   },
   1804: {
     judul:"MASA KOLONIAL BELANDA",
