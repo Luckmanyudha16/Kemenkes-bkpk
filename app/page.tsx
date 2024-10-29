@@ -1,49 +1,76 @@
-
-// import Link from "next/link";
 import Theme from "./components/Home/Theme";
 import Carousel from "./components/Home/Carousel";
 
 export default function Home() {
   return (
-    <div>
-      <Theme/>
-
-    
-    <div className="container mx-auto px-6">
-    {/* Logo Section */}
-    <div className="flex justify items gap-6 py-6">
-    <img
+    <div className="h-screen flex flex-col overflow-hidden">
+      {/* Header Section */}
+      <div className="flex items-center justify-between p-1">
+  <div className="flex items-center gap-6 pl-10">
+    {/* <img
       src="garuda.png"
       alt="Logo Garuda"
-      className="max-h-24 w-auto sm:max-h-28 md:max-h-32 lg:max-h-36"
-    />
+      className="h-full w-auto max-h-20" // Menggunakan max-h untuk membatasi tinggi
+    /> */}
     <img
       src="BKPK LOGO.png"
       alt="Logo BKPK"
-      className="max-h-24 w-auto sm:max-h-28 md:max-h-32 lg:max-h-36"
+      className="h-full w-auto max-h-40" // Menggunakan max-h untuk membatasi tinggi
     />
   </div>
   <img
     src="Supergrafis.png"
     alt="Logo Tambahan"
-    className="absolute top-0 right-0 max-h-0 w-auto sm:max-h-0 md:max-h-0 lg:max-h-72 m-2"
+    className="h-40 w-auto"
   />
-  <br/>
-  </div>
+</div>
 
-  <div className="carousel w-full ">
-  <Carousel/>
-  </div>
-  
-    <div className="relative mt-12 flex justify-left">
+      <br/>
+
+      <div className="flex items-center gap-6 pl-10 py-10">
+          <img
+            src="Garis.png"
+            alt="Logo Garuda"
+            className="h- w-auto"
+          />
+
+      </div>
+
+      {/* Main Content */}
+      <main className="flex-grow flex flex-col items-center justify-center pl-10 pr-10">
+        <Carousel />
+      </main>
+
+
+     <div className="flex items-center justify-end gap-6 pr-10 py-10">
     <img
-      src="Supergrafiskiri.png"
-      alt="Logo Tambahan"
-      className="absolute top-0 left-0 max-h-0 w-auto sm:max-h-0 md:max-h-0 lg:max-h-72 m-2"
+        src="Garis.png"
+        alt="Logo Garuda"
+        className="h-auto w-auto"
     />
-  </div>
-  </div>
-  
+</div>
+
+      {/* <div className="flex items-center justify-end p-4">
+    <img
+        src="Logo Footer.png"
+        alt="Footer Logo"
+        className="h-20 w-auto "
+    />
+</div> */}
+
+      {/* Footer Section */}
+      <div className="flex items-center justify-between p-1 pr-10">
+        <img
+          src="Supergrafiskiri.png"
+          alt="Logo Tambahan Kiri"
+          className="h-40 w-auto"
+        />
+         <img
+        src="Logo Footer.png"
+        alt="Footer Logo"
+        className="h-50 w-auto pr-10"
+    />
+      </div>
+    </div>
   );
 }
-

@@ -1,53 +1,43 @@
-/* .timeline {
-  position: relative;
+.steps {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
-.timeline li {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+.step .step-neutral {
+  border: 2px solid #07fab5;
 }
 
-.timeline li:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
+
+/* .step:hover {
+  background-color: #fcfcfc;
+} */
+
+.info-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid #07fab5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(8, 232, 124, 0.2);
+  animation: fadeIn 0.5s; /* Animasi saat kotak muncul */
+  z-index: 1000; /* Pastikan kotak informasi berada di atas elemen lain */
 }
 
-.description {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+.info-box img {
+  max-width: 100%;
+  height: auto;
 }
 
-.timeline-start, .timeline-end {
-  cursor: pointer;
-}
-
-.timeline-start:hover, .timeline-end:hover {
-  color: #007bff; /* Change to your desired hover color */
-/* } */
-
-.timeline {
-  position: relative;
-}
-
-.timeline li {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.timeline li:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-.description {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #333;
-  transition: opacity 0.3s ease;
-}
-.timeline-start, .timeline-end {
-  cursor: pointer;
-}
-
-.timeline-start:hover, .timeline-end:hover {
-  color: #007bff; /* Change to your desired hover color */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

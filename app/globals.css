@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  background: lightgray!important;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #ffffff;
@@ -19,6 +23,24 @@
 .timeline-item.visible {
   opacity: 1; /* Fade in */
   transform: translateY(0); /* Slide up */
+}
+
+header img, footer img {
+  max-height: 100px;
+  object-fit: contain;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+}
+
+footer {
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
 }
 
 
