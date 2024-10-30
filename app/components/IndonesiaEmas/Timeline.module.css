@@ -6,7 +6,6 @@
   flex-direction: column;
   justify-content: space-between;
   font-family: Arial, sans-serif;
-  
   padding: 20px;
   box-sizing: border-box;
 }
@@ -22,7 +21,7 @@
 
 /* Gambar di sebelah kiri */
 .image {
-  width: 30%; /* Gambar mengambil setengah layar */
+  width: 30%; /* Gambar mengambil 30% layar */
   height: auto;
   object-fit: cover; /* Menjaga proporsi gambar */
   border-radius: 10px; /* Opsional: Untuk sudut yang melengkung */
@@ -30,22 +29,23 @@
 
 /* Kontainer teks di sisi kanan gambar */
 .textContainer {
-  width: 60%; /* Mengambil setengah layar */
+  width: 60%; /* Mengambil 60% layar */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 10px;
 }
 
-.Judul{
+.Judul {
   position: absolute; /* Mengatur posisi absolut */
-  top: 200; /* Jarak dari atas */
-  right: 200; /* Jarak dari kanan */
+  top: 200px; /* Jarak dari atas */
+  right: 200px; /* Jarak dari kanan */
   /* Menghilangkan margin default */
   font-size: 32px; /* Ukuran font */
   font-weight: bold; /* Ketebalan font */
   color: #909090; /* Warna teks hitam */
 }
+
 /* Judul berada di atas deskripsi */
 .title {
   margin: 0;
@@ -66,11 +66,11 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-right: 60px ;
+  padding-right: 40px;
   position: relative;
   margin-bottom: 60px;
-  width: 1600;
-  margin-left: auto;                 /* Centering using auto margins */
+  width: 100%; /* Menggunakan 100% untuk responsivitas */
+  margin-left: auto; /* Centering using auto margins */
   margin-right: auto;
 }
 
@@ -79,8 +79,8 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: 10;
-  right: 20;
+  left: 0;
+  right: 0;
   height: 5px;
   background-color: rgb(3, 249, 192);
   z-index: 1;
@@ -131,7 +131,6 @@
   }
 }
 
-
 .fadein {
   opacity: 0; /* Start invisible */
   animation: fadeIn 1s ease forwards; /* Transition timing */
@@ -143,23 +142,85 @@
 
 .buttonContainer {
   position: absolute; /* Position relative to the nearest positioned ancestor */
-  top: 620px;         /* Adjust as needed */
-  right: 40px;       /* Adjust as needed */
+  top: 620px; /* Adjust as needed */
+  right: 40px; /* Adjust as needed */
 }
 
 .navigationButton {
   background-color: #05e265; /* Button color */
-  color: white;              /* Text color */
-  border: none;              /* No border */
-  padding: 10px 20px;       /* Padding */
-  border-radius: 20px;       /* Rounded corners */
-  cursor: pointer;           /* Pointer cursor */
-  font-size: 12px;          /* Font size */
+  color: white; /* Text color */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding */
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  font-size: 12px; /* Font size */
 }
-
 
 .navigationButton:hover {
   background-color: #057ff9; /* Darker blue on hover */
 }
 
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* Mengubah arah flex menjadi kolom */
+    align-items: center; /* Memusatkan konten */
+  }
 
+  .image {
+    width: 100%; /* Mengambil 100% layar pada perangkat kecil */
+  }
+
+  .textContainer {
+    width: 100%; /* Mengambil 100% layar pada perangkat kecil */
+  }
+
+  .Judul {
+    position: relative; /* Mengatur kembali posisi relatif */
+    top: 0; /* Reset posisi */
+    right: 0; /* Reset posisi */
+    font-size: 24px; /* Mengubah ukuran font */
+  }
+
+  .title {
+    font-size: 24px; /* Mengubah ukuran font */
+  }
+
+  .description {
+    font-size: 16px; /* Mengubah ukuran font */
+  }
+
+  .buttonContainer {
+    top: auto; /* Mengatur kembali posisi */
+    right: 20px; /* Mengatur posisi pada perangkat kecil */
+    margin-top: 20px; /* Memberikan jarak atas */
+  }
+
+  .timeline {
+    flex-direction: column; /* Mengubah arah flex menjadi kolom */
+    padding-right: 0; /* Menghapus padding pada perangkat kecil */
+  }
+
+  .timelinePoint span {
+    top: 20px; /* Mengubah posisi tahun */
+  }
+}
+
+@media (max-width: 480px) {
+  .Judul {
+    font-size: 20px; /* Ukuran font lebih kecil */
+  }
+
+  .title {
+    font-size: 20px; /* Ukuran font lebih kecil */
+  }
+
+  .description {
+    font-size: 14px; /* Ukuran font lebih kecil */
+  }
+
+  .navigationButton {
+    padding: 8px 16px; /* Mengurangi padding pada tombol */
+    font-size: 10px; /* Ukuran font lebih kecil */
+  }
+}

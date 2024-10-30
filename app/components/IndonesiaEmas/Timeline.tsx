@@ -10,7 +10,7 @@ const data = [
     year: "Visi Misi Indonesia Emas",
     judul: "MENUJU INDONESIA EMAS 2045",
     title: "Visi Misi Indonesia Emas",
-    image: "/obat.jpg",
+    image: "/BKPK LOGO.png",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
@@ -18,7 +18,7 @@ const data = [
     year: "Program makan siang gratis",
     judul: "MENUJU INDONESIA EMAS 2045",
     title: "Program makan siang gratis",
-    image: "/obat.jpg",
+    image: "/BKPK LOGO.png",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
@@ -26,7 +26,7 @@ const data = [
     year: "Eleminasi TB",
     judul: "MENUJU INDONESIA EMAS 2045",
     title: "Program 100 hari Kemenkes",
-    image: "/obat.jpg",
+    image: "/BKPK LOGO.png",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
@@ -34,7 +34,7 @@ const data = [
     year: "Pembangunan RS Kawasan timur",
     judul: "MENUJU INDONESIA EMAS 2045",
     title: "Program 100 hari Kemenkes",
-    image: "/obat.jpg",
+    image: "/BKPK LOGO.png",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
@@ -42,7 +42,7 @@ const data = [
     year: "14 Screening Puskesmas",
     judul: "MENUJU INDONESIA EMAS 2045",
     title: "Program 100 hari Kemenkes",
-    image: "/obat.jpg",
+    image: "/BKPK LOGO.png",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },

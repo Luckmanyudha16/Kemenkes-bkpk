@@ -71,14 +71,14 @@ export default function Timeline() {
   return (
     <div className={styles.container} >
     {/* <div className={`${styles.container} ${fadeIn ? styles.fadeinActive : styles.fadein}`}> */}
+      <div className={`${styles.content} ${fadeIn ? styles.fadeinActive : styles.fadein}`}>
       <div className={styles.Judul}>{judul}
       </div>
-      <div className={`${styles.content} ${fadeIn ? styles.fadeinActive : styles.fadein}`}>
         <Image
           src={image}
           alt="Deskripsi gambar"
           width={250}
-          height={250}
+          height={200}
           className={styles.image}
         />
         <div>
@@ -105,7 +105,7 @@ export default function Timeline() {
        {/* Button to navigate to another page */}
       <div className={styles.buttonContainer}>
         <Link href="/Kemerdekaan">
-          <button className={styles.navigationButton}>Kemerdekaan</button>
+        <button className={`${styles.timelinebefore} ${styles.navigationButton}`}>Kemerdekaan</button>
         </Link>
       </div>
     </div>

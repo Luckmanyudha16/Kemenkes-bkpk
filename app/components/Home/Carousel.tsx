@@ -8,20 +8,20 @@ export default function Carousel() {
   // Carousel items grouped by 3
   const slides = [
     [
+      // {
+      //   href: "/PraKemerdekaan",
+      //   src: "gedung.png",
+      //   alt: "Team Member",
+      //   caption: "Pra Kemerdekaan",
+      // },
+      // {
+      //   href: "/Kemerdekaan",
+      //   src: "orang.png",
+      //   alt: "Team Member",
+      //   caption: "Kemerdekaan",
+      // },
       {
-        href: "/PraKemerdekaan",
-        src: "gedung.png",
-        alt: "Team Member",
-        caption: "Pra Kemerdekaan",
-      },
-      {
-        href: "/Kemerdekaan",
-        src: "orang.png",
-        alt: "Team Member",
-        caption: "Kemerdekaan",
-      },
-      {
-        href: "/",
+        href: "/Transformasi",
         src: "budi.png",
         alt: "Team Member",
         caption: "Transformasi Kesehatan",
@@ -57,7 +57,7 @@ export default function Carousel() {
           {slides.map((slideGroup, i) => (
             <div key={i} className="flex w-full flex-shrink-0 ">
               {slideGroup.map((slide, j) => (
-                <div key={j} className="relative group w-1/3 h-100 ">
+                <div key={j} className="relative group w-1/2 p-36 gap-10 h-200 ">
                   <Link href={slide.href}>
                   <div className="relative">
                     <img
