@@ -12,39 +12,102 @@
 
 /* Konten utama dengan gambar di kiri dan teks di kanan */
 .content {
+  padding-left: 10%;
   display: flex;
   align-items: center;
-  gap: 20px;
+  /* gap: 0px; */
   width: 100%;
   flex: 1;
 }
 
-/* Gambar di sebelah kiri */
+/* Gambar di sebelah kiri */ 
+/* TABLET */
 .image {
-  width: 20%; /* Gambar mengambil 30% layar */
+  padding-left: 50px; /* Add unit for padding */
+  width: 30%;         /* Default width for desktop */
   height: 80%;
-  object-fit: cover; /* Menjaga proporsi gambar */
-  border-radius: 10px; /* Opsional: Untuk sudut yang melengkung */
+  object-fit: cover;   /* Keep image proportions */
+  border-radius: 10px; /* Optional: For rounded corners */
 }
+
+/* Styling for desktop screens at 67% zoom */
+@media screen and (min-width: 1440px) {
+  .image {
+    padding-left: 5%;
+    padding-bottom: 4%;
+    width: 25%;       /* Adjust width slightly for zoomed-out view */
+    height: auto;      /* Adjust height */
+  }
+}
+
+/* Responsive styling for */
+@media screen and (max-width: 1024px) {
+  .image {
+    padding-left: 5%;
+    width: 40%;       /* Increase width for smaller screens */
+    height: auto;     /* Maintain original aspect ratio */
+  }
+}
+
+/* Responsive styling for small tablets and large mobile phones */
+@media screen and (max-width: 768px) {
+  .image {
+    padding-left: 2%;
+    width: 80%;       /* Image takes more width on smaller screens */
+    height: auto;     /* Allow height to adjust automatically */
+  }
+}
+
 
 /* Kontainer teks di sisi kanan gambar */
 .textContainer {
+  padding-left: 2%;
   width: 60%; /* Mengambil 60% layar */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
 .Judul {
-  position: absolute; /* Mengatur posisi absolut */
-  top: 200px; /* Jarak dari atas */
-  right: 200px; /* Jarak dari kanan */
-  /* Menghilangkan margin default */
-  font-size: 32px; /* Ukuran font */
-  font-weight: bold; /* Ketebalan font */
-  color: #909090; /* Warna teks hitam */
+  position: absolute;
+  top: 20vh;           /* Responsive distance from the top */
+  right: 15vw;         /* Responsive distance from the right */
+  font-size: 2rem;     /* Relative font size for adaptability */
+  font-weight: bold;
+  color: #909090;
 }
+
+/* For desktop screens with 67% zoom or larger screens */
+@media screen and (min-width: 1440px) {
+  .Judul {
+    top: 18vh;         /* Adjust positioning for larger screen */
+    right: 12vw;
+    font-size: 2.5rem; /* Increase font size for better visibility */
+  }
+}
+
+/* For tablet screens */
+@media screen and (max-width: 1024px) {
+  .Judul {
+    top: 15vh;         /* Adjust positioning for tablets */
+    right: 10vw;
+    font-size: 2rem;   /* Maintain readable font size on tablets */
+  }
+}
+
+/* For smaller tablets and mobile */
+@media screen and (max-width: 768px) {
+  .Judul {
+    top: 10vh;
+    right: 5vw;
+    font-size: 1.5rem; /* Scale down for smaller screens */
+    text-align: center; /* Center-align for smaller screens */
+    right: 0;           /* Override right positioning for center alignment */
+    left: 0;
+  }
+}
+
 
 /* Judul berada di atas deskripsi */
 .title {
@@ -80,7 +143,7 @@
   position: absolute;
   top: 50%;
   left: 50;
-  right: 80;
+  right: 115;
   height: 5px;
   background-color: rgb(3, 249, 192);
   z-index: 1;
@@ -140,11 +203,24 @@
   opacity: 1; /* Become visible */
 }
 
+/* Default tablet view */
 .buttonContainer {
-  position: absolute; /* Position relative to the nearest positioned ancestor */
-  top: 655px;         /* Adjust as needed */
-  right: 40px;       /* Adjust as needed */
+  position: absolute;
+  top: 68vh;          /* Positions the button dynamically based on viewport height */
+  right: 10vh;         /* Positions the button dynamically based on viewport width */
+  transform: translateY(-50%);
 }
+
+/* Special case for fullscreen web */
+@media screen and (min-width: 1440px) {
+  .buttonContainer {
+    top: 76vh;        /* Slightly higher for larger screens */
+    right: 4vw;
+  }
+}
+
+
+
 
 .navigationButton {
   background-color: #05e265; /* Button color */
@@ -159,6 +235,12 @@
 .navigationButton:hover {
   background-color: #057ff9; /* Darker blue on hover */
 }
+
+
+
+
+
+
 
 /* Media Queries untuk Responsivitas */
 @media (max-width: 768px) {
@@ -191,7 +273,7 @@
   }
 
   .buttonContainer {
-    top: auto; /* Mengatur kembali posisi */
+    top: 100; /* Mengatur kembali posisi */
     right: 20px; /* Mengatur posisi pada perangkat kecil */
     margin-top: 20px; /* Memberikan jarak atas */
   }
