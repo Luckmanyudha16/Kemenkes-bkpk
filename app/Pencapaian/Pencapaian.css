@@ -31,3 +31,40 @@ main {
   padding: 10px; /* Atur padding sesuai kebutuhan */
 }
 
+
+.arrow-button-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.arrow-button-container.left {
+  left: 20px;
+}
+
+.arrow-button-container.right {
+  right: 20px;
+}
+
+.btn-arrow {
+  padding: 10px;
+  border: 1px solid #007bff;
+  background-color: transparent;
+  color: #007bff;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-arrow:hover {
+  background-color: #007bff;
+  color: #fff;
+}

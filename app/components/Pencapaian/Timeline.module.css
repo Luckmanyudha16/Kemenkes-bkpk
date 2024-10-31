@@ -2,7 +2,7 @@
   padding-bottom: 20%;
   text-align: center;
   /* Tambahkan gambar latar belakang */
-  background-image: url('/bg.png'); /* Ganti dengan URL gambar yang sesuai */
+  /* background-image: url('/bg.png'); Ganti dengan URL gambar yang sesuai */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,6 +14,26 @@
   /* z-index: -1; Pastikan background berada di belakang konten */
 }
 
+.styledButton {
+  display: inline-block; /* Makes the button wrap tightly around its content */
+  padding: 10px 20px; /* Adjust padding for top-bottom and left-right */
+  font-size: 1.5em; /* Matches the font size of the title */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Ganti font */
+  background-color: #007bff; /* Button background color */
+  color: #ffffff; /* Text color */
+  border: none; /* No border */
+  border-radius: 550px; /* Match rounded corners with title */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin: 400px 0 50px 50; /* Add top margin (40px) for spacing */
+  text-align: center; /* Center align text */
+  white-space: normal; /* Allow text to wrap to the next line */
+  line-height: 1.2; /* Adjust line height for better spacing */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.styledButton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
 
 .title {
   padding-top: 20%;
@@ -146,5 +166,10 @@
   height: auto; /* Mempertahankan proporsi gambar */
   border-radius: 8px; /* Membuat sudut gambar lebih lembut */
   margin-top: 15px; /* Ruang antara judul dan gambar */
+}
+
+.popupVideo {
+  width: 100%; /* Adjust as needed */
+  max-height: 300px; /* Limit height */
 }
 

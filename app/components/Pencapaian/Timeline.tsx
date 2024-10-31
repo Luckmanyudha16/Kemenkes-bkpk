@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./Timeline.module.css";
-import { FaStethoscope, FaMicroscope, FaClipboardList } from "react-icons/fa";
+// import { FaStethoscope, FaMicroscope, FaClipboardList } from "react-icons/fa";
 
 const data = [
   {
@@ -127,25 +127,31 @@ export default function Timeline() {
 
   return (
     <div className={styles.timelineContainer}>
-      <div className={styles.title}>Pencapaian Kami</div>
+    <button className={styles.styledButton}>
+  Badan Kebijakan <br /> Pembangunan Kesehatan  (BKPK)
+</button>
+
+
+      {/* <div className={styles.title}>
+        Badan Kebijakan Pembangunan Kesehatan (BKPK)
+      </div> */}
       <div className={styles.timeline}>
         {data.map((entry, index) => {
           const angle = (index / data.length) * 2 * Math.PI;
-          const x = radius * Math.cos(angle) + 50;
-          const y = radius * Math.sin(angle) + 50;
+          const x = Math.round((radius * Math.cos(angle) + 50) * 100) / 100;
+          const y = Math.round((radius * Math.sin(angle) + 50) * 100) / 100;
 
           return (
             <div
               key={index}
-              className={`${styles.card} ${selectedIndex === index ? styles.active : ""}`}
+              className={`${styles.card} ${
+                selectedIndex === index ? styles.active : ""
+              }`}
               style={{ left: `${x}px`, top: `${y}px` }}
-              onClick={() => handleCardClick(index)}
-            >
-              <div className={styles.iconContainer}>
-                {entry.icon}
-              </div>
+              onClick={() => handleCardClick(index)}>
+              {/* <div className={styles.iconContainer}>{entry.}</div> */}
               <h3 className={styles.cardTitle}>{entry.title}</h3>
-              <p className={styles.cardSubtitle}>{entry.judul}</p>
+              {/* <p className={styles.cardSubtitle}>{entry.}</p> */}
             </div>
           );
         })}
@@ -154,9 +160,15 @@ export default function Timeline() {
       {isPopupVisible && selectedIndex !== null && (
         <div className={styles.popup}>
           <div className={styles.popupContent}>
-            <span className={styles.close} onClick={handleClosePopup}>×</span>
+            <span className={styles.close} onClick={handleClosePopup}>
+              ×
+            </span>
             <h3>{data[selectedIndex].description}</h3>
-            <img src={data[selectedIndex].image} alt={data[selectedIndex].title} className={styles.popupImage} />
+            <img
+              src={data[selectedIndex].image}
+              alt={data[selectedIndex].title}
+              className={styles.popupImage}
+            />
             {/* <p>{data[selectedIndex].description}</p> */}
           </div>
         </div>

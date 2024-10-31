@@ -1,164 +1,171 @@
-/* Kontainer utama yang memenuhi layar penuh */
-.container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-family: Arial, sans-serif;
-  
-  padding: 20px;
-  box-sizing: border-box;
+.timelineContainer {
+  padding-bottom: 20%;
+  text-align: center;
+  /* Tambahkan gambar latar belakang */
+  /* background-image: url('/bg.png'); Ganti dengan URL gambar yang sesuai */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 90vw; /* Lebar penuh layar */
+  height: 100vh; /* Tinggi penuh layar */
+  position: fixed; /* Tetapkan posisi agar tetap di layar */
+  top: 1;
+  /* left: 12; */
+  /* z-index: -1; Pastikan background berada di belakang konten */
 }
 
-/* Konten utama dengan gambar di kiri dan teks di kanan */
-.content {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-  flex: 1;
+.styledButton {
+  display: inline-block; /* Makes the button wrap tightly around its content */
+  padding: 10px 20px; /* Adjust padding for top-bottom and left-right */
+  font-size: 2em; /* Matches the font size of the title */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Ganti font */
+  background-color: #007bff; /* Button background color */
+  color: #ffffff; /* Text color */
+  border: none; /* No border */
+  border-radius: 500px; /* Match rounded corners with title */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin: 400px 0 50px 50; /* Add top margin (40px) for spacing */
+  text-align: center; /* Center align text */
+  transition: background-color 0.3s ease; /* Smooth background transition */
 }
 
-/* Gambar di sebelah kiri */
-.image {
-  width: 30%; /* Gambar mengambil setengah layar */
-  height: auto;
-  object-fit: cover; /* Menjaga proporsi gambar */
-  border-radius: 10px; /* Opsional: Untuk sudut yang melengkung */
+.styledButton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
-/* Kontainer teks di sisi kanan gambar */
-.textContainer {
-  width: 60%; /* Mengambil setengah layar */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 10px;
-}
 
-.Judul{
-  position: absolute; /* Mengatur posisi absolut */
-  top: 200; /* Jarak dari atas */
-  right: 200; /* Jarak dari kanan */
-  /* Menghilangkan margin default */
-  font-size: 32px; /* Ukuran font */
-  font-weight: bold; /* Ketebalan font */
-  color: #909090; /* Warna teks hitam */
-}
-/* Judul berada di atas deskripsi */
 .title {
-  margin: 0;
-  font-size: 32px;
-  font-weight: bold;
-  color: #000; /* Warna teks hitam */
+  padding-top: 25%;
+  font-size: 2em;
+  /* background-color: #007bff; Button background color */
+  border-radius: 20px; /* Rounded corners */
+  margin-bottom: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Ganti font */
 }
 
-/* Deskripsi berada di bawah judul */
-.description {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #000; /* Warna teks hitam */
-}
-
-/* Timeline berada di bawah konten utama */
 .timeline {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  padding-right: 40px ;
-  position: relative;
-  margin-bottom: 60px;
-  width: 1600;
-  margin-left: auto;                 /* Centering using auto margins */
-  margin-right: auto;
+  gap: 20px; /* Jarak antar kartu */
+  flex-wrap: wrap;
+  position: absolute;
+  top: 40%;
+  left: 44%;
+  width: 100%;
+  height: 100%;
 }
 
-/* Garis timeline melintang di tengah */
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 50%;
+
+.card {
+  position: absolute; /* Membuat kartu berada dalam posisi absolut */
+  background-color: white; /* Warna latar belakang */
+  border-radius: 50%; /* Membuat kartu bulat */
+  width: 120px; /* Atur lebar kartu */
+  height: 120px; /* Atur tinggi kartu */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Memusatkan konten vertikal */
+  align-items: center; /* Memusatkan konten horizontal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Gaya bayangan */
+  transition: transform 0.3s; /* Efek transisi saat kartu dipilih */
+  cursor: pointer; /* Menunjukkan bahwa kartu dapat diklik */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Membesar saat hover */
+}
+
+.cardTitle {
+  margin: 5px 0; /* Jarak antara elemen judul */
+  font-size: 1em; /* Ukuran font judul */
+}
+
+.cardSubtitle {
+  font-size: 0.8em; /* Ukuran font subjudul */
+  color: gray; /* Warna subjudul */
+}
+
+.iconContainer {
+  margin-bottom: 5px; /* Jarak antara ikon dan teks */
+}
+
+/* Tambahkan atau perbarui di Timeline.module.css */
+
+.popup {
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  height: 5px;
-  background-color: rgb(3, 249, 192);
-  z-index: 1;
-}
-
-.timelinePoint {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  background-color: #686868; /* Default background color */
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 2;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: center;
   justify-content: center;
-  transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Add transition for background color */
+  align-items: center;
+  opacity: 0; /* Awalnya tidak terlihat */
+  animation: fadeIn 0.4s forwards; /* Animasi masuk */
 }
 
-.timelinePoint:hover {
-  box-shadow: 0 0 10px 5px rgba(4, 182, 242, 0.6); /* Cahaya biru muda */
+.popupContent {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(0.7); /* Awal dari skala kecil */
+  opacity: 0; /* Awalnya tidak terlihat */
+  animation: popIn 0.4s forwards; /* Animasi konten masuk */
 }
 
-/* Tahun berada di bawah titik timeline */
-.timelinePoint span {
+.close {
+  cursor: pointer;
+  font-size: 28px;
   position: absolute;
-  top: 30px;
-  font-weight: bold;
-  color: #686868;
-  font-size: 14px;
+  right: 15px;
+  top: 15px;
+  color: #333;
+  transition: color 0.2s ease-in-out;
 }
 
-/* Efek saat titik aktif */
-.active {
-  background-color: white; /* Change background to white */
-  border: 3px solid #00B1A9; /* Keep the border as white */
+.close:hover {
+  color: #d9534f; /* Warna saat hover */
 }
 
-/* Animation for fade-in effect */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px); /* Slide up effect */
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-
-.fadein {
-  opacity: 0; /* Start invisible */
-  animation: fadeIn 1s ease forwards; /* Transition timing */
+@keyframes popIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.fadeinActive {
-  opacity: 1; /* Become visible */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
+/* Tambahkan ini di Timeline.module.css */
 
-.buttonContainer {
-  position: absolute; /* Position relative to the nearest positioned ancestor */
-  top: 620px;         /* Adjust as needed */
-  right: 40px;       /* Adjust as needed */
+.popupImage {
+  width: 40%; /* Sesuaikan lebar gambar sesuai dengan konten pop-up */
+  height: auto; /* Mempertahankan proporsi gambar */
+  border-radius: 8px; /* Membuat sudut gambar lebih lembut */
+  margin-top: 15px; /* Ruang antara judul dan gambar */
 }
-
-.navigationButton {
-  background-color: #05e265; /* Button color */
-  color: white;              /* Text color */
-  border: none;              /* No border */
-  padding: 10px 25px;       /* Padding */
-  border-radius: 20px;       /* Rounded corners */
-  cursor: pointer;           /* Pointer cursor */
-  font-size: 12px;          /* Font size */
-}
-
-.navigationButton:hover {
-  background-color: #057ff9; /* Darker blue on hover */
-}
-
 
