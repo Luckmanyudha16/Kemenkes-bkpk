@@ -1,108 +1,166 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import styles from "./Timeline.module.css";
-import Link from "next/link";
+import { FaStethoscope, FaMicroscope, FaClipboardList } from "react-icons/fa";
 
 const data = [
   {
     year: "Pencapaian",
-    judul: "Badan Kebijakan Pembangunan Kesehatan",
-    title: "21 Implementasi Riset",
-    image: "/obat.jpg",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaStethoscope size={50} color="#4CAF50" />,
+    description: "Deskripsi tentang 21 Implementasi Riset.",
+    image: "https://example.com/image1.jpg", // Ganti dengan URL gambar yang sesuai
   },
   {
     year: "Pencapaian",
-    judul: "Badan Kebijakan Pembangunan Kesehatan",
-    title: "SKI dan SSGI",
-    image: "/obat.jpg",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaMicroscope size={50} color="#FF9800" />,
+    description: "Deskripsi tentang dokumen",
+    image: "dokter.png", // Ganti dengan URL gambar yang sesuai
   },
   {
     year: "Pencapaian",
-    judul: "Badan Kebijakan Pembangunan Kesehatan",
-    title: "SiBijJaKs Awards",
-    image: "/obat.jpg",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    image: "/45.png", // Ganti dengan URL gambar yang sesuai
   },
   {
     year: "Pencapaian",
-    judul: "Badan Kebijakan Pembangunan Kesehatan",
-    title: "Islamic Development Bank",
-    image: "/obat.jpg",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    image: "/45.png", // Ganti dengan URL gambar yang sesuai
   },
   {
     year: "Pencapaian",
-    judul: "Badan Kebijakan Pembangunan Kesehatan",
-    title: "Kerjasama Islamic Development Bank",
-    image: "/obat.jpg",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    image: "/45.png", // Ganti dengan URL gambar yang sesuai
   },
   {
     year: "Pencapaian",
-    judul: "Badan Kebijakan Pembangunan Kesehatan",
-    title: "Sun Medical Korea",
-    image: "/obat.jpg",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    image: "/45.png", // Ganti dengan URL gambar yang sesuai
   },
+  {
+    year: "Pencapaian",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+  },
+  {
+    year: "Pencapaian",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+  },
+  {
+    year: "Pencapaian",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+  },
+  {
+    year: "Pencapaian",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+  },
+  {
+    year: "Pencapaian",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+  },
+  {
+    year: "Pencapaian",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+  },
+  // Tambahkan data lainnya
 ];
 
 export default function Timeline() {
-  const defaultYear = "Pencapaian";
-  const defaultIndex = data.findIndex((entry) => entry.year === defaultYear) || 0;
-  const [selectedIndex, setSelectedIndex] = useState(defaultIndex);
-  const [fadeIn, setFadeIn] = useState(false);
-  const { year, image, title, judul, description } = data[selectedIndex];
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [isPopupVisible, setPopupVisible] = useState(false);
 
   useEffect(() => {
-    setFadeIn(false);
-    const timeout = setTimeout(() => setFadeIn(true), 550);
-    return () => clearTimeout(timeout);
+    if (selectedIndex !== null) {
+      setPopupVisible(true);
+    }
   }, [selectedIndex]);
 
+  const radius = 300;
+
+  const handleCardClick = (index) => {
+    setSelectedIndex(index);
+  };
+
+  const handleClosePopup = () => {
+    setSelectedIndex(null);
+    setPopupVisible(false);
+  };
+
   return (
-    <div className={styles.container}>
-      <div className={styles.Judul}>{judul || "Sejarah"}</div>
-      <div className={`${styles.content} ${fadeIn ? styles.fadeinActive : styles.fadein}`}>
-        <Image
-          src={image}
-          alt="Deskripsi gambar"
-          width={300}
-          height={300}
-          className={styles.image}
-        />
-        <div className={`${styles.textContainer} ${fadeIn ? styles.fadeinActive : styles.fadein}`}>
-          <div className={styles.title}>{title}</div>
-          <p className={styles.description}>{description}</p>
-        </div>
-      </div>
-
+    <div className={styles.timelineContainer}>
+      <div className={styles.title}>Pencapaian Kami</div>
       <div className={styles.timeline}>
-        {data.map((entry, index) => (
-          <div
-            key={index}
-            className={`${styles.timelinePoint} ${selectedIndex === index ? styles.active : ""}`}
-            onClick={() => setSelectedIndex(index)}
-          >
-            <span>{entry.year}</span>
-          </div>
-        ))}
+        {data.map((entry, index) => {
+          const angle = (index / data.length) * 2 * Math.PI;
+          const x = radius * Math.cos(angle) + 50;
+          const y = radius * Math.sin(angle) + 50;
+
+          return (
+            <div
+              key={index}
+              className={`${styles.card} ${selectedIndex === index ? styles.active : ""}`}
+              style={{ left: `${x}px`, top: `${y}px` }}
+              onClick={() => handleCardClick(index)}
+            >
+              <div className={styles.iconContainer}>
+                {entry.icon}
+              </div>
+              <h3 className={styles.cardTitle}>{entry.title}</h3>
+              <p className={styles.cardSubtitle}>{entry.judul}</p>
+            </div>
+          );
+        })}
       </div>
 
-      <div className={styles.buttonContainer}>
-        <Link href="/Pencapaian2">
-          <button className={styles.navigationButton}>Selanjutnya</button>
-        </Link>
-      </div>
+      {isPopupVisible && selectedIndex !== null && (
+        <div className={styles.popup}>
+          <div className={styles.popupContent}>
+            <span className={styles.close} onClick={handleClosePopup}>×</span>
+            <h3>{data[selectedIndex].description}</h3>
+            <img src={data[selectedIndex].image} alt={data[selectedIndex].title} className={styles.popupImage} />
+            {/* <p>{data[selectedIndex].description}</p> */}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

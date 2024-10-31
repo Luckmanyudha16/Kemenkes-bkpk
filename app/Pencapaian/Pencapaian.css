@@ -1,15 +1,33 @@
-
-@keyframes fadeIn {
+@keyframes fullPageBackgroundAnimation {
   0% {
-    opacity: 0;
-    transform: translateY(20px);
+    background-position: 0% 50%;
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+    background-position: 100% 50%;
   }
 }
-
-.animate-fade-in {
-  animation: fadeIn 1s ease-in-out forwards; /* Adjust duration and timing function */
+/* CSS Global */
+html, body {
+  height: 100%; /* Pastikan html dan body mengisi tinggi penuh */
+  margin: 0; /* Hapus margin default */
+  overflow: hidden; /* Mencegah scroll */
 }
+
+.full-page-background {
+  display: flex;
+  align-items: center; /* Memusatkan konten secara vertikal */
+  justify-content: center; /* Memusatkan konten secara horizontal */
+  height: 100vh; /* Mengisi tinggi penuh viewport */
+  width: 100vw; /* Mengisi lebar penuh viewport */
+  background-color: #f0f0f0; /* Ganti dengan warna latar belakang yang diinginkan */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Memusatkan konten dalam main */
+  justify-content: center; /* Memusatkan konten dalam main */
+  width: 100%; /* Memastikan lebar penuh */
+  padding: 10px; /* Atur padding sesuai kebutuhan */
+}
+
