@@ -2,21 +2,21 @@
 
 import { useEffect, useState } from "react";
 import styles from "./Timeline.module.css";
-// import { FaStethoscope, FaMicroscope, FaClipboardList } from "react-icons/fa";
 
 const data = [
   {
     year: "Pencapaian",
     // judul: "Badan Kebijakan Pembangunan Kesehatan",
-    title: "Gambar dan Judul",
+    title: "Pembentukan Badan Kebijakan Pembangunan Kesehatan (BKPK)",
     // icon: <FaStethoscope size={50} color="#4CAF50" />,
-    description: "Deskripsi tentang 21 Implementasi Riset.",
-    image: "https://example.com/image1.jpg", // Ganti dengan URL gambar yang sesuai
+    description:
+      "Pada 2021, pemerintah mengeluarkan Peraturan Presiden (Perpres) Nomor 18 Tahun 2021 tentang Kementerian Kesehatan. Sebagaimana ketentuan dalam Perpres tersebut, salah satu fungsi yang diselenggarakan Kementerian Kesehatan adalah perumusan, penetapan, dan pelaksanaan kebijakan di bidang kesehatan masyarakat, pencegahan dan pengendalian penyakit, pelayanan kesehatan, kefarmasian, alat kesehatan, dan tenaga Kesehatan. Dengan demikian, tidak lagi terdapat fungsi penelitian dan pengembangan yang selama ini melekat di Kementerian Kesehatan melalui unit organisasi Badan Penelitian dan Pengembangan Kesehatan (Badan Litbangkes). Adanya perubahan itu membuat Badan Litbangkes bertransformasi menjadi Badan Kebijakan Pembangunan Kesehatan (BKPK) yang mengemban fungsi perumusan, penetapan, dan pelaksanaan kebijakan di bidang kesehatan masyarakat.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    image: "dokter.png", // Ganti dengan URL gambar yang sesuai
   },
   {
     year: "Pencapaian",
     // judul: "Badan Kebijakan Pembangunan Kesehatan",
-    title: "Gambar dan Judul",
+    title: "SKI dan SSGI (2)",
     // icon: <FaMicroscope size={50} color="#FF9800" />,
     description: "Deskripsi tentang dokumen",
     image: "dokter.png", // Ganti dengan URL gambar yang sesuai
@@ -101,7 +101,6 @@ const data = [
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
     image: "/45.png", // Ganti dengan URL gambar yang sesuai
   },
-  // Tambahkan data lainnya
 ];
 
 export default function Timeline() {
@@ -158,15 +157,22 @@ export default function Timeline() {
             <span className={styles.close} onClick={handleClosePopup}>
               ×
             </span>
-            <h3>{data[selectedIndex].description}</h3>
-            <img
-              src={data[selectedIndex].image}
-              alt={data[selectedIndex].title}
-              className={styles.popupImage}
-            />
-            {/* <p>{data[selectedIndex].description}</p> */}
+            <div className={styles.imageAndDescription}>
+              <img
+                src={data[selectedIndex].image}
+                alt={data[selectedIndex].title}
+                className={styles.popupImage}
+              />
+              <div className={styles.popupDescription}>
+                <h3 className={styles.popupTitle}>
+                  {data[selectedIndex].title}
+                </h3>
+                <p>{data[selectedIndex].description}</p>
+              </div>
+            </div>
           </div>
         </div>
+        // )}
       )}
     </div>
   );

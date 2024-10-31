@@ -8,7 +8,7 @@ const data = [
   {
     year: "Pencapaian",
     // judul: "Badan Kebijakan Pembangunan Kesehatan",
-    title: "Gambar dan Judul",
+    title: "21 Implementasi Riset (1)",
     // icon: <FaStethoscope size={50} color="#4CAF50" />,
     description: "Deskripsi tentang 21 Implementasi Riset.",
     image: "https://example.com/image1.jpg", // Ganti dengan URL gambar yang sesuai
@@ -16,7 +16,7 @@ const data = [
   {
     year: "Pencapaian",
     // judul: "Badan Kebijakan Pembangunan Kesehatan",
-    title: "Gambar dan Judul",
+    title: "SKI dan SSGI (2)",
     // icon: <FaMicroscope size={50} color="#FF9800" />,
     description: "Deskripsi tentang dokumen",
     image: "dokter.png", // Ganti dengan URL gambar yang sesuai
@@ -132,47 +132,49 @@ export default function Timeline() {
 </button>
 
 
-      {/* <div className={styles.title}>
-        Badan Kebijakan Pembangunan Kesehatan (BKPK)
-      </div> */}
-      <div className={styles.timeline}>
-        {data.map((entry, index) => {
-          const angle = (index / data.length) * 2 * Math.PI;
-          const x = Math.round((radius * Math.cos(angle) + 50) * 100) / 100;
-          const y = Math.round((radius * Math.sin(angle) + 50) * 100) / 100;
+        {/* <div className={styles.title}>
+    Badan Kebijakan Pembangunan Kesehatan (BKPK)
+  </div> */}
+  <div className={styles.timeline}>
+    {data.map((entry, index) => {
+      const angle = (index / data.length) * 2 * Math.PI;
+      const x = Math.round((radius * Math.cos(angle) + 50) * 100) / 100;
+      const y = Math.round((radius * Math.sin(angle) + 50) * 100) / 100;
 
-          return (
-            <div
-              key={index}
-              className={`${styles.card} ${
-                selectedIndex === index ? styles.active : ""
-              }`}
-              style={{ left: `${x}px`, top: `${y}px` }}
-              onClick={() => handleCardClick(index)}>
-              {/* <div className={styles.iconContainer}>{entry.}</div> */}
-              <h3 className={styles.cardTitle}>{entry.title}</h3>
-              {/* <p className={styles.cardSubtitle}>{entry.}</p> */}
-            </div>
-          );
-        })}
-      </div>
-
-      {isPopupVisible && selectedIndex !== null && (
-        <div className={styles.popup}>
-          <div className={styles.popupContent}>
-            <span className={styles.close} onClick={handleClosePopup}>
-              ×
-            </span>
-            <h3>{data[selectedIndex].description}</h3>
-            <img
-              src={data[selectedIndex].image}
-              alt={data[selectedIndex].title}
-              className={styles.popupImage}
-            />
-            {/* <p>{data[selectedIndex].description}</p> */}
-          </div>
+      return (
+        <div
+          key={index}
+          className={`${styles.card} ${
+            selectedIndex === index ? styles.active : ""
+          }`}
+          style={{ left: `${x}px`, top: `${y}px` }}
+          onClick={() => handleCardClick(index)}>
+          {/* <div className={styles.iconContainer}>{entry.}</div> */}
+          <h3 className={styles.cardTitle}>{entry.title}</h3>
+          {/* <p className={styles.cardSubtitle}>{entry.}</p> */}
         </div>
-      )}
+      );
+    })}
+  </div>
+
+  {isPopupVisible && selectedIndex !== null && (
+    <div className={styles.popup}>
+      <div className={styles.popupContent}>
+        <span className={styles.close} onClick={handleClosePopup}>
+          ×
+        </span>
+        {/* <h3>{data[selectedIndex].description}</h3> */}
+        <h3>{data[selectedIndex].title}</h3>
+        <img
+          src={data[selectedIndex].image}
+          // alt={data[selectedIndex].description}
+          className={styles.popupImage}
+        />
+        <h2 >{data[selectedIndex].description}</h2>
+        {/* <p>{data[selectedIndex].description}</p> */}
+      </div>
     </div>
+  )}
+</div>
   );
 }
