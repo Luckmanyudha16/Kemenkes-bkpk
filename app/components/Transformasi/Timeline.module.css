@@ -128,10 +128,10 @@
 }
 
 .popupContent {
-  width: 900px; /* Fixed width for the popup */
-  height: 400px; /* Fixed height for the popup */
+  width: 1500px; /* Fixed width for the popup */
+  height: 70%; /* Fixed height for the popup */
   background-color: white;
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
   position: relative;
   display: flex;
@@ -146,40 +146,79 @@
 }
 
 .popupImage {
-  width: 200px; /* Fixed width for the image */
-  height: 400px; /* Fixed height for the image */
-  object-fit: contain; /* Maintain aspect ratio */
+  width: 600px; /* Fixed width for the image */
+  height: 500px; /* Fixed height for the image */
+  /* object-fit: contain; Maintain aspect ratio */
   border-radius: 8px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-top: 0px;
 }
 
 .popupDescription {
   padding-top: 20px;
-  max-height: 350px; /* Set max height to trigger scrolling */
+  padding-left: 30px;
+  max-height: 500px; /* Set max height to trigger scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Disable horizontal scrolling */
-  padding-right: 10px; /* Space for scrollbar */
+  padding-right: 15px; /* Space for scrollbar */
   white-space: normal; /* Allow text to wrap to a new line */
   text-align: justify; /* Justify the text */
 }
 
 .popupTitle {
-  font-size: 1.5rem; /* Font size for the title */
-  margin-bottom: 10px; /* Space between title and description */
-  text-align: center; /* Center the title text */
-  padding-top: 10px;
-  
+  font-size: 2rem; /* Font size for the title */
+  margin-bottom: 20px; /* Space between title and description */
+  text-align: center; 
+  padding-top: 15px;
+}
+
+
+.carouselControls {
+  position: absolute;
+  display: flex;
+  gap: 600px;
+  z-index: 1;
+  padding-top: 480px;
+  padding-right: 55%;
+}
+
+.carouselControls.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.carouselControls.bottom {
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carouselControls button {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.carouselControls button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
 
-
-
 .close {
-  cursor: pointer;
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  z-index: 101; /* Higher than any other content */
 }
 
 
