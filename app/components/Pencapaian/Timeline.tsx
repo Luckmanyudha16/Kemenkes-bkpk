@@ -11,7 +11,7 @@ const data = [
     title: "21 Implementasi Riset (1)",
     // icon: <FaStethoscope size={50} color="#4CAF50" />,
     description: "Deskripsi tentang 21 Implementasi Riset.",
-    image: "https://example.com/image1.jpg", // Ganti dengan URL gambar yang sesuai
+    images: ["dokter.png", "dokter2.png"], // Multiple images
   },
   {
     year: "Pencapaian",
@@ -19,7 +19,7 @@ const data = [
     title: "SKI dan SSGI (2)",
     // icon: <FaMicroscope size={50} color="#FF9800" />,
     description: "Deskripsi tentang dokumen",
-    image: "dokter.png", // Ganti dengan URL gambar yang sesuai
+    images: ["dokter.png", "dokter2.png"], // Multiple images
   },
   {
     year: "Pencapaian",
@@ -27,7 +27,7 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+    images: ["dokter.png", "dokter2.png"], // Multiple images
   },
   {
     year: "Pencapaian",
@@ -35,7 +35,7 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+    images: ["dokter.png", "dokter2.png"], // Multiple images
   },
   {
     year: "Pencapaian",
@@ -43,7 +43,7 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+    images: ["dokter.png", "dokter2.png"], // Multiple images
   },
   {
     year: "Pencapaian",
@@ -51,7 +51,7 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+    images: ["dokter.png", "dokter2.png"], // Multiple images
   },
   {
     year: "Pencapaian",
@@ -59,7 +59,7 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+    images: ["dokter.png", "dokter2.png"], // Multiple images
   },
   {
     year: "Pencapaian",
@@ -67,7 +67,7 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+    images: ["dokter.png", "dokter2.png"], // Multiple images
   },
   {
     year: "Pencapaian",
@@ -75,7 +75,7 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+    images: ["dokter.png", "dokter2.png"], // Multiple images
   },
   {
     year: "Pencapaian",
@@ -83,7 +83,7 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+    images: ["dokter.png", "dokter2.png"], // Multiple images
   },
   {
     year: "Pencapaian",
@@ -91,7 +91,7 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+    images: ["dokter.png", "dokter2.png"], // Multiple images
   },
   {
     year: "Pencapaian",
@@ -99,7 +99,7 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    image: "/45.png", // Ganti dengan URL gambar yang sesuai
+    images: ["dokter.png", "dokter2.png"], // Multiple images
   },
   // Tambahkan data lainnya
 ];
@@ -107,10 +107,12 @@ const data = [
 export default function Timeline() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Carousel image index
 
   useEffect(() => {
     if (selectedIndex !== null) {
       setPopupVisible(true);
+      setCurrentImageIndex(0); // Reset carousel index when a new entry is selected
     }
   }, [selectedIndex]);
 
@@ -125,56 +127,67 @@ export default function Timeline() {
     setPopupVisible(false);
   };
 
+  const handleNextImage = () => {
+    const totalImages = data[selectedIndex]?.images.length;
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % totalImages);
+  };
+
+  const handlePrevImage = () => {
+    const totalImages = data[selectedIndex]?.images.length;
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + totalImages) % totalImages);
+  };
+
   return (
     <div className={styles.timelineContainer}>
-    <button className={styles.styledButton}>
-  Badan Kebijakan <br /> Pembangunan Kesehatan  (BKPK)
-</button>
+      <button className={styles.styledButton}>Transformasi Kesehatan</button>
+      <div className={styles.timeline}>
+        {data.map((entry, index) => {
+          const angle = (index / data.length) * 2 * Math.PI;
+          const x = Math.round((radius * Math.cos(angle) + 50) * 100) / 100;
+          const y = Math.round((radius * Math.sin(angle) + 50) * 100) / 100;
 
+          return (
+            <div
+              key={index}
+              className={`${styles.card} ${selectedIndex === index ? styles.active : ""}`}
+              style={{ left: `${x}px`, top: `${y}px` }}
+              onClick={() => handleCardClick(index)}
+            >
+              <h3 className={styles.cardTitle}>{entry.title}</h3>
+            </div>
+          );
+        })}
+      </div>
 
-        {/* <div className={styles.title}>
-    Badan Kebijakan Pembangunan Kesehatan (BKPK)
-  </div> */}
-  <div className={styles.timeline}>
-    {data.map((entry, index) => {
-      const angle = (index / data.length) * 2 * Math.PI;
-      const x = Math.round((radius * Math.cos(angle) + 50) * 100) / 100;
-      const y = Math.round((radius * Math.sin(angle) + 50) * 100) / 100;
-
-      return (
-        <div
-          key={index}
-          className={`${styles.card} ${
-            selectedIndex === index ? styles.active : ""
-          }`}
-          style={{ left: `${x}px`, top: `${y}px` }}
-          onClick={() => handleCardClick(index)}>
-          {/* <div className={styles.iconContainer}>{entry.}</div> */}
-          <h3 className={styles.cardTitle}>{entry.title}</h3>
-          {/* <p className={styles.cardSubtitle}>{entry.}</p> */}
-        </div>
-      );
-    })}
-  </div>
-
-  {isPopupVisible && selectedIndex !== null && (
-    <div className={styles.popup}>
-      <div className={styles.popupContent}>
-        <span className={styles.close} onClick={handleClosePopup}>
-          ×
-        </span>
-        {/* <h3>{data[selectedIndex].description}</h3> */}
-        <h3>{data[selectedIndex].title}</h3>
+      {isPopupVisible && selectedIndex !== null && (
+  <div className={styles.popup}>
+    <div className={styles.popupContent}>
+      <span className={styles.close} onClick={handleClosePopup}>×</span>
+      <div className={styles.imageAndDescription}>
+        {data[selectedIndex].images && data[selectedIndex].images.length > 1 && ( 
+        <div className={`${styles.carouselControls} ${styles.center}`}>
+          <button onClick={handlePrevImage}>&lt;</button>
+          <button onClick={handleNextImage}>&gt;</button>
+        </div>)}
+  
         <img
-          src={data[selectedIndex].image}
-          // alt={data[selectedIndex].description}
+          src={
+            data[selectedIndex].images
+              ? data[selectedIndex].images[currentImageIndex]
+              : data[selectedIndex].image
+          }
+          alt={`${data[selectedIndex].title} image ${currentImageIndex + 1}`}
           className={styles.popupImage}
         />
-        <h2 >{data[selectedIndex].description}</h2>
-        {/* <p>{data[selectedIndex].description}</p> */}
+        <div className={styles.popupDescription}>
+          <h3 className={styles.popupTitle}>{data[selectedIndex].title}</h3>
+          <p>{data[selectedIndex].description}</p>
+        </div>
       </div>
     </div>
-  )}
-</div>
+  </div>
+)}
+
+    </div>
   );
 }
