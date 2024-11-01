@@ -60,7 +60,7 @@
 .card {
   position: absolute; /* Membuat kartu berada dalam posisi absolut */
   background-color: white; /* Warna latar belakang */
-  border-radius: 80%; /* Membuat kartu bulat */
+  border-radius: 50%; /* Membuat kartu bulat */
   width: 150px; /* Atur lebar kartu */
   height: 150px; /* Atur tinggi kartu */
   display: flex;

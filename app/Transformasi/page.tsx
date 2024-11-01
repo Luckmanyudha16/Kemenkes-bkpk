@@ -26,7 +26,23 @@ export default function Reformasi() {
         {/* Left Arrow Button */}
         <div className="arrow-button-container left">
           <Link href="/Pencapaian">
-            <button className="btn btn-arrow">{"<"}</button>
+            <svg
+              className="h-16 w-16 text-green-700"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <circle cx="12" cy="12" r="9" />
+              <line x1="8" y1="12" x2="16" y2="12" /> {/* Panah kanan */}
+              <line x1="8" y1="12" x2="12" y2="16" />
+              <line x1="8" y1="12" x2="12" y2="8" />
+            </svg>
           </Link>
         </div>
 
@@ -37,8 +53,24 @@ export default function Reformasi() {
 
         {/* Right Arrow Button */}
         <div className="arrow-button-container right">
-          <Link href="/Tranformasi">
-            <button className="btn btn-arrow">{">"}</button>
+          <Link href="/Pencapaian">
+            <svg
+              className="h-16 w-16 text-green-700"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <circle cx="12" cy="12" r="9" />
+              <line x1="16" y1="12" x2="8" y2="12" />
+              <line x1="16" y1="12" x2="12" y2="16" />
+              <line x1="16" y1="12" x2="12" y2="8" />
+            </svg>
           </Link>
         </div>
       </div>
