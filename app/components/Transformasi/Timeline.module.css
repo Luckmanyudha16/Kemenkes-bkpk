@@ -61,8 +61,8 @@
   position: absolute; /* Membuat kartu berada dalam posisi absolut */
   background-color: white; /* Warna latar belakang */
   border-radius: 50%; /* Membuat kartu bulat */
-  width: 120px; /* Atur lebar kartu */
-  height: 120px; /* Atur tinggi kartu */
+  width: 150px; /* Atur lebar kartu */
+  height: 150px; /* Atur tinggi kartu */
   display: flex;
   flex-direction: column;
   justify-content: center; /* Memusatkan konten vertikal */

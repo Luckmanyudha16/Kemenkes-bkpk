@@ -84,3 +84,25 @@ main {
   background-color: #007bff;
   color: #fff;
 }
+.slide-left {
+  transform: translateX(100%); /* Slide ke kanan */
+}
+
+.slide-right {
+  transform: translateX(-100%); /* Slide ke kiri */
+}
+.arrow-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s; /* Animasi untuk transformasi */
+}
+
+.arrow-button-container:hover {
+  transform: scale(1.1); /* Memperbesar ikon saat hover */
+}
+
+.arrow-button-container:active {
+  transform: scale(0.9); /* Mengecilkan ikon saat ditekan */
+}

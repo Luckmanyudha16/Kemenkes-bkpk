@@ -101,6 +101,30 @@ const data = [
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
     images: ["dokter.png", "dokter2.png"], // Multiple images
   },
+  {
+    year: "Pencapaian",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    images: ["dokter.png", "dokter2.png"], // Multiple images
+  },
+  {
+    year: "Pencapaian",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    images: ["dokter.png", "dokter2.png"], // Multiple images
+  },
+  {
+    year: "Pencapaian",
+    // judul: "Badan Kebijakan Pembangunan Kesehatan",
+    title: "Gambar dan Judul",
+    // icon: <FaClipboardList size={50} color="#2196F3" />,
+    description: "Deskripsi tentang Dokumen SKI dan SSGI.",
+    images: ["dokter.png", "dokter2.png"], // Multiple images
+  },
   // Tambahkan data lainnya
 ];
 
@@ -139,7 +163,7 @@ export default function Timeline() {
 
   return (
     <div className={styles.timelineContainer}>
-      <button className={styles.styledButton}>Transformasi Kesehatan</button>
+      <button className={`${styles.styledButton} ${styles.circularCard}`}>Transformasi Kesehatan</button>
       <div className={styles.timeline}>
         {data.map((entry, index) => {
           const angle = (index / data.length) * 2 * Math.PI;
