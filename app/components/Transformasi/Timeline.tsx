@@ -115,7 +115,7 @@ const data = [
       { type: "image", src: "6 Teknologi Kesehatan Halaman 50-59_page-0007.jpg" },
       { type: "image", src: "6 Teknologi Kesehatan Halaman 50-59_page-0008.jpg" },
       { type: "image", src: "6 Teknologi Kesehatan Halaman 50-59_page-0009.jpg" },
-      { type: "image", src: "6 Teknologi Kesehatan Halaman 50-59_page-00010.jpg" },
+      { type: "image", src: "6 Teknologi Kesehatan Halaman 50-59_page-0010.jpg" },
       // { type: "video", src: "IndonesiaRaya.mp4" }
     ],
   },
