@@ -135,7 +135,33 @@
   /* opacity: 0; Awalnya tidak terlihat */
   /* animation: popIn 0.4s forwards; Animasi konten masuk */
 /* } */
+
 .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  width: 70%;
+  max-width: 700px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1000;
+  opacity: 0;
+  animation: boxOpen 0.4s forwards;
+}
+
+@keyframes boxOpen {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+/* .popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -145,10 +171,59 @@
   display: flex;
   justify-content: center;
   align-items: center;
+} */
+
+/* General container styling for the phone mockup */
+.mockup-phone {
+  position: relative;
+  width: 100%;
+  padding-top: 150%; /* Adjust based on your mockup phone dimensions */
+  background-color: #f1f1f1;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+/* Camera styling at the top of the phone */
+.camera {
+  width: 40px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 10px;
+  margin: 10px auto 5px auto;
+}
+
+/* Display area where content is shown */
+.display {
+  flex: 1;
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Artboard for the main content inside the display */
+.artboard {
+  width: 90%;
+  height: 90%;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.artboard-demo {
+  font-family: Arial, sans-serif;
+  color: #333;
 }
 
 .popupContent {
-  width: 900px;
+  width: 500px;
   height: 65%; 
   background-color: white;
   padding: 10px;
@@ -161,21 +236,21 @@
 
 .mediaContainer {
   padding-top: 10px;
-  width: 90%;
+  width: 70%;
   display: flex;
   justify-content: center;
-  margin-bottom: 15px; /* Adds spacing between media and text */
+  margin-bottom: 2px; /* Adds spacing between media and text */
 }
 
 .imageAndDescription {
   display: flex;
-  gap: 2px;
+  gap: 5px;
   width: 100%; /* Full width to accommodate both image and description */
   height: 100%;
 }
 
 .popupImage {
-  width: 890px; /* Fixed width for the image */
+  width: 550px; /* Fixed width for the image */
   height: 400px; /* Fixed height for the image */
   /* object-fit: contain; Maintain aspect ratio */
   border-radius: 70px;
@@ -186,20 +261,21 @@
 }
 
 .popupVideo{
-  width: 890px; /* Fixed width for the image */
+  width: 550px; /* Fixed width for the image */
   height: 400px; /* Fixed height for the image */
   /* object-fit: contain; Maintain aspect ratio */
-  border-radius: 70px;
+  border-radius: 30px;
   /* padding-bottom: 2px; */
   padding-right: 10px;
   padding-left: 18px;
-  padding-top: 1px;
+  padding-top: 50px;
 }
 
 .popupDescription {
   padding-top: 0px;
   padding-left: 15px;
-  max-height: 500px; /* Set max height to trigger scrolling */
+  padding-bottom: 50px;
+  max-height: 300px; /* Set max height to trigger scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Disable horizontal scrolling */
   padding-right: 15px; /* Space for scrollbar */
@@ -209,19 +285,19 @@
 
 .popupTitle {
   font-size: 2rem; /* Font size for the title */
-  margin-bottom: 5px; /* Space between title and description */
+  margin-bottom: 10px; /* Space between title and description */
   text-align: center; 
-  padding-top: 0px;
+  padding-top: 5px;
 }
 
 
 .carouselControls {
   position: absolute;
   display: flex;
-  gap: 800px;
+  gap: 550px;
   z-index: 1;
-  padding-top: 400px;
-  padding-left: 450px;
+  padding-top: 200px;
+  padding-left: 10px;
 }
 
 .carouselControls.center {
@@ -252,13 +328,20 @@
 
 .close {
   position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 24px;
-  color: #333;
+  top: 50px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  border: 2px solid #ccc; /* Border color */
+  border-radius: 50%; /* Makes it circular */
+  font-size: 30px; /* Adjust font size to fit inside the circle */
   cursor: pointer;
-  
-  z-index: 101; /* Higher than any other content */
+  background-color: white; /* Optional: to create a white background */
+  color: #0acb21; /* Color for the 'X' */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 
@@ -275,7 +358,8 @@
 } */
 
 .close:hover {
-  color: #d9534f; /* Warna saat hover */
+  background-color: #a7a8a7; /* Hover background color */
+  color:#5fdc85; /* Hover color for 'X' */
 }
 
 @keyframes fadeIn {

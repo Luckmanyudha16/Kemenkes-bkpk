@@ -23,7 +23,11 @@ const data = [
     title: "SKI dan SSGI (2)",
     // icon: <FaMicroscope size={50} color="#FF9800" />,
     description: "Deskripsi tentang dokumen",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -31,7 +35,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -39,7 +47,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -47,7 +59,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -55,7 +71,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -63,7 +83,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -71,7 +95,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -79,7 +107,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -87,7 +119,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -95,7 +131,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -103,7 +143,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -111,7 +155,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -119,7 +167,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["IndonesiaRaya.mp4"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -127,7 +179,11 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   // Tambahkan data lainnya
 ];
@@ -188,38 +244,41 @@ export default function Timeline() {
       </div>
 
       {isPopupVisible && selectedIndex !== null && (
-  <div className={styles.popup}>
-    <div className={styles.popupContent}>
-      <span className={styles.close} onClick={handleClosePopup}>×</span>
-      
-      {/* Media Section */}
-      <div className={styles.mediaContainer}>
-        {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
-          <div className={`${styles.carouselControls} ${styles.center}`}>
-            <button onClick={handlePrevMedia}>&lt;</button>
-            <button onClick={handleNextMedia}>&gt;</button>
+  <div className={`${styles.popup} ${isPopupVisible ? styles.popupVisible : ''}`}>
+    <div className="mockup-phone">
+      <div className="camera"></div>
+      <div className="display">
+        <div className="artboard artboard-demo">
+          <span className={styles.close} onClick={handleClosePopup}>×</span>
+          
+          <div className={styles.mediaContainer}>
+            {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
+              <div className={styles.carouselControls}>
+                <button onClick={handlePrevMedia}>&lt;</button>
+                <button onClick={handleNextMedia}>&gt;</button>
+              </div>
+            )}
+            
+            {data[selectedIndex].media[currentMediaIndex].type === "image" ? (
+              <img
+                src={data[selectedIndex].media[currentMediaIndex].src}
+                alt={`${data[selectedIndex].title} media ${currentMediaIndex + 1}`}
+                className={styles.popupImage}
+              />
+            ) : (
+              <video
+                src={data[selectedIndex].media[currentMediaIndex].src}
+                controls
+                className={styles.popupVideo}
+              />
+            )}
           </div>
-        )}
-
-        {data[selectedIndex].media[currentMediaIndex].type === "image" ? (
-          <img
-            src={data[selectedIndex].media[currentMediaIndex].src}
-            alt={`${data[selectedIndex].title} media ${currentMediaIndex + 1}`}
-            className={styles.popupImage}
-          />
-        ) : (
-          <video
-            src={data[selectedIndex].media[currentMediaIndex].src}
-            controls
-            className={styles.popupVideo}
-          />
-        )}
-      </div>
-      
-      {/* Text Content Section */}
-      <div className={styles.popupDescription}>
-        <h3 className={styles.popupTitle}>{data[selectedIndex].title}</h3>
-        <p>{data[selectedIndex].description}</p>
+          
+          <div className={styles.popupDescription}>
+            <h3 className={styles.popupTitle}>{data[selectedIndex].title}</h3>
+            <p>{data[selectedIndex].description}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
