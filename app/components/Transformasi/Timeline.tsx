@@ -129,46 +129,48 @@ export default function Timeline() {
       </div>
 
       {isPopupVisible && selectedIndex !== null && (
-  <div className={`${styles.popup} ${isPopupVisible ? styles.popupVisible : ''}`}>
-    <div className="mockup-phone">
-      <div className="camera"></div>
-      <div className="display">
-        <div className="artboard artboard-demo">
-          <span className={styles.close} onClick={handleClosePopup}>×</span>
-          
-          <div className={styles.mediaContainer}>
-            {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
-              <div className={styles.carouselControls}>
-                <button onClick={handlePrevMedia}>&lt;</button>
-                <button onClick={handleNextMedia}>&gt;</button>
+        <div className={`${styles.popup} ${isPopupVisible ? styles.popupVisible : ''}`}>
+          <div className="mockup-phone">
+            <div className="camera"></div>
+            <div className="display">
+              <div className="artboard artboard-demo">
+                
+                <button className={styles.closeButton} onClick={handleClosePopup}>
+                  &times;
+                </button>
+
+                <div className={styles.mediaContainer}>
+                  {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
+                    <div className={styles.carouselControls}>
+                      <button onClick={handlePrevMedia}>&lt;</button>
+                      <button onClick={handleNextMedia}>&gt;</button>
+                    </div>
+                  )}
+
+                  {data[selectedIndex].media[currentMediaIndex].type === "image" ? (
+                    <img
+                      src={data[selectedIndex].media[currentMediaIndex].src}
+                      alt={`${data[selectedIndex].title} media ${currentMediaIndex + 1}`}
+                      className={styles.popupImage}
+                    />
+                  ) : (
+                    <video
+                      src={data[selectedIndex].media[currentMediaIndex].src}
+                      controls
+                      className={styles.popupVideo}
+                    />
+                  )}
+                </div>
+
+                <div className={styles.popupDescription}>
+                  <h3 className={styles.popupTitle}>{data[selectedIndex].title}</h3>
+                  <p>{data[selectedIndex].description}</p>
+                </div>
               </div>
-            )}
-            
-            {data[selectedIndex].media[currentMediaIndex].type === "image" ? (
-              <img
-                src={data[selectedIndex].media[currentMediaIndex].src}
-                alt={`${data[selectedIndex].title} media ${currentMediaIndex + 1}`}
-                className={styles.popupImage}
-              />
-            ) : (
-              <video
-                src={data[selectedIndex].media[currentMediaIndex].src}
-                controls
-                className={styles.popupVideo}
-              />
-            )}
-          </div>
-          
-          <div className={styles.popupDescription}>
-            <h3 className={styles.popupTitle}>{data[selectedIndex].title}</h3>
-            <p>{data[selectedIndex].description}</p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-)}
-
+      )}
     </div>
   );
 }
