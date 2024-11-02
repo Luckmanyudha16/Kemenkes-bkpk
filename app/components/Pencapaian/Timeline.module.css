@@ -63,7 +63,7 @@
   border-radius: 50%; /* Membuat kartu bulat */
   width: 150px; /* Atur lebar kartu */
   height: 150px; /* Atur tinggi kartu */
-  transform: translate(-40%, -40%); /* Memusatkan kartu */
+  transform: translate(+50%, -50%); /* Memusatkan kartu */
   display: flex;
   flex-direction: column;
   justify-content: center; /* Memusatkan konten vertikal */
