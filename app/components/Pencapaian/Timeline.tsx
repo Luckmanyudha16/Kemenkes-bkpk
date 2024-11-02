@@ -12,8 +12,8 @@ const data = [
     // icon: <FaStethoscope size={50} color="#4CAF50" />,
     description: "Berkaitan dengan Jejaring Kanker, Jantung, Stroke, Uronefrologi, dan Kesehatan Ibu dan Anak (KJSU dan KIA), Jejaring Layanan Rujukan mengalami peningkatan. Berkaitan dengan Pengembangan Layanan Rujukan, Kemenkes bekerja sama dengan Mitra Pembangunan dalam pengembangan layanan Unggulan KJSU-KIA di RS Kemenkes, yaitu RS Kanker Dharmais (Jakarta), RS Persahabatan (Jakarta), RS Wahidin Sudirohusodo (Makassar), RS Sardjito (Yogyakarta), RS Ngoerah (Denpasar), dan RS Hasan Sadikin (Bandung). ",
     media: [
-      { type: "image", src: "dokter.png" },
-      { type: "image", src: "dokter.png" },
+      { type: "image", src: "budi.png" },
+      { type: "image", src: "budi.png" },
       { type: "video", src: "IndonesiaRaya.mp4" }
     ],
   },
@@ -227,8 +227,8 @@ export default function Timeline() {
       <div className={styles.timeline}>
         {data.map((entry, index) => {
           const angle = (index / data.length) * 2 * Math.PI;
-          const x = Math.round((radius * Math.cos(angle) + 50) * 130) / 100;
-          const y = Math.round((radius * Math.sin(angle) + 50) * 130) / 100;
+          const x = Math.round((radius * Math.cos(angle) + 50) * 100) / 100;
+          const y = Math.round((radius * Math.sin(angle) + 50) * 100) / 100;
 
           return (
             <div
@@ -244,46 +244,48 @@ export default function Timeline() {
       </div>
 
       {isPopupVisible && selectedIndex !== null && (
-  <div className={`${styles.popup} ${isPopupVisible ? styles.popupVisible : ''}`}>
-    <div className="mockup-phone">
-      <div className="camera"></div>
-      <div className="display">
-        <div className="artboard artboard-demo">
-          <span className={styles.close} onClick={handleClosePopup}>×</span>
-          
-          <div className={styles.mediaContainer}>
-            {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
-              <div className={styles.carouselControls}>
-                <button onClick={handlePrevMedia}>&lt;</button>
-                <button onClick={handleNextMedia}>&gt;</button>
+        <div className={`${styles.popup} ${isPopupVisible ? styles.popupVisible : ''}`}>
+          <div className="mockup-phone">
+            <div className="camera"></div>
+            <div className="display">
+              <div className="artboard artboard-demo">
+                
+                <button className={styles.closeButton} onClick={handleClosePopup}>
+                  &times;
+                </button>
+
+                <div className={styles.mediaContainer}>
+                  {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
+                    <div className={styles.carouselControls}>
+                      <button onClick={handlePrevMedia}>&lt;</button>
+                      <button onClick={handleNextMedia}>&gt;</button>
+                    </div>
+                  )}
+
+                  {data[selectedIndex].media[currentMediaIndex].type === "image" ? (
+                    <img
+                      src={data[selectedIndex].media[currentMediaIndex].src}
+                      alt={`${data[selectedIndex].title} media ${currentMediaIndex + 1}`}
+                      className={styles.popupImage}
+                    />
+                  ) : (
+                    <video
+                      src={data[selectedIndex].media[currentMediaIndex].src}
+                      controls
+                      className={styles.popupVideo}
+                    />
+                  )}
+                </div>
+
+                <div className={styles.popupDescription}>
+                  <h3 className={styles.popupTitle}>{data[selectedIndex].title}</h3>
+                  <p>{data[selectedIndex].description}</p>
+                </div>
               </div>
-            )}
-            
-            {data[selectedIndex].media[currentMediaIndex].type === "image" ? (
-              <img
-                src={data[selectedIndex].media[currentMediaIndex].src}
-                alt={`${data[selectedIndex].title} media ${currentMediaIndex + 1}`}
-                className={styles.popupImage}
-              />
-            ) : (
-              <video
-                src={data[selectedIndex].media[currentMediaIndex].src}
-                controls
-                className={styles.popupVideo}
-              />
-            )}
-          </div>
-          
-          <div className={styles.popupDescription}>
-            <h3 className={styles.popupTitle}>{data[selectedIndex].title}</h3>
-            <p>{data[selectedIndex].description}</p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-)}
-  
+      )}
     </div>
   );
 }

@@ -16,7 +16,7 @@
 
 .styledButton {
   display: inline-block; /* Makes the button wrap tightly around its content */
-  padding: 180px 180px; /* Adjust padding for top-bottom and left-right */
+  padding: 140px 140px; /* Adjust padding for top-bottom and left-right */
   font-size: 10em; /* Matches the font size of the title */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Ganti font */
   background-color: #007bff; /* Button background color */
@@ -24,7 +24,7 @@
   border: none; /* No border */
   border-radius: 500px; /* Match rounded corners with title */
   cursor: pointer; /* Pointer cursor on hover */
-  margin: 290px 0 100px 570; /* Add top margin (40px) for spacing */
+  margin: 250px 0 110px 420; /* Add top margin (40px) for spacing */
   /* padding-right: 100px; */
   text-align: center; /* Center align text */
   transition: background-color 0.8s ease; /* Smooth background transition */
@@ -51,7 +51,7 @@
   gap: 20%; /* Jarak antar kartu */
   flex-wrap: wrap;
   position: absolute;
-  top: 40%;
+  top: 42%;
   left: 44%;
   width: 100%;
   height: 100%;
@@ -61,8 +61,8 @@
   position: absolute; /* Membuat kartu berada dalam posisi absolut */
   background-color: white; /* Warna latar belakang */
   border-radius: 50%; /* Membuat kartu bulat */
-  width: 150px; /* Atur lebar kartu */
-  height: 150px; /* Atur tinggi kartu */
+  width: 100px; /* Atur lebar kartu */
+  height: 100px; /* Atur tinggi kartu */
   transform: translate(-40%, -40%); /* Memusatkan kartu */
   display: flex;
   flex-direction: column;
@@ -141,7 +141,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.7);
-  width: 70%;
+  width: 100%;
   max-width: 700px;
   background: white;
   border-radius: 10px;
@@ -176,7 +176,7 @@
 /* General container styling for the phone mockup */
 .mockup-phone {
   position: relative;
-  width: 100%;
+  width: 90%;
   padding-top: 150%; /* Adjust based on your mockup phone dimensions */
   background-color: #f1f1f1;
   border-radius: 25px;
@@ -223,7 +223,7 @@
 }
 
 .popupContent {
-  width: 500px;
+  width: 400px;
   height: 65%; 
   background-color: white;
   padding: 10px;
@@ -236,7 +236,7 @@
 
 .mediaContainer {
   padding-top: 10px;
-  width: 70%;
+  width: 50%;
   display: flex;
   justify-content: center;
   margin-bottom: 2px; /* Adds spacing between media and text */
@@ -250,8 +250,8 @@
 }
 
 .popupImage {
-  width: 550px; /* Fixed width for the image */
-  height: 400px; /* Fixed height for the image */
+  width: 350px; /* Fixed width for the image */
+  height: 300px; /* Fixed height for the image */
   /* object-fit: contain; Maintain aspect ratio */
   border-radius: 70px;
   /* border-radius: 10px; */
@@ -261,8 +261,8 @@
 }
 
 .popupVideo{
-  width: 550px; /* Fixed width for the image */
-  height: 400px; /* Fixed height for the image */
+  width: 350px; /* Fixed width for the image */
+  height: 300px; /* Fixed height for the image */
   /* object-fit: contain; Maintain aspect ratio */
   border-radius: 30px;
   /* padding-bottom: 2px; */
@@ -294,7 +294,7 @@
 .carouselControls {
   position: absolute;
   display: flex;
-  gap: 550px;
+  gap: 350px;
   z-index: 1;
   padding-top: 200px;
   padding-left: 10px;
@@ -326,10 +326,10 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.close {
+.closeButton {
   position: absolute;
-  top: 50px;
-  right: 40px;
+  top: 25px;
+  right: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -337,11 +337,15 @@
   height: 50px; /* Adjust size as needed */
   border: 2px solid #ccc; /* Border color */
   border-radius: 50%; /* Makes it circular */
-  font-size: 30px; /* Adjust font size to fit inside the circle */
-  cursor: pointer;
+  font-size: 24px;
+  color: #333;
   background-color: white; /* Optional: to create a white background */
   color: #0acb21; /* Color for the 'X' */
   transition: background-color 0.3s, color 0.3s;
+  /* background: transparent;
+  border: none; */
+  cursor: pointer;
+  z-index: 10;
 }
 
 

@@ -326,10 +326,10 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.close {
+.closeButton {
   position: absolute;
-  top: 50px;
-  right: 40px;
+  top: 20px;
+  right: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -337,11 +337,15 @@
   height: 50px; /* Adjust size as needed */
   border: 2px solid #ccc; /* Border color */
   border-radius: 50%; /* Makes it circular */
-  font-size: 30px; /* Adjust font size to fit inside the circle */
-  cursor: pointer;
+  font-size: 24px;
+  color: #333;
   background-color: white; /* Optional: to create a white background */
   color: #0acb21; /* Color for the 'X' */
   transition: background-color 0.3s, color 0.3s;
+  /* background: transparent;
+  border: none; */
+  cursor: pointer;
+  z-index: 10;
 }
 
 
