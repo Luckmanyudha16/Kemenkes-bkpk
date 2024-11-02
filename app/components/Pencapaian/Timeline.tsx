@@ -8,10 +8,14 @@ const data = [
   {
     year: "Pencapaian",
     // judul: "Badan Kebijakan Pembangunan Kesehatan",
-    title: "21 Implementasi Riset (1)",
+    title: "21  (1)",
     // icon: <FaStethoscope size={50} color="#4CAF50" />,
-    description: "Deskripsi tentang 21 Implementasi Riset.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    description: "Berkaitan dengan Jejaring Kanker, Jantung, Stroke, Uronefrologi, dan Kesehatan Ibu dan Anak (KJSU dan KIA), Jejaring Layanan Rujukan mengalami peningkatan. Berkaitan dengan Pengembangan Layanan Rujukan, Kemenkes bekerja sama dengan Mitra Pembangunan dalam pengembangan layanan Unggulan KJSU-KIA di RS Kemenkes, yaitu RS Kanker Dharmais (Jakarta), RS Persahabatan (Jakarta), RS Wahidin Sudirohusodo (Makassar), RS Sardjito (Yogyakarta), RS Ngoerah (Denpasar), dan RS Hasan Sadikin (Bandung). ",
+    media: [
+      { type: "image", src: "dokter.png" },
+      { type: "image", src: "dokter.png" },
+      { type: "video", src: "IndonesiaRaya.mp4" }
+    ],
   },
   {
     year: "Pencapaian",
@@ -115,7 +119,7 @@ const data = [
     title: "Gambar dan Judul",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Deskripsi tentang Dokumen SKI dan SSGI.",
-    images: ["dokter.png", "dokter2.png"], // Multiple images
+    images: ["IndonesiaRaya.mp4"], // Multiple images
   },
   {
     year: "Pencapaian",
@@ -131,12 +135,12 @@ const data = [
 export default function Timeline() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Carousel image index
+  const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
 
   useEffect(() => {
     if (selectedIndex !== null) {
       setPopupVisible(true);
-      setCurrentImageIndex(0); // Reset carousel index when a new entry is selected
+      setCurrentMediaIndex(0);
     }
   }, [selectedIndex]);
 
@@ -151,14 +155,14 @@ export default function Timeline() {
     setPopupVisible(false);
   };
 
-  const handleNextImage = () => {
-    const totalImages = data[selectedIndex]?.images.length;
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % totalImages);
+  const handleNextMedia = () => {
+    const totalMedia = data[selectedIndex]?.media.length;
+    setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % totalMedia);
   };
 
-  const handlePrevImage = () => {
-    const totalImages = data[selectedIndex]?.images.length;
-    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + totalImages) % totalImages);
+  const handlePrevMedia = () => {
+    const totalMedia = data[selectedIndex]?.media.length;
+    setCurrentMediaIndex((prevIndex) => (prevIndex - 1 + totalMedia) % totalMedia);
   };
 
   return (
@@ -167,8 +171,8 @@ export default function Timeline() {
       <div className={styles.timeline}>
         {data.map((entry, index) => {
           const angle = (index / data.length) * 2 * Math.PI;
-          const x = Math.round((radius * Math.cos(angle) + 50) * 100) / 100;
-          const y = Math.round((radius * Math.sin(angle) + 50) * 100) / 100;
+          const x = Math.round((radius * Math.cos(angle) + 50) * 130) / 100;
+          const y = Math.round((radius * Math.sin(angle) + 50) * 130) / 100;
 
           return (
             <div
@@ -187,31 +191,40 @@ export default function Timeline() {
   <div className={styles.popup}>
     <div className={styles.popupContent}>
       <span className={styles.close} onClick={handleClosePopup}>×</span>
-      <div className={styles.imageAndDescription}>
-        {data[selectedIndex].images && data[selectedIndex].images.length > 1 && ( 
-        <div className={`${styles.carouselControls} ${styles.center}`}>
-          <button onClick={handlePrevImage}>&lt;</button>
-          <button onClick={handleNextImage}>&gt;</button>
-        </div>)}
-  
-        <img
-          src={
-            data[selectedIndex].images
-              ? data[selectedIndex].images[currentImageIndex]
-              : data[selectedIndex].image
-          }
-          alt={`${data[selectedIndex].title} image ${currentImageIndex + 1}`}
-          className={styles.popupImage}
-        />
-        <div className={styles.popupDescription}>
-          <h3 className={styles.popupTitle}>{data[selectedIndex].title}</h3>
-          <p>{data[selectedIndex].description}</p>
-        </div>
+      
+      {/* Media Section */}
+      <div className={styles.mediaContainer}>
+        {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
+          <div className={`${styles.carouselControls} ${styles.center}`}>
+            <button onClick={handlePrevMedia}>&lt;</button>
+            <button onClick={handleNextMedia}>&gt;</button>
+          </div>
+        )}
+
+        {data[selectedIndex].media[currentMediaIndex].type === "image" ? (
+          <img
+            src={data[selectedIndex].media[currentMediaIndex].src}
+            alt={`${data[selectedIndex].title} media ${currentMediaIndex + 1}`}
+            className={styles.popupImage}
+          />
+        ) : (
+          <video
+            src={data[selectedIndex].media[currentMediaIndex].src}
+            controls
+            className={styles.popupVideo}
+          />
+        )}
+      </div>
+      
+      {/* Text Content Section */}
+      <div className={styles.popupDescription}>
+        <h3 className={styles.popupTitle}>{data[selectedIndex].title}</h3>
+        <p>{data[selectedIndex].description}</p>
       </div>
     </div>
   </div>
 )}
-
+  
     </div>
   );
 }

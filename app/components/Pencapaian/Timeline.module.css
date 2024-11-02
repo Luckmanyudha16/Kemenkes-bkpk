@@ -16,21 +16,22 @@
 
 .styledButton {
   display: inline-block; /* Makes the button wrap tightly around its content */
-  padding: 10px 20px; /* Adjust padding for top-bottom and left-right */
-  font-size: 2em; /* Matches the font size of the title */
+  padding: 180px 180px; /* Adjust padding for top-bottom and left-right */
+  font-size: 10em; /* Matches the font size of the title */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Ganti font */
   background-color: #007bff; /* Button background color */
   color: #ffffff; /* Text color */
   border: none; /* No border */
   border-radius: 500px; /* Match rounded corners with title */
   cursor: pointer; /* Pointer cursor on hover */
-  margin: 400px 0 50px 50; /* Add top margin (40px) for spacing */
+  margin: 290px 0 100px 570; /* Add top margin (40px) for spacing */
+  /* padding-right: 100px; */
   text-align: center; /* Center align text */
-  transition: background-color 0.3s ease; /* Smooth background transition */
+  transition: background-color 0.8s ease; /* Smooth background transition */
 }
 
 .styledButton:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #00b321; /* Darker blue on hover */
 }
 
 
@@ -47,7 +48,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Jarak antar kartu */
+  gap: 20%; /* Jarak antar kartu */
   flex-wrap: wrap;
   position: absolute;
   top: 40%;
@@ -55,7 +56,6 @@
   width: 100%;
   height: 100%;
 }
-
 
 .card {
   position: absolute; /* Membuat kartu berada dalam posisi absolut */
@@ -148,8 +148,8 @@
 }
 
 .popupContent {
-  width: 900px; /* Fixed width for the popup */
-  height: 60%; /* Fixed height for the popup */
+  width: 900px;
+  height: 65%; 
   background-color: white;
   padding: 10px;
   border-radius: 8px;
@@ -159,25 +159,46 @@
   align-items: center;
 }
 
+.mediaContainer {
+  padding-top: 10px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px; /* Adds spacing between media and text */
+}
+
 .imageAndDescription {
   display: flex;
-  gap: 10px;
+  gap: 2px;
   width: 100%; /* Full width to accommodate both image and description */
+  height: 100%;
 }
 
 .popupImage {
-  width: 400px; /* Fixed width for the image */
+  width: 890px; /* Fixed width for the image */
   height: 400px; /* Fixed height for the image */
   /* object-fit: contain; Maintain aspect ratio */
-  border-radius: 8px;
+  border-radius: 70px;
+  /* border-radius: 10px; */
   padding-bottom: 10px;
   padding-left: 30px;
   padding-top: 60px;
 }
 
+.popupVideo{
+  width: 890px; /* Fixed width for the image */
+  height: 400px; /* Fixed height for the image */
+  /* object-fit: contain; Maintain aspect ratio */
+  border-radius: 70px;
+  /* padding-bottom: 2px; */
+  padding-right: 10px;
+  padding-left: 18px;
+  padding-top: 1px;
+}
+
 .popupDescription {
-  padding-top: 20px;
-  padding-left: 30px;
+  padding-top: 0px;
+  padding-left: 15px;
   max-height: 500px; /* Set max height to trigger scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Disable horizontal scrolling */
@@ -188,19 +209,19 @@
 
 .popupTitle {
   font-size: 2rem; /* Font size for the title */
-  margin-bottom: 20px; /* Space between title and description */
+  margin-bottom: 5px; /* Space between title and description */
   text-align: center; 
-  padding-top: 15px;
+  padding-top: 0px;
 }
 
 
 .carouselControls {
   position: absolute;
   display: flex;
-  gap: 350px;
+  gap: 800px;
   z-index: 1;
   padding-top: 400px;
-  padding-left: 0px;
+  padding-left: 450px;
 }
 
 .carouselControls.center {
@@ -229,15 +250,14 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-
-
 .close {
   position: absolute;
-  top: 10px;
+  top: 5px;
   right: 10px;
   font-size: 24px;
   color: #333;
   cursor: pointer;
+  
   z-index: 101; /* Higher than any other content */
 }
 
@@ -288,13 +308,3 @@
     opacity: 1;
   }
 }
-/* Tambahkan ini di Timeline.module.css */
-
-/* .popupImage {
-  /* Pastikan gambar tidak melebihi ukuran konten */
-  /* max-width: 100%; */
-  /* max-height: 400px; */
-  /* object-fit: contain; */
-  /* margin-top: 10px; */
-/* }  */
-
