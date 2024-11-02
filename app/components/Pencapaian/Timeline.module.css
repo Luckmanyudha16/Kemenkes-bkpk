@@ -24,7 +24,7 @@
   border: none; /* No border */
   border-radius: 500px; /* Match rounded corners with title */
   cursor: pointer; /* Pointer cursor on hover */
-  margin: 250px 0 110px 420; /* Add top margin (40px) for spacing */
+  margin: 220px 0 110px 430; /* Add top margin (40px) for spacing */
   /* padding-right: 100px; */
   text-align: center; /* Center align text */
   transition: background-color 0.8s ease; /* Smooth background transition */
