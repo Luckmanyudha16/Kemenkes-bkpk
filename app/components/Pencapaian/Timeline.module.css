@@ -24,7 +24,7 @@
   border: none; /* No border */
   border-radius: 500px; /* Match rounded corners with title */
   cursor: pointer; /* Pointer cursor on hover */
-  margin: 250px 0 110px 420; /* Add top margin (40px) for spacing */
+  margin: 220px 0 110px 430; /* Add top margin (40px) for spacing */
   /* padding-right: 100px; */
   text-align: center; /* Center align text */
   transition: background-color 0.8s ease; /* Smooth background transition */
@@ -273,12 +273,12 @@
 
 .popupDescription {
   padding-top: 0px;
-  padding-left: 15px;
+  padding-left: 30px;
   padding-bottom: 50px;
   max-height: 300px; /* Set max height to trigger scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Disable horizontal scrolling */
-  padding-right: 15px; /* Space for scrollbar */
+  padding-right: 20px; /* Space for scrollbar */
   white-space: normal; /* Allow text to wrap to a new line */
   text-align: justify; /* Justify the text */
 }
