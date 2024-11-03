@@ -79,18 +79,13 @@ export default function Reformasi() {
           </Link>
         </div>
       </div>
-      {/* <div className="flex items-center justify-between p-1">
+      <div className="flex items-center justify-between p-1">
         <img
           src="Supergrafiskiri.png"
           alt="Logo Tambahan Kiri"
-          className="h-40 w-auto md:h-32 sm:h-24" // Adjust height for smaller screens
+          className="h-40 w-auto" // Adjust height for smaller screens
         />
-        <img
-          src="Logo Footer.png"
-          alt="Footer Logo"
-          className="h-50 w-auto pr-10 md:h-40 sm:h-32" // Adjust height for smaller screens
-        />
-      </div> */}
+      </div>
     </div>
   );
 }
