@@ -230,8 +230,8 @@ export default function Timeline() {
         <div className={styles.timeline}>
           {data.map((entry, index) => {
             const angle = (index / data.length) * 2 * Math.PI;
-            const x = Math.round((radius * Math.cos(angle) + 50) * 110) / 130;
-            const y = Math.round((radius * Math.sin(angle) + 50) * 110) / 130;
+            const x = Math.round((radius * Math.cos(angle) + 50) * 80) / 100;
+            const y = Math.round((radius * Math.sin(angle) + 50) * 80) / 100;
 
             return (
               <div
