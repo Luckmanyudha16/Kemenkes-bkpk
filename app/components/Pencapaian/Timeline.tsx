@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Timeline.module.css";
 // import { FaStethoscope, FaMicroscope, FaClipboardList } from "react-icons/fa";
 
@@ -49,7 +49,7 @@ const data = [
       { type: "image", src: "Layanan Rujukan_2.jpg", judul:"", description: "Mengawal Penyusunan Kebijakan (UU dan Turunannya).<br>BKPK telah mengawal penyusunan kebijakan kesehatan sampai menghasilkan Undang Undang Kesehatan Nomor 17 tahun 2023 dan Peraturan Pemerintah Nomor 28 tahun 2024." },
       { type: "image", src: "Layanan Rujukan_3.jpg", judul:"", description: "Kajian Implementasi Kebijakan<br>BKPK sudah melaksanakan 16 topik kajian Implementasi Kebijakan."},
       { type: "image", src: "Layanan Rujukan_4.jpg", judul:"", description: "Survei Status Gizi Indonesia (SSGI) & Survei Kesehatan Indonesia (SKI)<br>BKPK telah menjalankan Survei Status Gizi Indonesia (SSGI) setiap tahun sejak 2019. Survei Status Gizi Indonesia sejak 2019, melibatkan konsorsium lembaga survei untuk manajemen lapangan pada tahun 2024. Keterlibatan para akademisi sebagai tim pakar dan validator eksternal SSGI. Bersama BPS serta BRIN dalam tim SSGI mengawal metodologi dan analisis data. BKPK juga melaksanakan Survei Kesehatan Indonesia (SKI) pada 2023. Pada Juli 2024, telah dilakukan diseminasi terhadap hasil survei tersebut."},
-      { type: "image", src: "Layanan Rujukan_5.jpg", judul:"", description: "SiBijaKs Awards 2024<br>BKPK menyelenggarakan Rekomendasi Kebijakan Kesehatan (SiBijaKs) Awards 2024, yaitu kompetisi penulisan rekomendasi kebijakan kesehatan dengan data Survei Kesehatan Indonesia (SKI) tahun 2023 sebagai sumber data utama."},
+      { type: "image", src: ["Layanan Rujukan_5.jpg", "Layanan Rujukan_6.jpg"], judul:"", description: "SiBijaKs Awards 2024<br>BKPK menyelenggarakan Rekomendasi Kebijakan Kesehatan (SiBijaKs) Awards 2024, yaitu kompetisi penulisan rekomendasi kebijakan kesehatan dengan data Survei Kesehatan Indonesia (SKI) tahun 2023 sebagai sumber data utama."},
       { type: "image", src: "Layanan Rujukan_6.jpg", judul:"", description: "Kerja Sama Internasional<br>BKPK menjalin Kerjasama Internasiona antara lain dengan untuk layanan Kesehatan Ibu dan Anak di 6 Rumah Sakit Vertikal, United Arab Emirates untuk Pembangunan Rumah Sakit Kardiologi di Solo, Sun Medical Centre Korea Selatan, Joint Operation Kemenkes dan Institute for Health Metrics and Evaluation (IHME)."},
       { type: "image", src: "Layanan Rujukan_7.jpg", judul:"", description: "Vaksin Merah Putih<br>BKPK berkolaborasi dengan Universitas Airlangga melaksanakan uji klinis  vaksin Merah Putih dan vaksin booster Covid-19."},
       { type: "image", src: "Layanan Rujukan_8.jpg", judul:"", description: "National Health Account dan Health Technology Assessment<br>Untuk penguatan jaminan kesehatan, BKPK National Health Account yang menghasilkan potret belanja kesehatan Indonesia, belanja farmasi dan belanja berdasarkan penyakit. BKPK juga sudah melakukan review Health Technology Assessment untuk mendapatkan inovasi teknologi di program JKN."},
@@ -76,7 +76,7 @@ const data = [
   {
     year: "Pencapaian",
     judul: "",
-    title: "<h3>Layanan Data</h3>",
+    title: "Layanan Data",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description:
       "BKPK menjalin Kerjasama Internasiona antara lain dengan untuk layanan Kesehatan Ibu dan Anak di 6 Rumah Sakit Vertikal, United Arab Emirates untuk Pembangunan Rumah Sakit Kardiologi di Solo, Sun Medical Centre Korea Selatan, Joint Operation Kemenkes dan Institute for Health Metrics and Evaluation (IHME). ",
@@ -252,6 +252,76 @@ export default function Timeline() {
     );
   };
 
+  interface ImageSliderProps {
+    images: string | string[];
+    title: string;
+  }
+  const RenderImageSlider: React.FC<ImageSliderProps> = ({ images, title }) => {
+    const [imageSlide, SetImageSlide] = React.useState(0);
+    if (Array.isArray(images)) {
+      return (
+        <div className="rounded-md shadow max-w-[1200px] flex gap-4" style={{
+          width: "100%",
+          height: "100%",
+          overflowX: "auto"
+        }}>
+          {images.map((item: string, index: number) => (
+            <img
+              key={index}
+              src={item}
+              alt={`${title} media ${index + 1}`}
+              className="h-full"
+            />
+          ))}
+        </div>
+        // <>
+        //   <div>
+        //     <img
+        //       src={images[imageSlide]}
+        //       alt={`${title} media ${currentMediaIndex + 1}`}
+        //       className="w-full rounded-md shadow max-w-[900px]"
+        //     />
+        //     <div className="flex gap-2 my-2 justify-center">
+        //       <div onClick={() => {
+        //           if(imageSlide - 1 == -1) {
+        //             SetImageSlide(images.length - 1);
+        //           } else {
+        //             SetImageSlide(imageSlide - 1);
+        //           }
+        //         }}>
+        //         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+        //           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        //         </svg>
+        //       </div>
+
+        //       <p>{imageSlide + 1} of {images.length}</p>
+
+        //       <div onClick={() => {
+        //           if(imageSlide + 1 == images.length) {
+        //             SetImageSlide(0);
+        //           } else {
+        //             SetImageSlide(imageSlide + 1);
+        //           }
+        //         }}>
+        //           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+        //             <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        //           </svg>
+        //       </div>
+        //     </div>
+        //   </div>
+        // </>
+      );
+    } else {
+      return (
+        <img
+          src={images}
+          alt={`${title} media ${currentMediaIndex + 1}`}
+          className="w-full rounded-md shadow max-w-[900px]"
+        />
+      )
+    }
+  };
+
   return (
     <>
       {isPopupVisible && selectedIndex !== null && (
@@ -267,7 +337,7 @@ export default function Timeline() {
 
             <div>
               {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
-                <div className="flex items-center justify-between w-full h-full absolute top-0 left-0 px-[10px] z-[99]">
+                <div className="flex items-center justify-between w-full h-full absolute top-0 left-0 px-[10px]">
                   <div onClick={handlePrevMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10  hover:bg-opacity-20 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -293,13 +363,7 @@ export default function Timeline() {
 
               {data[selectedIndex].media[currentMediaIndex].type ===
               "image" ? (
-                <img
-                  src={data[selectedIndex].media[currentMediaIndex].src}
-                  alt={`${data[selectedIndex].title} media ${
-                    currentMediaIndex + 1
-                  }`}
-                  className="w-full rounded-md shadow max-w-[900px]"
-                />
+                <RenderImageSlider images={data[selectedIndex].media[currentMediaIndex].src} title={data[selectedIndex].title} />
               ) : (
                 <video
                   src={data[selectedIndex].media[currentMediaIndex].src}
