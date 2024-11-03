@@ -394,7 +394,7 @@ export default function Timeline() {
 
       <div className={styles.timelineContainer}>
         <button className={`${styles.styledButton} ${styles.circularCard}`}>
-          Transformasi Kesehatan
+          Badan Kebijakan Pembangunan Kesehatan
         </button>
         <div className={styles.timeline}>
           {data.map((entry, index) => {
