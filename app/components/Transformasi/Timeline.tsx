@@ -1,4 +1,5 @@
 "use client";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { useEffect, useState } from "react";
 import styles from "./Timeline.module.css";
@@ -136,6 +137,12 @@ export default function Timeline() {
 
   const radius = 300;
 
+  const popupVariants = {
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.5 },
+  };
+
   const handleCardClick = (index) => {
     setSelectedIndex(index);
   };
@@ -157,53 +164,60 @@ export default function Timeline() {
 
   return (
     <>
-      {isPopupVisible && selectedIndex !== null && (
-        <div className="absolute bg-black bg-opacity-50 w-[100%] h-[100%] z-[999] left-0 top-0 flex items-center justify-center">
-          <div className="flex items-center px-[40px] max-w-[60vw] min-h-[60vh] bg-white border border-sm rounded-xl gap-8 relative">
-            <div className='absolute right-[-20] top-[-20] bg-white border w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300' onClick={handleClosePopup} style={{ color: "green"}}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
-            </div>
+      <AnimatePresence>
+        {isPopupVisible && selectedIndex !== null && (
+          <motion.div variants={popupVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          transition={{ duration: 0.3 }} 
+          className="absolute bg-black bg-opacity-50 w-[100%] h-[100%] z-[999] left-0 top-0 flex items-center justify-center">
+            <div className="flex items-center px-[40px] max-w-[60vw] min-h-[60vh] bg-white border border-sm rounded-xl gap-8 relative">
+              <div className='absolute right-[-20] top-[-20] bg-white border w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300' onClick={handleClosePopup} style={{ color: "green"}}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </div>
 
-            <div className="flex justify-center mb-[2px] relative min-w-[50%]">
-              {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
-                <div className="flex items-center justify-between w-full h-full absolute top-0 left-0 px-[10px]">
-                  <div onClick={handlePrevMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10  hover:bg-opacity-20 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                    </svg>
+              <div className="flex justify-center mb-[2px] relative min-w-[50%]">
+                {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
+                  <div className="flex items-center justify-between w-full h-full absolute top-0 left-0 px-[10px]">
+                    <div onClick={handlePrevMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10  hover:bg-opacity-20 cursor-pointer">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                      </svg>
+                    </div>
+                    <div onClick={handleNextMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10  hover:bg-opacity-20 cursor-pointer">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                      </svg>
+                    </div>
                   </div>
-                  <div onClick={handleNextMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10  hover:bg-opacity-20 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                    </svg>
-                  </div>
-                </div>
-              )}
+                )}
 
-              {data[selectedIndex].media[currentMediaIndex].type === "image" ? (
-                <img
-                  src={data[selectedIndex].media[currentMediaIndex].src}
-                  alt={`${data[selectedIndex].title} media ${currentMediaIndex + 1}`}
-                  className="w-full bg-transparent"
-                />
-              ) : (
-                <video
-                  src={data[selectedIndex].media[currentMediaIndex].src}
-                  controls
-                  className={styles.popupVideo}
-                />
-              )}
-            </div>
+                {data[selectedIndex].media[currentMediaIndex].type === "image" ? (
+                  <img
+                    src={data[selectedIndex].media[currentMediaIndex].src}
+                    alt={`${data[selectedIndex].title} media ${currentMediaIndex + 1}`}
+                    className="w-full bg-transparent"
+                  />
+                ) : (
+                  <video
+                    src={data[selectedIndex].media[currentMediaIndex].src}
+                    controls
+                    className={styles.popupVideo}
+                  />
+                )}
+              </div>
 
-            <div className={styles.popupDescription}>
-              <h3 className={styles.popupTitle}>{data[selectedIndex].title}</h3>
-              <p>{data[selectedIndex].description}</p>
+              <div className={styles.popupDescription}>
+                <h3 className={styles.popupTitle}>{data[selectedIndex].title}</h3>
+                <p>{data[selectedIndex].description}</p>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </ AnimatePresence>
 
       <div className={styles.timelineContainer}>
         <button className={`${styles.styledButton} ${styles.circularCard}`}>Transformasi Kesehatan</button>
