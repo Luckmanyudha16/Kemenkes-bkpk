@@ -21,7 +21,7 @@ export default function Carousel() {
         caption: "Kemerdekaan",
       },
       {
-        href: "/",
+        href: "/Pencapaian",
         src: "budi.png",
         alt: "Team Member",
         caption: "Transformasi Kesehatan",
