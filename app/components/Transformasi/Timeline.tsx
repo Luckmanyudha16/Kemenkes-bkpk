@@ -9,6 +9,7 @@ const data = [
     year: "Pencapaian",
     // judul: "Badan Kebijakan Pembangunan Kesehatan",
     title: "Transformasi Layanan Primer",
+    background: "puskesmas.png",
     // icon: <FaStethoscope size={50} color="#4CAF50" />,
     description: "Berkaitan dengan stunting, seluruh Indikator capaian Intervensi spesifik masih On-Track.",
     media: [
@@ -27,6 +28,7 @@ const data = [
     year: "Pencapaian",
     // judul: "Badan Kebijakan Pembangunan Kesehatan",
     title: "Transformasi Layanan Rujukan",
+    background: "RS.png",
     // icon: <FaMicroscope size={50} color="#FF9800" />,
     description: "Berkaitan dengan Jejaring Kanker, Jantung, Stroke, Uronefrologi, dan Kesehatan Ibu dan Anak (KJSU dan KIA), Jejaring Layanan Rujukan mengalami peningkatan. Berkaitan dengan Pengembangan Layanan Rujukan, Kemenkes bekerja sama dengan Mitra Pembangunan dalam pengembangan layanan Unggulan KJSU-KIA di RS Kemenkes, yaitu RS Kanker Dharmais (Jakarta), RS Persahabatan (Jakarta), RS Wahidin Sudirohusodo (Makassar), RS Sardjito (Yogyakarta), RS Ngoerah (Denpasar), dan RS Hasan Sadikin (Bandung).",
     media: [
@@ -56,6 +58,7 @@ const data = [
     year: "Pencapaian",
     // judul: "Badan Kebijakan Pembangunan Kesehatan",
     title: "Transformasi Sistem Ketahanan Kesehatan",
+    background: "vaksin.png",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Berkaitan dengan Kemandirian Obat, Vaksin, dan Alkes, per Triwulan II Tahun 2024 telah diproduksi delapan dari sepuluh bahan baku obat, 10 dari 14 antigen vaksin program, 1 dari 2 platform vaksin baru, 6 dari 10 produk biologi, dan 8 dari 10 alkes terbesar by value. Berkaitan dengan sumber daya manusia, data per 30 Agustus 2024 menunjukkan bahwa ada 17.289 tenaga cadangan kesehatan tersebar di seluruh Indonesia.",
     media: [
@@ -71,6 +74,7 @@ const data = [
     year: "Pencapaian",
     // judul: "Badan Kebijakan Pembangunan Kesehatan",
     title: "Transformasi Sistem Pembiayaan Kesehatan",
+    background: "JKN.png",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Perbaikan Standar Tarif terus dilakukan dalam meningkatkan kualitas penyelenggaraan Program Jaminan Kesehatan. Saat ini, sedang dilakukan perbaikan standar tarif yang ditargetkan launching pada Januari 2025. Kemudian, dilakukan juga perbaikan proses costing pelayanan RS melalui aplikasi SIPK dan pengembangan INA- Grouper yang disesuaikan dengan kondisi penyakit masyarakat Indonesia. Berkaitan dengan Health Technology Assessment (HTA), pada 2024 ditetapkan 27 topik prioritas HTA baru, dengan variasi topik menyesuaikan prioritas kebijakan Kemenkes terhadap pencegahan dan pengelolaan penyakit. ",
     media: [
@@ -85,6 +89,7 @@ const data = [
     year: "Pencapaian",
     // judul: "Badan Kebijakan Pembangunan Kesehatan",
     title: "Transformasi SDM Kesehatan",
+    background: "SDM.png",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Dalam hal upaya pemenuhan SDM Kesehatan hingga Juni 2024, telah ditempatkan 3.457 tenaga kesehatan di Puskesmas DTPK/DBK dan 2.670 dokter spesialis di RSUD dan Rumah Sakit Pemerintah. Kemenkes juga menyediakan Program Beasiswa bagi Tenaga Medis dan Tenaga Kesehatan dengan ikatan pengabdian, serta menginisiasi Hospital Based atau Program Pendidikan Dokter Spesialis berbasis Rumah Sakit Pendidikan Penyelenggara Utama (RSP-PU) yang diresmikan oleh Presiden Joko Widodo pada 6 Mei 2024.",
     media: [
@@ -104,6 +109,7 @@ const data = [
     year: "Pencapaian",
     // judul: "Badan Kebijakan Pembangunan Kesehatan",
     title: "Transformasi Teknologi Kesehatan",
+    background: "satusehat.png",
     // icon: <FaClipboardList size={50} color="#2196F3" />,
     description: "Kemenkes menyelenggarakan integrasi data kesehatan di semua fasyankes di Indonesia. Melalui platform Satusehat, sebanyak lebih dari 35 ribu fasyankes sudah terintegrasi. Sementara itu, Aplikasi Sehat Indonesia KU (ASIK) Mobile dan Dashboard sudah digunakan oleh lebih dari 90 persen Puskesmas. ASIK menjadi percontohan negara lain.",
     media: [
@@ -231,10 +237,23 @@ export default function Timeline() {
               <div
                 key={index}
                 className={`${styles.card} ${selectedIndex === index ? styles.active : ""}`}
-                style={{ left: `${x}px`, top: `${y}px` }}
+                style={{ left: `${x}px`, top: `${y}px`, backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_URL}/${entry.background})`, backgroundSize: "cover", backgroundPosition: "center", }}
                 onClick={() => handleCardClick(index)}
               >
-                <h3 className={styles.cardTitle}>{entry.title}</h3>
+                <div style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  backgroundColor: "rgba(0, 0, 0, 0.5)"
+                }} className="rounded-full"></div>
+                <h3 className={styles.cardTitle}style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0}}>{entry.title}</h3>
               </div>
             );
           })}

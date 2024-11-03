@@ -13,6 +13,11 @@ export default function Reformasi() {
             alt="Logo BKPK"
             className="h-full w-auto max-h-20"
           />
+          <img
+          src="Logo Footer.png"
+          alt="Footer Logo"
+          className="h-50 w-auto pr-10 md:h-40 sm:h-32" // Adjust height for smaller screens
+        />
         </div>
         <img
           src="Supergrafis.png"
@@ -73,6 +78,18 @@ export default function Reformasi() {
             </svg>
           </Link>
         </div>
+      </div>
+      <div className="flex items-center justify-between p-1 pr-10">
+        <img
+          src="Supergrafiskiri.png"
+          alt="Logo Tambahan Kiri"
+          className="h-40 w-auto"
+        />
+        {/* <img
+        src="Logo Footer.png"
+        alt="Footer Logo"
+        className="h-50 w-auto pr-10"
+    /> */}
       </div>
     </div>
   );
