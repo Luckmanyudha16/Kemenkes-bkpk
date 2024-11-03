@@ -239,11 +239,15 @@
 }
 
 .mediaContainer {
-  padding-top: 10px;
-  width: 50%;
+  /* padding-top: 10px; */
+  /* width: 200px; */
+  background-color: rgb(226 232 240);
+  width: 100%;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   margin-bottom: 2px; /* Adds spacing between media and text */
+  position: relative;
 }
 
 .imageAndDescription {
@@ -279,7 +283,7 @@
   padding-top: 0px;
   padding-left: 30px;
   padding-bottom: 50px;
-  max-height: 300px; /* Set max height to trigger scrolling */
+  max-height: 400px; /* Set max height to trigger scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Disable horizontal scrolling */
   padding-right: 20px; /* Space for scrollbar */
@@ -288,10 +292,17 @@
 }
 
 .popupTitle {
-  font-size: 2rem; /* Font size for the title */
   margin-bottom: 10px; /* Space between title and description */
   text-align: center; 
   padding-top: 5px;
+}
+
+.popupTitle h3 {
+  font-size: 2rem; /* Font size for the title */
+}
+
+.popupTitle p {
+  font-size: 1rem; /* Font size for the title */
 }
 
 
