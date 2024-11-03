@@ -239,11 +239,15 @@
 }
 
 .mediaContainer {
-  padding-top: 10px;
-  width: 50%;
+  /* padding-top: 10px; */
+  /* width: 200px; */
+  background-color: rgb(226 232 240);
+  min-width: 50%;
+  height: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 2px; /* Adds spacing between media and text */
+  position: relative;
 }
 
 .imageAndDescription {
@@ -276,10 +280,10 @@
 }
 
 .popupDescription {
-  padding-top: 0px;
-  padding-left: 15px;
-  padding-bottom: 50px;
-  max-height: 300px; /* Set max height to trigger scrolling */
+  padding-top: 20px;
+  /* padding-left: 15px; */
+  padding-bottom: 20px;
+  max-height: 100%; /* Set max height to trigger scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Disable horizontal scrolling */
   padding-right: 15px; /* Space for scrollbar */
@@ -295,14 +299,14 @@
 }
 
 
-.carouselControls {
+/* .carouselControls {
   position: absolute;
   display: flex;
   gap: 350px;
   z-index: 1;
   padding-top: 200px;
   padding-left: 10px;
-}
+} */
 
 .carouselControls.center {
   top: 10%;
