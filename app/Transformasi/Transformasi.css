@@ -13,3 +13,96 @@
 .animate-fade-in {
   animation: fadeIn 1s ease-in-out forwards; /* Adjust duration and timing function */
 }
+
+@keyframes fullPageBackgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+/* CSS Global */
+html, body {
+  height: 100%; /* Pastikan html dan body mengisi tinggi penuh */
+  margin: 0; /* Hapus margin default */
+  overflow: hidden; /* Mencegah scroll */
+}
+
+.full-page-background {
+  display: flex;
+  align-items: center; /* Memusatkan konten secara vertikal */
+  justify-content: center; /* Memusatkan konten secara horizontal */
+  height: 100vh; /* Mengisi tinggi penuh viewport */
+  width: 100vw; /* Mengisi lebar penuh viewport */
+  background-color: #f0f0f0; /* Ganti dengan warna latar belakang yang diinginkan */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Memusatkan konten dalam main */
+  justify-content: center; /* Memusatkan konten dalam main */
+  width: 100%; /* Memastikan lebar penuh */
+  padding: 10px; /* Atur padding sesuai kebutuhan */
+}
+
+
+.arrow-button-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.arrow-button-container.left {
+  left: 20px;
+}
+
+.arrow-button-container.right {
+  right: 20px;
+}
+
+.btn-arrow {
+  padding: 10px;
+  border: 1px solid #007bff;
+  background-color: transparent;
+  color: #007bff;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-arrow:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+.slide-left {
+  transform: translateX(100%); /* Slide ke kanan */
+}
+
+.slide-right {
+  transform: translateX(-100%); /* Slide ke kiri */
+}
+.arrow-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s; /* Animasi untuk transformasi */
+}
+
+.arrow-button-container:hover {
+  transform: scale(1.1); /* Memperbesar ikon saat hover */
+}
+
+.arrow-button-container:active {
+  transform: scale(0.9); /* Mengecilkan ikon saat ditekan */
+}

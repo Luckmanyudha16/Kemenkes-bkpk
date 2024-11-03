@@ -1,6 +1,7 @@
 import Theme from "./components/Home/Theme";
 import Carousel from "./components/Home/Carousel";
 import  Style  from "./app/page.module.css";
+import Timeline from "./components/Pencapaian/Timeline";
 
 export default function Home() {
   return (
@@ -34,8 +35,8 @@ export default function Home() {
       </div> */}
 
       {/* Main Content */}
-      <main className="flex-grow flex flex-col items-center justify-center pl-5 pr-5">
-        <Carousel />
+      <main className="flex-grow flex flex-col items-center justify-center pl-10 pr-10">
+        <Timeline />
       </main>
 
       {/* <div className="flex items-center justify-end gap-6 pr-10 py-10">
