@@ -5,7 +5,6 @@ import Timeline from "../components/Kemerdekaan/Timeline";
 export default function Kemerdekaan() {
   return (
     <div className="h-screen flex flex-col overflow-hidden bg-white">
-    
       
       {/* Header Section */}
       <div className="flex items-center justify-between p-1">
