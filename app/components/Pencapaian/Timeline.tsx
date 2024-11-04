@@ -128,7 +128,7 @@ export default function Timeline() {
 
   const radius = 300;
 
-  const handleCardClick = (index) => {
+  const handleCardClick = (index: any) => {
     console.log(index);
     setSelectedIndex(index);
   };
