@@ -130,7 +130,7 @@ const data = [
 ];
 
 export default function Timeline() {
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
 
@@ -149,7 +149,8 @@ export default function Timeline() {
     exit: { opacity: 0, scale: 0.5 },
   };
 
-  const handleCardClick = (index) => {
+  const handleCardClick = (index:number) => {
+    console.log(index);
     setSelectedIndex(index);
   };
 
@@ -159,13 +160,21 @@ export default function Timeline() {
   };
 
   const handleNextMedia = () => {
-    const totalMedia = data[selectedIndex]?.media.length;
+   // Pastikan selectedIndex bukan null
+  if (selectedIndex !== null && data[selectedIndex]) {
+    const totalMedia = data[selectedIndex].media.length;
     setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % totalMedia);
+  }
   };
 
   const handlePrevMedia = () => {
-    const totalMedia = data[selectedIndex]?.media.length;
-    setCurrentMediaIndex((prevIndex) => (prevIndex - 1 + totalMedia) % totalMedia);
+    // Pastikan selectedIndex bukan null
+  if (selectedIndex !== null && data[selectedIndex]) {
+    const totalMedia = data[selectedIndex].media.length;
+    setCurrentMediaIndex(
+      (prevIndex) => (prevIndex - 1 + totalMedia) % totalMedia
+    );
+  }
   };
 
   return (

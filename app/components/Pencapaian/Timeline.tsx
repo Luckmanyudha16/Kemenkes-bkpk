@@ -115,7 +115,7 @@ const data = [
 ];
 
 export default function Timeline() {
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
 
@@ -128,7 +128,7 @@ export default function Timeline() {
 
   const radius = 300;
 
-  const handleCardClick = (index: any) => {
+  const handleCardClick = (index:number) => {
     console.log(index);
     setSelectedIndex(index);
   };
@@ -139,15 +139,21 @@ export default function Timeline() {
   };
 
   const handleNextMedia = () => {
-    const totalMedia = data[selectedIndex]?.media.length;
+    // Pastikan selectedIndex bukan null
+  if (selectedIndex !== null && data[selectedIndex]) {
+    const totalMedia = data[selectedIndex].media.length;
     setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % totalMedia);
-  };
+  }
+};
 
   const handlePrevMedia = () => {
-    const totalMedia = data[selectedIndex]?.media.length;
+    // Pastikan selectedIndex bukan null
+  if (selectedIndex !== null && data[selectedIndex]) {
+    const totalMedia = data[selectedIndex].media.length;
     setCurrentMediaIndex(
       (prevIndex) => (prevIndex - 1 + totalMedia) % totalMedia
     );
+  }
   };
 
   interface ImageSliderProps {
@@ -262,9 +268,11 @@ export default function Timeline() {
                 <RenderImageSlider images={data[selectedIndex].media[currentMediaIndex].src} title={data[selectedIndex].title} />
               ) : (
                 <video
-                  src={data[selectedIndex].media[currentMediaIndex].src}
-                  controls
-                  className="w-full rounded-2xl"
+                src={Array.isArray(data[selectedIndex].media[currentMediaIndex].src) 
+                  ? data[selectedIndex].media[currentMediaIndex].src[0] 
+                  : data[selectedIndex].media[currentMediaIndex].src}
+           controls
+           className="w-full rounded-2xl"
                 />
               )}
             </div>
