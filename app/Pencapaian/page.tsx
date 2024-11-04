@@ -1,10 +1,12 @@
 import Link from "next/link"; // Import Link from next/link
 import "./Pencapaian.css";
 import Timeline from "../components/Pencapaian/Timeline";
+import Screensaver from "../components/Screensaver";
 
-export default function Reformasi() {
+export default function Pencapaian() {
   return (
     <div className="h-screen flex flex-col overflow-hidden bg-white">
+       <Screensaver  videoSrc="PROFIL BKPK.mp4" idleTimeout={10000}/>
       {/* Header Section */}
       <div className="flex items-center justify-between p-1">
         <div className="flex items-center gap-6 pl-10">

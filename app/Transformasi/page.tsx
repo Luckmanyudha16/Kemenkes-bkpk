@@ -2,7 +2,7 @@ import Link from "next/link"; // Import Link from next/link
 import "./Transformasi.css";
 import Timeline from "../components/Transformasi/Timeline";
 
-export default function Reformasi() {
+export default function Transformasi() {
   return (
     <div className="h-screen flex flex-col overflow-hidden bg-white">
       {/* Header Section */}
@@ -51,8 +51,8 @@ export default function Reformasi() {
           </Link>
         </div>
 
-        {/* Main Content */}
-        <main className="flex-grow flex flex-col items-center justify-center pl-10 pr-10">
+       {/* Main Content */}
+       <main className="flex-grow flex flex-col items-center justify-center pl-10 pr-10">
           <Timeline />
         </main>
 
