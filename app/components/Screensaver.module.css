@@ -1,0 +1,25 @@
+/* components/Screensaver.module.css */
+
+.screensaver {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    z-index: 9999;
+  }
+  
+  .screensaver.show {
+    display: flex;
+  }
+  
+  .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
