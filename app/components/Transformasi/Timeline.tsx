@@ -127,6 +127,8 @@ export default function Timeline() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+  const [[page, direction], setPage] = useState([0, 0]);
+
 
   useEffect(() => {
     if (selectedIndex !== null) {
@@ -143,6 +145,34 @@ export default function Timeline() {
     exit: { opacity: 0, scale: 0.5 },
   };
 
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 20000 : -90000, // Shift further left for right-edge alignment when entering from left
+      scale: 0.9,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      scale: 1,
+      opacity: 1,
+      transition: {
+        x: { type: "spring", stiffness: 100, damping: 20 },
+        scale: { duration: 0.4 },
+        opacity: { duration: 0.3 },
+      },
+    },
+    exit: (direction: number) => ({
+      x: direction < 0 ? 300 : -300, // Move out of view in the appropriate direction
+      scale: 0.9,
+      opacity: 0,
+    }),
+  };
+
+  const swipeConfidenceThreshold = 10000;
+  const swipePower = (offset: number, velocity: number) => {
+    return Math.abs(offset) * velocity;
+  };
+
   const handleCardClick = (index) => {
     setSelectedIndex(index);
   };
@@ -152,12 +182,20 @@ export default function Timeline() {
     setPopupVisible(false);
   };
 
+  const paginate = (newDirection: number) => {
+    setPage([page + newDirection, newDirection]);
+  };
+
   const handleNextMedia = () => {
+    paginate(1)
+
     const totalMedia = data[selectedIndex]?.media.length;
     setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % totalMedia);
   };
 
   const handlePrevMedia = () => {
+    paginate(-1);
+
     const totalMedia = data[selectedIndex]?.media.length;
     setCurrentMediaIndex((prevIndex) => (prevIndex - 1 + totalMedia) % totalMedia);
   };
@@ -179,34 +217,67 @@ export default function Timeline() {
                 </svg>
               </div>
 
-              <div className="flex justify-center mb-[2px] relative min-w-[50%]">
+              <div className="flex justify-center mb-[2px] relative min-w-[50%]" style={{
+                maxWidth: "50%",
+                overflow: "hidden",
+              }}>
                 {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
-                  <div className="flex items-center justify-between w-full h-full absolute top-0 left-0 px-[10px]">
+                  <div className="flex items-center justify-between h-full absolute top-0 left-0 inset-y-0 px-[10px] z-[99]">
                     <div onClick={handlePrevMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10  hover:bg-opacity-20 cursor-pointer">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                      </svg>
-                    </div>
-                    <div onClick={handleNextMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10  hover:bg-opacity-20 cursor-pointer">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                       </svg>
                     </div>
                   </div>
                 )}
 
                 {data[selectedIndex].media[currentMediaIndex].type === "image" ? (
-                  <img
-                    src={data[selectedIndex].media[currentMediaIndex].src}
-                    alt={`${data[selectedIndex].title} media ${currentMediaIndex + 1}`}
-                    className="w-full bg-transparent"
-                  />
+                  <AnimatePresence>
+                    <motion.img
+                      key={page}
+                      custom={direction}
+                      variants={slideVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={{
+                        x: { type: "spring", stiffness: 300, damping: 30 },
+                        opacity: { duration: 0.2 }
+                      }}
+                      drag="x"
+                      dragConstraints={{ left: 0, right: 0 }}
+                      dragElastic={1}
+                      onDragEnd={(e, { offset, velocity }) => {
+                        const swipe = swipePower(offset.x, velocity.x);
+            
+                        if (swipe < -swipeConfidenceThreshold) {
+                          handleNextMedia();
+                        } else if (swipe > swipeConfidenceThreshold) {
+                          handlePrevMedia();
+                        }
+                      }}
+                      src={data[selectedIndex].media[currentMediaIndex].src}
+                      alt={`${data[selectedIndex].title} media ${currentMediaIndex + 1}`}
+                      className="w-full bg-transparent"
+                    />
+                  </AnimatePresence>
                 ) : (
                   <video
                     src={data[selectedIndex].media[currentMediaIndex].src}
                     controls
                     className={styles.popupVideo}
                   />
+                )}
+
+                {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
+                  <div className="flex items-center justify-between h-full absolute top-0 right-0 inset-y-0 px-[10px] z-[99]">
+                    <div onClick={handleNextMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10  hover:bg-opacity-20 cursor-pointer">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                      </svg>
+                    </div>
+                  </div>
+                  
                 )}
               </div>
 
