@@ -130,7 +130,7 @@ const data = [
 ];
 
 export default function Timeline() {
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
   const [[page, direction], setPage] = useState([0, 0]);
@@ -179,7 +179,7 @@ export default function Timeline() {
     return Math.abs(offset) * velocity;
   };
 
-  const handleCardClick = (index) => {
+  const handleCardClick = (index: number) => {
     setSelectedIndex(index);
   };
 
@@ -195,15 +195,19 @@ export default function Timeline() {
   const handleNextMedia = () => {
     paginate(1)
 
-    const totalMedia = data[selectedIndex]?.media.length;
-    setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % totalMedia);
+    if (selectedIndex !== null) { // Check that selectedIndex is not null
+      const totalMedia = data[selectedIndex]?.media.length || 0;
+      setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % totalMedia);
+    }
   };
 
   const handlePrevMedia = () => {
     paginate(-1);
 
-    const totalMedia = data[selectedIndex]?.media.length;
-    setCurrentMediaIndex((prevIndex) => (prevIndex - 1 + totalMedia) % totalMedia);
+    if (selectedIndex !== null) { // Ensure selectedIndex is not null
+      const totalMedia = data[selectedIndex]?.media.length || 0;
+      setCurrentMediaIndex((prevIndex) => (prevIndex - 1 + totalMedia) % totalMedia);
+    }
   };
 
   return (

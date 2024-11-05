@@ -118,7 +118,7 @@ const data = [
 ];
 
 export default function Timeline() {
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
   const [[page, direction], setPage] = useState([0, 0]);
@@ -167,7 +167,7 @@ export default function Timeline() {
     return Math.abs(offset) * velocity;
   };
 
-  const handleCardClick = (index) => {
+  const handleCardClick = (index:number) => {
     console.log(index);
     setSelectedIndex(index);
   };
@@ -178,15 +178,19 @@ export default function Timeline() {
   };
 
   const handleNextMedia = () => {
-    const totalMedia = data[selectedIndex]?.media.length;
-    setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % totalMedia);
+    if (selectedIndex !== null) { // Check if selectedIndex is not null
+      const totalMedia = data[selectedIndex]?.media.length || 0;
+      setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % totalMedia);
+    }
   };
 
   const handlePrevMedia = () => {
-    const totalMedia = data[selectedIndex]?.media.length;
-    setCurrentMediaIndex(
-      (prevIndex) => (prevIndex - 1 + totalMedia) % totalMedia
-    );
+    if (selectedIndex !== null) { // Ensure selectedIndex is not null
+      const totalMedia = data[selectedIndex]?.media.length || 0;
+      setCurrentMediaIndex(
+        (prevIndex) => (prevIndex - 1 + totalMedia) % totalMedia
+      );
+    }
   };
 
   interface ImageSliderProps {
@@ -380,9 +384,11 @@ export default function Timeline() {
                 <RenderImageSlider images={data[selectedIndex].media[currentMediaIndex].src} title={data[selectedIndex].title} />
               ) : (
                 <video
-                  src={data[selectedIndex].media[currentMediaIndex].src}
-                  controls
-                  className="w-full rounded-2xl"
+                src={Array.isArray(data[selectedIndex].media[currentMediaIndex].src) 
+                  ? data[selectedIndex].media[currentMediaIndex].src[0] // Use the first element if it's an array
+                  : data[selectedIndex].media[currentMediaIndex].src}   // Use the string directly if it's already a string
+            controls
+            className="w-full rounded-2xl"
                 />
               )}
             </div>
