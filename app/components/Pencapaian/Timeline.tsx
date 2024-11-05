@@ -164,7 +164,7 @@ export default function Timeline() {
     return Math.abs(offset) * velocity;
   };
 
-  const handleCardClick = (index:number) => {
+  const handleCardClick = (index) => {
     console.log(index);
     setSelectedIndex(index);
   };
@@ -326,30 +326,12 @@ export default function Timeline() {
               />
             ) : (
               <video
-              src={Array.isArray(data[selectedIndex].media[currentMediaIndex].src) 
-                ? data[selectedIndex].media[currentMediaIndex].src[0] 
-                : data[selectedIndex].media[currentMediaIndex].src}
+                src={data[selectedIndex].media[currentMediaIndex].src}
                 controls
                 className="w-full rounded-2xl"
               />
             )}
           </AnimatePresence>
-
-          {/* <div className={styles.popupDescription}>
-              <div 
-                className={styles.popupTitle}
-                dangerouslySetInnerHTML={{
-                  __html: data[selectedIndex].judul ? data[selectedIndex].judul : data[selectedIndex].media[currentMediaIndex].judul,
-                }}>
-                
-              </div>
-              
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: data[selectedIndex].media[currentMediaIndex].description,
-                }}></div>
-              {/* <p>{data[selectedIndex].description}</p> */}
-            {/* </div> */} 
 
           {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
             <div className="flex items-center justify-between h-full absolute top-0 right-0 inset-y-0 px-[10px] z-[99]">
