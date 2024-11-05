@@ -253,7 +253,7 @@ export default function Timeline() {
         <img
           src={images}
           alt={`${title} media ${currentMediaIndex + 1}`}
-          className="h-full max-h-[900px] rounded-md shadow"
+          className="h-full rounded-md shadow max-w-[900px] overflow-hidden"
         />
       )
     }
