@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
 import styles from "./Timeline.module.css";
+import { url } from "inspector";
 // import { FaStethoscope, FaMicroscope, FaClipboardList } from "react-icons/fa";
 
 const data = [
@@ -116,10 +115,9 @@ const data = [
 ];
 
 export default function Timeline() {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
-  const [[page, direction], setPage] = useState([0, 0]);
 
   useEffect(() => {
     if (selectedIndex !== null) {
@@ -129,40 +127,6 @@ export default function Timeline() {
   }, [selectedIndex]);
 
   const radius = 300;
-
-  const popupVariants = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: { opacity: 1, scale: 1 },
-    exit: { opacity: 0, scale: 0.5 },
-  };
-
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 20000 : -90000, // Shift further left for right-edge alignment when entering from left
-      scale: 0.9,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      scale: 1,
-      opacity: 1,
-      transition: {
-        x: { type: "spring", stiffness: 100, damping: 20 },
-        scale: { duration: 0.4 },
-        opacity: { duration: 0.3 },
-      },
-    },
-    exit: (direction: number) => ({
-      x: direction < 0 ? 300 : -300, // Move out of view in the appropriate direction
-      scale: 0.9,
-      opacity: 0,
-    }),
-  };
-
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
 
   const handleCardClick = (index) => {
     console.log(index);
@@ -175,21 +139,15 @@ export default function Timeline() {
   };
 
   const handleNextMedia = () => {
-    // Pastikan selectedIndex bukan null
-  if (selectedIndex !== null && data[selectedIndex]) {
-    const totalMedia = data[selectedIndex].media.length;
+    const totalMedia = data[selectedIndex]?.media.length;
     setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % totalMedia);
-  }
-};
+  };
 
   const handlePrevMedia = () => {
-    // Pastikan selectedIndex bukan null
-  if (selectedIndex !== null && data[selectedIndex]) {
-    const totalMedia = data[selectedIndex].media.length;
+    const totalMedia = data[selectedIndex]?.media.length;
     setCurrentMediaIndex(
       (prevIndex) => (prevIndex - 1 + totalMedia) % totalMedia
     );
-  }
   };
 
   interface ImageSliderProps {
@@ -264,95 +222,81 @@ export default function Timeline() {
 
   return (
     <>
-      <AnimatePresence>
-  {isPopupVisible && selectedIndex !== null && (
-    <motion.div 
-      variants={popupVariants}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      transition={{ duration: 0.3 }} 
-      className="absolute bg-black bg-opacity-50 w-full h-full z-[999] left-0 top-0 flex items-center justify-center">
-      
-      <div className="flex items-center px-[40px] max-w-[60vw] min-h-[60vh] bg-white border border-sm rounded-xl gap-8 relative">
-        <div 
-          className='absolute right-[-20px] top-[-20px] bg-white border w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300' 
-          onClick={handleClosePopup} 
-          style={{ color: "green" }}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-          </svg>
-        </div>
-
-        <div className="flex justify-center mb-[2px] relative min-w-[50%]" style={{ maxWidth: "50%", overflow: "hidden" }}>
-          {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
-            <div className="flex items-center justify-between h-full absolute top-0 left-0 inset-y-0 px-[10px] z-[99]">
-              <div onClick={handlePrevMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10 hover:bg-opacity-20 cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                </svg>
-              </div>
+      {isPopupVisible && selectedIndex !== null && (
+        <div className="absolute bg-black bg-opacity-50 w-[100%] h-[100%] z-[999] left-0 top-0 flex items-center justify-center">
+          <div className={`flex ${data[selectedIndex].media[currentMediaIndex].type == 'video' ? "flex-col" : ""} items-center px-[80px] py-[30px] max-w-[60vw] min-h-[60vh] bg-white border border-sm rounded-xl gap-8 relative`}>
+            <div className='absolute right-[-20] top-[-20] bg-white border w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300' onClick={handleClosePopup} style={{ color: "green"}}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
             </div>
-          )}
 
-          <AnimatePresence>
-            {data[selectedIndex].media[currentMediaIndex].type === "image" ? (
-              <motion.img
-                key={page}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 }
-                }}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={1}
-                onDragEnd={(e, { offset, velocity }) => {
-                  const swipe = swipePower(offset.x, velocity.x);
-                  if (swipe < -swipeConfidenceThreshold) {
-                    handleNextMedia();
-                  } else if (swipe > swipeConfidenceThreshold) {
-                    handlePrevMedia();
-                  }
-                }}
-                src={data[selectedIndex].media[currentMediaIndex].src}
-                alt={`${data[selectedIndex].title} media ${currentMediaIndex + 0}`}
-                className="w-full bg-transparent"
-              />
-            ) : (
-              <video
-                src={data[selectedIndex].media[currentMediaIndex].src}
-                controls
-                className="w-full rounded-2xl"
-              />
+            {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
+              <div className="absolute left-0 inset-y-0 z-[99] flex items-center ml-4">
+                <div onClick={handlePrevMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10  hover:bg-opacity-20 cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                  </svg>
+                </div>
+              </div>
+              // <div className="flex items-center justify-between w-full h-full absolute top-0 left-0 px-[10px]">
+              //   <div onClick={handleNextMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10  hover:bg-opacity-20 cursor-pointer">
+              //     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+              //       <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              //     </svg>
+              //   </div>
+              // </div>
             )}
-          </AnimatePresence>
 
-          {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
-            <div className="flex items-center justify-between h-full absolute top-0 right-0 inset-y-0 px-[10px] z-[99]">
-              <div onClick={handleNextMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10 hover:bg-opacity-20 cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                </svg>
-              </div>
+            <div className={`bg-slate-200 ${data[selectedIndex].media[currentMediaIndex].type === "image" ? "min-w-[40%] h-[100%]" : "w-[100%]"} rounded-md flex justify-center mb-[2px] relative`}>
+              {/* {data[selectedIndex].media &&
+                data[selectedIndex].media.length > 1 && (
+                  <div className={styles.carouselControls}>
+                    <button onClick={handlePrevMedia}>&lt;</button>
+                    <button onClick={handleNextMedia}>&gt;</button>
+                  </div>
+                )} */}
+
+              {data[selectedIndex].media[currentMediaIndex].type ===
+              "image" ? (
+                <RenderImageSlider images={data[selectedIndex].media[currentMediaIndex].src} title={data[selectedIndex].title} />
+              ) : (
+                <video
+                  src={data[selectedIndex].media[currentMediaIndex].src}
+                  controls
+                  className="w-full rounded-2xl"
+                />
+              )}
             </div>
-          )}
-        </div>
 
-        <div className={styles.popupDescription}>
-          <h3 className={styles.popupTitle}>{data[selectedIndex].title}</h3>
-          <p>{data[selectedIndex].description}</p>
-        </div>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
+            <div className={styles.popupDescription}>
+              <div 
+                className={styles.popupTitle}
+                dangerouslySetInnerHTML={{
+                  __html: data[selectedIndex].judul ? data[selectedIndex].judul : data[selectedIndex].media[currentMediaIndex].judul,
+                }}>
+                
+              </div>
+              
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data[selectedIndex].media[currentMediaIndex].description,
+                }}></div>
+              {/* <p>{data[selectedIndex].description}</p> */}
+            </div>
 
+            {data[selectedIndex].media && data[selectedIndex].media.length > 1 && (
+              <div className="absolute right-0 inset-y-0 z-[99] flex items-center mr-4">
+                <div onClick={handleNextMedia} className="flex items-center p-2 rounded-full bg-black bg-opacity-10  hover:bg-opacity-20 cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                  </svg>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       <div className={styles.timelineContainer}>
         <button className={`${styles.styledButton} ${styles.circularCard}`}>
