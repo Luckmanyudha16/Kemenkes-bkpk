@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Timeline.module.css";
-import { url } from "inspector";
+
 // import { FaStethoscope, FaMicroscope, FaClipboardList } from "react-icons/fa";
 
 const data = [
@@ -427,36 +427,43 @@ export default function Timeline() {
           Badan Kebijakan Pembangunan Kesehatan
         </button>
         <div className={styles.timeline}>
-          {data.map((entry, index) => {
-            const angle = (index / data.length) * 2 * Math.PI;
-            const x = Math.round((radius * Math.cos(angle) + 50) * 80) / 100;
-            const y = Math.round((radius * Math.sin(angle) + 50) * 80) / 100;
+          <div style={{
+            position: "relative",
+            width: "200px",
+            height: "200px",
+          }}>
 
-            return (
-              
+            {data.map((entry, index) => {
+              const angle = (index / data.length) * 2 * Math.PI;
+              const x = Math.round((radius * Math.cos(angle) * 80) + 80) / 100;
+              const y = Math.round((radius * Math.sin(angle) * 80) + 80) / 100;
+
+              return (
+                
               <div
-              key={index}
-              className={`${styles.card} ${selectedIndex === index ? styles.active : ""}`}
-              style={{ left: `${x}px`, top: `${y}px`, backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_URL}/${entry.background})`, backgroundSize: "100px", backgroundPosition: "center", }}
-              onClick={() => handleCardClick(index)}
-            >
-              <div style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundColor: "rgba(0, 0, 0, 0.5)"
-              }} className="rounded-full"></div>
-              <h3 className={styles.cardTitle}style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0}}>{entry.title}</h3>
-            </div>
-            );
-          })}
+                key={index}
+                className={`${styles.card} ${selectedIndex === index ? styles.active : ""}`}
+                style={{ left: `${x + 40}px`, top: `${y + 40}px`, backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_URL}/${entry.background})`, backgroundSize: "100px", backgroundPosition: "center", }}
+                onClick={() => handleCardClick(index)}
+              >
+                <div style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  backgroundColor: "rgba(0, 0, 0, 0.5)"
+                }} className="rounded-full"></div>
+                <h3 className={styles.cardTitle}style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0}}>{entry.title}</h3>
+              </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>
