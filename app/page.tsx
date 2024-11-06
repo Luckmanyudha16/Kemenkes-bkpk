@@ -13,18 +13,18 @@ export default function Home() {
           <img
             src="BKPK LOGO.png"
             alt="Logo BKPK"
-            className="h-full w-auto max-h-20"
+            className="h-12 md:h-16 lg:h-20 xl:h-28"
           />
            <img
           src="Logo Footer.png"
           alt="Footer Logo"
-          className="h-50 w-auto pr-10 md:h-40 sm:h-32" // Adjust height for smaller screens
+          className="w-auto pr-10 h-12 md:h-16 lg:h-20 xl:h-28" // Adjust height for smaller screens
         />
         </div>
         <img
           src="Supergrafis.png"
           alt="Logo Tambahan"
-          className="h-40 w-auto"
+          className="h-12 md:h-16 lg:h-20 xl:h-28"
         />
       </div>
 
@@ -86,7 +86,7 @@ export default function Home() {
         <img
           src="Supergrafiskiri.png"
           alt="Logo Tambahan Kiri"
-          className="h-40 w-auto" // Adjust height for smaller screens
+          className="h-12 md:h-16 lg:h-20 xl:h-28" // Adjust height for smaller screens
         />
       </div>
     </div>
