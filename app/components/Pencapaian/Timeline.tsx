@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Timeline.module.css";
-import { url } from "inspector";
+
 // import { FaStethoscope, FaMicroscope, FaClipboardList } from "react-icons/fa";
 
 const data = [
@@ -61,8 +61,8 @@ const data = [
       { type: "image", src: ["arsitektur_global.jpeg", "arsitektur_regional.jpg"], judul:"<h2><b>Arsitektur Kesehatan Global</b></h2>", description: "BKPK berperan penting dalam membangun Arsitektur Kesehatan Global saat Presidensi G20 ,dan Keketuaan ASEAN Tahun 2023"},
       { type: "image", src: "peran.jpg", judul:"<h2><b>Peran dalam Organisasi Internasional</b></h2>", description: "Wakil dari Kementerian Kesehatan menduduki posisi board maupun co-chair dalam organisasi internasional seperti pandemic fund, CEPI, Global fund, dan GAVI."},
       { type: "image", src: "kolaborasi.jpg", judul:"<h2><b>Kolaborasi Global</b></h2>", description: "BKPK memanfaatkan jejaring kolaborasi global untuk melakukan leap frog di bidang bioteknologi, genomik dan layanan kedokteran presisi dan juga peningkatan sistem informasi kesehatan."},
-      { type: "image", src: ["SIMPLEK 1.png", "SIMPLEK 2.JPG", "SIMPLEK 3.JPG", "SIMPLEK 4.jpg"], judul:"<h2><b>Sistem Informasi Monitoring Implementasi Kebijakan (SIMPLEK)</b></h2>", description: "Untuk kinerja internal yang lebih baik, BKPK mengembangkan aplikasi SIMPLEK atau Sistem Informasi Monitoring Implementasi Kebijakan"},
-      { type: "image", src: "Pelatihan Koding.jpg", judul:"<h2><b>Layanan Data untuk Publik</b></h2>", description: "BKPK juga melayani permintaan data survei secara online untuk memberikan kemudahan kepada publik."},
+      { type: "image", src: ["SIMPLEK 1.png", "SIMPLEK 2.jpg", "SIMPLEK 3.jpg", "SIMPLEK 4.jpg"], judul:"<h2><b>Sistem Informasi Monitoring Implementasi Kebijakan (SIMPLEK)</b></h2>", description: "Untuk kinerja internal yang lebih baik, BKPK mengembangkan aplikasi SIMPLEK atau Sistem Informasi Monitoring Implementasi Kebijakan"},
+      { type: "image", src: "Pelatihan Koding.JPG", judul:"<h2><b>Layanan Data untuk Publik</b></h2>", description: "BKPK juga melayani permintaan data survei secara online untuk memberikan kemudahan kepada publik."},
       // { type: "video", src: "peta.mp4", judul:"<h3></h3>", description: "Layanan Data untuk Publik<br>BKPK juga melayani permintaan data survei secara online untuk memberikan kemudahan kepada publik."},
     ],
   },
@@ -83,7 +83,7 @@ const data = [
       { type: "video", src: "00069.mp4", judul:"", description:"Berikut Video Dokumentasi"  },
       { type: "video", src: "00074.mp4", judul:"", description: "Berikut Video Dokumentasi"  },
       { type: "video", src: "00087.mp4", judul:"", description: "Berikut Video Dokumentasi"  },
-      { type: "image", src: ["PORTAL LAYANAN.PNG"], judul:"<h3><b>Layanan Data</b></h3>", description: "Badan Kebijakan Pembangunan Kesehatan mengelola data hasil survey skala nasional, dimulai dari Riset Kesehatan Dasar (Riskesdas), Studi Status Gizi Indonesia (SSGI), Riset Fasilitas Kesehatan (Rifaskes), dan survey nasional lainnya." },
+      { type: "image", src: ["PORTAL LAYANAN.png"], judul:"<h3><b>Layanan Data</b></h3>", description: "Badan Kebijakan Pembangunan Kesehatan mengelola data hasil survey skala nasional, dimulai dari Riset Kesehatan Dasar (Riskesdas), Studi Status Gizi Indonesia (SSGI), Riset Fasilitas Kesehatan (Rifaskes), dan survey nasional lainnya." },
     ],
   },
   // {
@@ -359,7 +359,7 @@ export default function Timeline() {
       {isPopupVisible && selectedIndex !== null && (
         <div className="absolute bg-black bg-opacity-50 w-[100%] h-[100%] z-[999] left-0 top-0 flex items-center justify-center">
           <div className={`flex ${data[selectedIndex].media[currentMediaIndex].type == 'video' ? "flex-col" : ""} items-center px-[80px] py-[30px] max-w-[60vw] min-h-[60vh] bg-white border border-sm rounded-xl gap-8 relative`}>
-            <div className='absolute right-[-20] top-[-20] bg-white border w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300' onClick={handleClosePopup} style={{ color: "green"}}>
+            <div className='absolute right-[-20px] top-[-20px] bg-white border w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300' onClick={handleClosePopup} style={{ color: "green"}}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg>
@@ -427,36 +427,43 @@ export default function Timeline() {
           Badan Kebijakan Pembangunan Kesehatan
         </button>
         <div className={styles.timeline}>
-          {data.map((entry, index) => {
-            const angle = (index / data.length) * 2 * Math.PI;
-            const x = Math.round((radius * Math.cos(angle) + 50) * 80) / 100;
-            const y = Math.round((radius * Math.sin(angle) + 50) * 80) / 100;
+          <div style={{
+            position: "relative",
+            width: "200px",
+            height: "200px",
+          }}>
 
-            return (
-              
+            {data.map((entry, index) => {
+              const angle = (index / data.length) * 2 * Math.PI;
+              const x = Math.round((radius * Math.cos(angle) * 70) + 80) / 100;
+              const y = Math.round((radius * Math.sin(angle) * 70) + 80) / 100;
+
+              return (
+                
               <div
-              key={index}
-              className={`${styles.card} ${selectedIndex === index ? styles.active : ""}`}
-              style={{ left: `${x}px`, top: `${y}px`, backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_URL}/${entry.background})`, backgroundSize: "100px", backgroundPosition: "center", }}
-              onClick={() => handleCardClick(index)}
-            >
-              <div style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundColor: "rgba(0, 0, 0, 0.5)"
-              }} className="rounded-full"></div>
-              <h3 className={styles.cardTitle}style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0}}>{entry.title}</h3>
-            </div>
-            );
-          })}
+                key={index}
+                className={`${styles.card} ${selectedIndex === index ? styles.active : ""}`}
+                style={{ left: `${x + 40}px`, top: `${y + 40}px`, backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_URL}/${entry.background})`, backgroundSize: "100px", backgroundPosition: "center", }}
+                onClick={() => handleCardClick(index)}
+              >
+                <div style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  backgroundColor: "rgba(0, 0, 0, 0.5)"
+                }} className="rounded-full"></div>
+                <h3 className={styles.cardTitle}style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0}}>{entry.title}</h3>
+              </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>
