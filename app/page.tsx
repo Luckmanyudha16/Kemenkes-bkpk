@@ -30,7 +30,7 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="full-page-background bg-white">
-        <Screensaver  videoSrc="PROFIL BKPK.mp4" idleTimeout={50000}/>
+        <Screensaver  videoSrc="screen 1.mp4" idleTimeout={50000}/>
         {/* Left Arrow Button */}
         <div className="arrow-button-container left">
           <Link href="/Transformasi">
