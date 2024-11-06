@@ -221,7 +221,7 @@ export default function Timeline() {
           transition={{ duration: 0.3 }} 
           className="absolute bg-black bg-opacity-50 w-[100%] h-[100%] z-[999] left-0 top-0 flex items-center justify-center">
             <div className="flex items-center px-[40px] max-w-[60vw] min-h-[60vh] bg-white border border-sm rounded-xl gap-8 relative">
-              <div className='absolute right-[-20] top-[-20] bg-white border w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300' onClick={handleClosePopup} style={{ color: "green"}}>
+              <div className='absolute right-[-20px] top-[-20px] bg-white border w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300' onClick={handleClosePopup} style={{ color: "green"}}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
@@ -303,35 +303,42 @@ export default function Timeline() {
       <div className={styles.timelineContainer}>
         <button className={`${styles.styledButton} ${styles.circularCard}`}>Transformasi Kesehatan</button>
         <div className={styles.timeline}>
-          {data.map((entry, index) => {
-            const angle = (index / data.length) * 2 * Math.PI;
-            const x = Math.round((radius * Math.cos(angle) + 50) * 110) / 130;
-            const y = Math.round((radius * Math.sin(angle) + 50) * 110) / 130;
+          <div style={{
+              position: "relative",
+              width: "200px",
+              height: "200px",
+            }}>
 
-            return (
-              <div
-                key={index}
-                className={`${styles.card} ${selectedIndex === index ? styles.active : ""}`}
-                style={{ left: `${x}px`, top: `${y}px`, backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_URL}/${entry.background})`, backgroundSize: "cover", backgroundPosition: "center", }}
-                onClick={() => handleCardClick(index)}
-              >
-                <div style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  backgroundColor: "rgba(0, 0, 0, 0.5)"
-                }} className="rounded-full"></div>
-                <h3 className={styles.cardTitle}style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0}}>{entry.title}</h3>
-              </div>
-            );
-          })}
+            {data.map((entry, index) => {
+              const angle = (index / data.length) * 2 * Math.PI;
+              const x = Math.round((radius * Math.cos(angle) * 80) + 80) / 100;
+              const y = Math.round((radius * Math.sin(angle) * 80) + 80) / 100;
+
+              return (
+                <div
+                  key={index}
+                  className={`${styles.card} ${selectedIndex === index ? styles.active : ""}`}
+                  style={{ left: `${x + 40}px`, top: `${y + 40}px`, backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_URL}/${entry.background})`, backgroundSize: "cover", backgroundPosition: "center", }}
+                  onClick={() => handleCardClick(index)}
+                >
+                  <div style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: "rgba(0, 0, 0, 0.5)"
+                  }} className="rounded-full"></div>
+                  <h3 className={styles.cardTitle}style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0}}>{entry.title}</h3>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

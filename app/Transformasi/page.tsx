@@ -52,7 +52,7 @@ export default function Transformasi() {
         </div>
 
        {/* Main Content */}
-       <main className="flex-grow flex flex-col items-center justify-center pl-10 pr-10">
+       <main className="flex-grow flex flex-col items-center justify-center pl-10 pr-10 h-full">
           <Timeline />
         </main>
 
