@@ -2,6 +2,7 @@ import Link from "next/link"; // Import Link from next/link
 import "./Pencapaian/Pencapaian.css";
 import Timeline from "./components/Pencapaian/Timeline";
 import Screensaver from './components/Screensaver';
+import ButtonQuiz from "./components/Home/ButtonQuiz";
 
 export default function Home() {
   return (
@@ -30,7 +31,7 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="full-page-background bg-white">
-        <Screensaver  videoSrc="PROFIL BKPK.mp4" idleTimeout={10000}/>
+        <Screensaver  videoSrc="screen 1.mp4" idleTimeout={300000}/>
         {/* Left Arrow Button */}
         <div className="arrow-button-container left">
           <Link href="/Transformasi">
@@ -89,6 +90,7 @@ export default function Home() {
           className="h-40 w-auto" // Adjust height for smaller screens
         />
       </div>
+      <ButtonQuiz/>
     </div>
   );
 }

@@ -2,11 +2,12 @@ import Link from "next/link"; // Import Link from next/link
 import "./Pencapaian.css";
 import Timeline from "../components/Pencapaian/Timeline";
 import Screensaver from "../components/Screensaver";
+import Quiz from "../components/Home/ButtonQuiz";
 
 export default function Pencapaian() {
   return (
     <div className="h-screen flex flex-col overflow-hidden bg-white">
-       <Screensaver  videoSrc="PROFIL BKPK.mp4" idleTimeout={50000}/>
+       <Screensaver  videoSrc="screen 1.mp4" idleTimeout={300000}/>
       {/* Header Section */}
       <div className="flex items-center justify-between p-1">
         <div className="flex items-center gap-6 pl-10">
@@ -81,13 +82,8 @@ export default function Pencapaian() {
           </Link>
         </div>
       </div>
-      <div className="flex items-center justify-between p-1">
-        <img
-          src="Supergrafiskiri.png"
-          alt="Logo Tambahan Kiri"
-          className="h-40 w-auto" // Adjust height for smaller screens
-        />
-      </div>
+      
+      <Quiz/>
     </div>
   );
 }

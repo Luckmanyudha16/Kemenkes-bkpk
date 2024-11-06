@@ -1,10 +1,14 @@
 import Link from "next/link"; // Import Link from next/link
 import "./Transformasi.css";
 import Timeline from "../components/Transformasi/Timeline";
+import ButtonQuiz from "../components/Home/ButtonQuiz";
+import Screensaver from "../components/Screensaver";
+
 
 export default function Transformasi() {
   return (
     <div className="h-screen flex flex-col overflow-hidden bg-white">
+       <Screensaver  videoSrc="screen 1.mp4" idleTimeout={300000}/>
       {/* Header Section */}
       <div className="flex items-center justify-between p-1">
         <div className="flex items-center gap-6 pl-10">
@@ -79,18 +83,14 @@ export default function Transformasi() {
           </Link>
         </div>
       </div>
-      <div className="flex items-center justify-between p-1 pr-10">
+      <div className="flex items-center justify-between p-1">
         <img
           src="Supergrafiskiri.png"
           alt="Logo Tambahan Kiri"
-          className="h-40 w-auto"
+          className="h-40 w-auto" // Adjust height for smaller screens
         />
-        {/* <img
-        src="Logo Footer.png"
-        alt="Footer Logo"
-        className="h-50 w-auto pr-10"
-    /> */}
       </div>
+      <ButtonQuiz/>
     </div>
   );
 }
