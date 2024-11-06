@@ -6,7 +6,7 @@ import Screensaver from "../components/Screensaver";
 export default function Pencapaian() {
   return (
     <div className="h-screen flex flex-col overflow-hidden bg-white">
-       <Screensaver  videoSrc="PROFIL BKPK.mp4" idleTimeout={50000}/>
+       <Screensaver  videoSrc="screen 1.mp4" idleTimeout={50000}/>
       {/* Header Section */}
       <div className="flex items-center justify-between p-1">
         <div className="flex items-center gap-6 pl-10">
